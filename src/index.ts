@@ -1,13 +1,12 @@
-import { fstat } from "fs";
 import createParser, { Table, Cardinality } from "./wiring";
 import { readFileSync } from "fs";
+import vizRenderStringSync from "@aduh95/viz.js/sync";
 
 const parse = createParser(
   readFileSync(__dirname + "/../src/dbml.pegjs", "utf-8")
 );
 
-const dbml = parse(readFileSync(__dirname + "/../input2.dbml", "utf-8"));
-// console.log(dbml.tables);
+const dbml = parse(readFileSync(process.argv[2], "utf-8"));
 
 const columnRows: Map<string, string> = new Map();
 const tables: Map<string, { table: Table; dot: string }> = new Map();
@@ -120,11 +119,20 @@ const refs = dbml.refs
   })
   .join("\n");
 
-console.log(`digraph obj {
+const dot = `digraph obj {
   node [shape=none, style=filled, fillcolor=aliceblue, fontname=arial, margin=0];
   nodesep=2.0;
 
   ${groups}
   ${remainingTables}
   ${refs}
-}`);
+}`;
+
+// console.log(dot);
+
+const svg = vizRenderStringSync(dot, {
+  engine: "dot",
+  format: "svg",
+});
+
+console.log(svg);

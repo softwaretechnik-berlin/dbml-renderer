@@ -5,9 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var wiring_1 = __importDefault(require("./wiring"));
 var fs_1 = require("fs");
+var sync_1 = __importDefault(require("@aduh95/viz.js/sync"));
 var parse = wiring_1.default(fs_1.readFileSync(__dirname + "/../src/dbml.pegjs", "utf-8"));
-var dbml = parse(fs_1.readFileSync(__dirname + "/../input2.dbml", "utf-8"));
-// console.log(dbml.tables);
+var dbml = parse(fs_1.readFileSync(process.argv[2], "utf-8"));
 var columnRows = new Map();
 var tables = new Map();
 dbml.tables.forEach(function (table) {
@@ -86,4 +86,10 @@ var refs = dbml.refs
     return fromRow + "->" + toRow + " [headlabel=\"" + headLabel + "\",taillabel=\"" + tailLabel + "\", arrowhead=\"none\", arrowtail=\"none\"]";
 })
     .join("\n");
-console.log("digraph obj {\n  node [shape=none, style=filled, fillcolor=aliceblue, fontname=arial, margin=0];\n  nodesep=2.0;\n\n  " + groups + "\n  " + remainingTables + "\n  " + refs + "\n}");
+var dot = "digraph obj {\n  node [shape=none, style=filled, fillcolor=aliceblue, fontname=arial, margin=0];\n  nodesep=2.0;\n\n  " + groups + "\n  " + remainingTables + "\n  " + refs + "\n}";
+// console.log(dot);
+var svg = sync_1.default(dot, {
+    engine: "dot",
+    format: "svg",
+});
+console.log(svg);

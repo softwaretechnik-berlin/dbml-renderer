@@ -14,6 +14,7 @@
     "typescript": "^4.1.3"
   },
   "dependencies": {
+    "@aduh95/viz.js": "^3.2.1",
     "pegjs": "^0.10.0"
   }
 }
