@@ -119,9 +119,11 @@ const refs = dbml.refs
   })
   .join("\n");
 
-const dot = `digraph obj {
-  node [shape=none, style=filled, fillcolor=aliceblue, fontname=arial, margin=0];
-  nodesep=2.0;
+const dot = `digraph dbml {
+  graph [pad="0", ranksep="0", nodesep="4"]
+  node [shape=none, style=filled, fillcolor=aliceblue, margin=0, fontname=arial, fontsize=18];
+  fontname=arial;
+  nodesep=5.0;
 
   ${groups}
   ${remainingTables}
