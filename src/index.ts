@@ -55,7 +55,7 @@ dbml.tables.forEach((table) => {
   const value = {
     table,
     dot: `${alias} [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" bgcolor="#cccccc"><B>${table.name}</B></TD></TR>
+      <TR><TD PORT="f0" WIDTH="150" bgcolor="#cccccc"><B>       ${table.name}       </B></TD></TR>
       ${rows}
     </TABLE>>];`,
   };
@@ -113,7 +113,7 @@ const refs = dbml.refs
     const toRow = columnRows.get(toKey);
     if (!toRow) throw new Error(`Could not find ${toKey} used in to ref`);
 
-    let [tailLabel, headLabel] = refLabels[ref.cardinality];
+    const [tailLabel, headLabel] = refLabels[ref.cardinality];
 
     return `${fromRow}->${toRow} [headlabel="${headLabel}",taillabel="${tailLabel}", arrowhead="none", arrowtail="none"]`;
   })
