@@ -1,5 +1,6 @@
+#!/usr/bin/env node
+
 import createParser, { Table, Cardinality, Group, DBML, Ref } from "./parser";
-import { existsSync, readFileSync } from "fs";
 import vizRenderStringSync from "@aduh95/viz.js/sync";
 import yargs, { number } from "yargs";
 import fs from "fs";
@@ -45,7 +46,7 @@ const args = yargs(process.argv.slice(2))
   }).argv;
 
 const parse = createParser(
-  readFileSync(__dirname + "/../src/dbml.pegjs", "utf-8")
+  fs.readFileSync(__dirname + "/../src/dbml.pegjs", "utf-8")
 );
 
 type RowAttributes = {
