@@ -1,4 +1,4 @@
-import createParser, { Table, Cardinality } from "./wiring";
+import createParser, { Table, Cardinality } from "./parser";
 import { readFileSync } from "fs";
 import vizRenderStringSync from "@aduh95/viz.js/sync";
 import yargs from "yargs";
