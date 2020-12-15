@@ -1,12 +1,54 @@
 import createParser, { Table, Cardinality } from "./wiring";
 import { readFileSync } from "fs";
 import vizRenderStringSync from "@aduh95/viz.js/sync";
+import yargs from "yargs";
+import fs from "fs";
+
+type Formats = "dot" | "svg";
+
+const args = yargs(process.argv.slice(2))
+  .scriptName("dbml-renderer")
+  .usage("Usage: $0 [options]")
+  .example("$0 -i schema.dbml", "Render the given file and output to stdout")
+  .alias("h", "help")
+  .option("input", {
+    demandOption: true,
+    alias: "i",
+    type: "string",
+    description: "DBML file",
+    coerce: (arg) => {
+      if (!fs.existsSync(arg)) {
+        throw new Error(`Could not find file '${arg}'`);
+      }
+
+      return fs.readFileSync(arg, "utf-8");
+    },
+  })
+  .option("format", {
+    alias: "f",
+    type: "string",
+    choices: ["dot", "svg"],
+    default: "svg",
+    description: "Output format",
+    coerce: (arg) => arg as Formats,
+  })
+  .option("output", {
+    alias: "o",
+    type: "string",
+    default: "-",
+    description: "Output file",
+    coerce: (arg) => {
+      return arg === "-"
+        ? console.log
+        : (content: string) => fs.writeFileSync(arg, content);
+    },
+  }).argv;
 
 const parse = createParser(
   readFileSync(__dirname + "/../src/dbml.pegjs", "utf-8")
 );
 
-const dbml = parse(readFileSync(process.argv[2], "utf-8"));
+const dbml = parse(args.input);
 
 const columnRows: Map<string, string> = new Map();
 const tables: Map<string, { table: Table; dot: string }> = new Map();
@@ -130,11 +172,9 @@ const dot = `digraph dbml {
   ${refs}
 }`;
 
-// console.log(dot);
-
 const svg = vizRenderStringSync(dot, {
   engine: "dot",
-  format: "svg",
+  format: args.format,
 });
 
-console.log(svg);
+args.output(svg);
