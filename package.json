@@ -1,14 +1,13 @@
 {
-  "name": "dbml-renderer",
+  "name": "@softwaretechnik/dbml-renderer",
   "version": "1.0.0",
-  "description": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/softwaretechnik-berlin/dbml-renderer"
+    "url": "git+https://github.com/softwaretechnik-berlin/dbml-renderer.git"
   },
   "main": "./build/index.js",
   "bin": {
-    "dbml-renderer": "./build/index.js"
+    "dbml-renderer": "build/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -27,5 +26,10 @@
     "@types/yargs": "^15.0.11",
     "pegjs": "^0.10.0",
     "yargs": "^16.2.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/softwaretechnik-berlin/dbml-renderer/issues"
+  },
+  "homepage": "https://github.com/softwaretechnik-berlin/dbml-renderer#readme",
+  "description": ""
 }
