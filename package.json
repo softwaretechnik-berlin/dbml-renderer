@@ -2,6 +2,10 @@
   "name": "dbml-renderer",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/softwaretechnik-berlin/dbml-renderer"
+  },
   "main": "./build/index.js",
   "bin": {
     "dbml-renderer": "./build/index.js"
