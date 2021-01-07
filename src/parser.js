@@ -1,5 +1,4 @@
-import { SSL_OP_TLS_BLOCK_PADDING_BUG } from "constants";
-import peg from "pegjs";
+import dbml from "./dbml";
 
 const isObject = (what) => typeof what === "object" && what !== null;
 const isArray = (what) => Array.isArray(what);
@@ -67,32 +66,28 @@ const entriesTransformations = {
   },
 };
 
-export default function createParser(grammar) {
-  const parser = peg.generate(grammar);
+export default function createParser(input) {
+  const parsed = dbml.parse(input);
 
-  return (input) => {
-    const parsed = parser.parse(input);
-
-    const obj = {};
-    removeComments(parsed).forEach((entry) => {
-      const typeKey = entry.type + "s";
-      const transform =
-        entriesTransformations[entry.type] || entriesTransformations.default;
-      (obj[typeKey] = obj[typeKey] || []).push(transform(entry));
-    });
-    const projects = obj.projects || [];
-    delete obj.projects;
-    obj.project = {
-      options: projects
-        .map((p) => p.options)
-        .reduce((a, b) => Object.assign(a, b), {}),
-    };
-
-    obj.tables = obj.tables || [];
-    obj.groups = obj.groups || [];
-    obj.enums = obj.enums || [];
-    obj.refs = obj.refs || [];
-
-    return obj;
+  const obj = {};
+  removeComments(parsed).forEach((entry) => {
+    const typeKey = entry.type + "s";
+    const transform =
+      entriesTransformations[entry.type] || entriesTransformations.default;
+    (obj[typeKey] = obj[typeKey] || []).push(transform(entry));
+  });
+  const projects = obj.projects || [];
+  delete obj.projects;
+  obj.project = {
+    options: projects
+      .map((p) => p.options)
+      .reduce((a, b) => Object.assign(a, b), {}),
   };
+
+  obj.tables = obj.tables || [];
+  obj.groups = obj.groups || [];
+  obj.enums = obj.enums || [];
+  obj.refs = obj.refs || [];
+
+  return obj;
 }

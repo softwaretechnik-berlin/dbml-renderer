@@ -60,4 +60,4 @@ export type Settings = {
   [string]: string;
 };
 
-export default function createParser(input: string): (input: string) => DBML;
+export default function parse(input: string): DBML;

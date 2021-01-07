@@ -1,12 +1,7 @@
-import fs from "fs";
-import createParser, { Table, Cardinality, Group, DBML, Ref } from "./parser";
-import vizRenderStringSync from "@aduh95/viz.js/sync";
+import parse, { Table, Cardinality, Group, DBML, Ref } from "./parser";
 
 export type Format = "dot" | "svg";
 
-const parse = createParser(
-  fs.readFileSync(__dirname + "/../src/dbml.pegjs", "utf-8")
-);
 
 type RowAttributes = {
   [key: string]: string;
@@ -263,12 +258,24 @@ class DbmlRenderer {
   }
 }
 
+export function dot(input: string): string {
+  const dbml = new DbmlRenderer(parse(input));
+  return dbml.toDot();
+}
 
 
 export default function render(input: string, format: Format): string {
-  const dbml = new DbmlRenderer(parse(input));
+  const dotString = dot(input);
 
-  return vizRenderStringSync(dbml.toDot(), {
+  if (format === "dot") {
+    // viz.js can return the dot format too, but it needs node.js' global
+    // 'process' object to be present, but it isn't available in graal's
+    // script engine.
+    return dotString;
+  }
+  const vizRenderStringSync = require("@aduh95/viz.js/sync");
+
+  return vizRenderStringSync(dotString, {
     engine: "dot",
     format: format,
   });
