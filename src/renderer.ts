@@ -29,9 +29,9 @@ class TableRenderer {
 
   constructor(table: Table) {
     this.table = table;
-    this.addRow("__TABLE_NAME__", `<B>       ${table.name}       </B>`, {
+    this.addRow("__TABLE_NAME__", `<font color="#ffffff"><B>       ${table.name}       </B></font>`, {
       WIDTH: "150",
-      BGCOLOR: "#cccccc",
+      BGCOLOR: "#1d71b8",
     });
 
     table.columns.forEach((column) => {
@@ -49,7 +49,7 @@ class TableRenderer {
       );
 
       this.addRow(column.name, transformName(column.name), {
-        BGCOLOR: "AliceBlue",
+        BGCOLOR: "#e7e2dd",
       });
     });
   }
@@ -77,8 +77,8 @@ class TableRenderer {
     //TODO: check that columns together are pk
     const key = columns.sort().join(",");
     if (!this.columns.has(key)) {
-      this.addRow(key, `<font color="DarkBlue"><i>${key}</i></font>`, {
-        BGCOLOR: "DeepSkyBlue",
+      this.addRow(key, `<font color="#1d71b8"><i>${key}</i></font>`, {
+        BGCOLOR: "#e7e2dd",
       });
     }
     return this.ref(key);
@@ -246,10 +246,13 @@ class DbmlRenderer {
     return extraRefs;
   }
 
+  //--light-blue: #1d71b8;--dark-blue: #29235c;--grey: #e7e2dd;--white: #ffffff;--orange: #ea5b0c
   toDot(): string {
     return `digraph dbml {
-      node [penwidth=0, margin=0, fontname=arial, fontsize=18];
       rankdir=LR;
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
       ${this.groups.toDot()}
       ${this.refs.map((ref) => ref.toDot()).join("\n")}
