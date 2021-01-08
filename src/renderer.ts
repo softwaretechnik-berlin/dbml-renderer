@@ -2,7 +2,6 @@ import parse, { Table, Cardinality, Group, DBML, Ref } from "./parser";
 
 export type Format = "dot" | "svg";
 
-
 type RowAttributes = {
   [key: string]: string;
 };
@@ -49,7 +48,9 @@ class TableRenderer {
         (n) => n
       );
 
-      this.addRow(column.name, transformName(column.name));
+      this.addRow(column.name, transformName(column.name), {
+        BGCOLOR: "AliceBlue",
+      });
     });
   }
 
@@ -76,7 +77,9 @@ class TableRenderer {
     //TODO: check that columns together are pk
     const key = columns.sort().join(",");
     if (!this.columns.has(key)) {
-      this.addRow(key, `<font color="grey"><i>${key}</i></font>`);
+      this.addRow(key, `<font color="DarkBlue"><i>${key}</i></font>`, {
+        BGCOLOR: "DeepSkyBlue",
+      });
     }
     return this.ref(key);
   }
@@ -126,11 +129,9 @@ class GroupRenderer {
 
   toDot(): string {
     return `subgraph cluster_${this.name} {
-      rankdir=LR;
+      label = "${this.name}"
       style=filled;
       color="#dddddd";
-      label = "${this.name}"
-      margin=20
 
       ${this.tables.map((table) => table.toDot()).join("\n")}
     }`;
@@ -247,10 +248,8 @@ class DbmlRenderer {
 
   toDot(): string {
     return `digraph dbml {
-      graph [pad="0", ranksep="0", nodesep="4"]
-      node [shape=none, style=filled, fillcolor=aliceblue, margin=0, fontname=arial, fontsize=18];
-      fontname=arial;
-      nodesep=5.0;
+      node [penwidth=0, margin=0, fontname=arial, fontsize=18];
+      rankdir=LR;
 
       ${this.groups.toDot()}
       ${this.refs.map((ref) => ref.toDot()).join("\n")}
@@ -262,7 +261,6 @@ export function dot(input: string): string {
   const dbml = new DbmlRenderer(parse(input));
   return dbml.toDot();
 }
-
 
 export default function render(input: string, format: Format): string {
   const dotString = dot(input);
