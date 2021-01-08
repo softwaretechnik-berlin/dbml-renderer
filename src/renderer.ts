@@ -250,7 +250,7 @@ class DbmlRenderer {
   toDot(): string {
     return `digraph dbml {
       rankdir=LR;
-      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
