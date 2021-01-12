@@ -13,13 +13,14 @@ const args = yargs(process.argv.slice(2))
     demandOption: true,
     alias: "i",
     type: "string",
+    default: "-",
     description: "DBML file",
     coerce: (arg) => {
-      if (!fs.existsSync(arg)) {
+      if (!fs.existsSync(arg) && !(arg === "-")) {
         throw new Error(`Could not find file '${arg}'`);
       }
-
-      return fs.readFileSync(arg, "utf-8");
+      return arg === "-" ?
+        fs.readFileSync(0, "utf-8") : fs.readFileSync(arg, "utf-8");
     },
   })
   .option("format", {
