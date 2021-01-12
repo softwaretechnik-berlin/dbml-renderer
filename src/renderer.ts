@@ -87,7 +87,7 @@ class TableRenderer {
   toDot(): string {
     return `"${
       this.table.name
-    }" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+    }" [id=${this.table.name};label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       ${Array.from(this.columns.values())
         .map((column) => column.toDot())
         .join("\n")}
