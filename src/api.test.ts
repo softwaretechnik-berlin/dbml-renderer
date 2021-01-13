@@ -37,3 +37,40 @@ dbmlFiles.forEach(([dbmlFilename, dbmlFile]) => {
     t.is(currentOutput, expectedOutput);
   });
 });
+
+const comparisonPage =
+  `
+  <style>
+    table {
+      width: 100%;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    img {
+      width: 600px;
+      height: auto;
+    }
+  </style>
+` +
+  dbmlFiles
+    .map(
+      ([dbmlFilename, dbmlFile]) => `<div>
+    <h2>${dbmlFilename}</h2>
+    <table>
+      <tr>
+        <th>Expected</th>
+        <th>Current</th>
+      </tr>
+      <tr>
+        <td><img src="${dbmlFile}.svg" /></td>
+        <td><img src="${join(testOutputDir, dbmlFilename)}.svg" /></td>
+      </tr>
+    </table>
+  </div>
+  `
+    )
+    .join("\n");
+
+writeFileSync(".compare-test-output.html", comparisonPage, "utf-8");
