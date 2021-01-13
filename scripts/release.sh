@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ue
+set -uex
 
 cd "$(dirname "$0")"
 
