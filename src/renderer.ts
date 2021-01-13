@@ -93,9 +93,9 @@ class TableRenderer {
   }
 
   toDot(): string {
-    return `"${
+    return `"${this.table.name}" [id=${
       this.table.name
-    }" [id=${this.table.name};label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+    };label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       ${Array.from(this.columns.values())
         .map((column) => column.toDot())
         .join("\n")}
@@ -215,13 +215,14 @@ class RefRenderer {
 
   toDot(): string {
     const [tailLabel, headLabel] = refLabels[this.ref.cardinality];
-    return `${this.fromRef}:e -> ${this.toRef}:w [headlabel="${headLabel}", taillabel="${tailLabel}", arrowhead="normal", arrowtail="none"]`;
+    return `${this.fromRef}:e -> ${this.toRef}:w [penwidth=3, color="#29235c", headlabel="${headLabel}", taillabel="${tailLabel}", arrowhead="normal", arrowtail="none"]`;
   }
 }
 
 class DbmlRenderer {
   private groups: GroupsRenderer;
   private refs: RefRenderer[];
+
   constructor(dbml: DBML) {
     const tables = new TablesRenderer(dbml.tables);
 
