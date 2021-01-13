@@ -9,8 +9,9 @@ DBML =
   / Enum
   / NewLine {}
 
-Project = "Project"i _ "{" __ options:Options Comment? __ "}"
+Project = "Project"i _ ProjectName? _ "{" __ options:Options Comment? __ "}"
   { return { type: "project", options } }
+ProjectName = String / Name
 Options = (head:Option tail:(EOL __ opt:Option { return opt; })* { return [head, ...tail].reduce((a, b) => Object.assign(a, b), {}); })?
 Option = key:OptionKey _ ":" _ value:OptionValue _ Comment?
   { return { [key]: value } }
@@ -73,7 +74,7 @@ EnumValue =
   name:Name _ settings:Settings? { return { name, settings: settings || {} }; }
   / Comment
 
-Name = [a-zA-Z_]+ { return text(); }
+Name = [a-zA-Z_][a-zA-Z_0-9]* { return text(); }
 
 AnyString = MultiLineString / SimpleString / String
 String = '"' content:[^"\n\r]* '"' { return content.join(""); }

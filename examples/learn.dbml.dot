@@ -1,0 +1,183 @@
+digraph dbml {
+      rankdir=LR;
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
+
+      
+      
+      "User" [id=User;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       User       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">firstName <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">lastName <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">email <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">createdAt <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">updatedAt</TD></TR>
+    </TABLE>>];
+"User" [id=User;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       User       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">firstName <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">lastName <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">email <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">createdAt <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">updatedAt</TD></TR>
+    </TABLE>>];
+"UserPreferences" [id=UserPreferences;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPreferences       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">userId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">practiceGoal</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">why</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">codingAbility</TD></TR>
+    </TABLE>>];
+"Path" [id=Path;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Path       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">icon <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">description <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">createdAt <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">updatedAt</TD></TR>
+<TR><TD PORT="f7" BGCOLOR="#e7e2dd">characterId <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"UserPath" [id=UserPath;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPath       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">userId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">pathId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">completed <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">joined <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"Concept" [id=Concept;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Concept       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">description <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">icon <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">taughtIn <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"UserConcepts" [id=UserConcepts;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserConcepts       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd">userId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">conceptId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">learned <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"Module" [id=Module;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Module       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">icon <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">type <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">previous</TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">pathId <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"Module" [id=Module;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Module       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">icon <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">type <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">previous</TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">pathId <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"UserModule" [id=UserModule;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserModule       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">userId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">moduleId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">completedAt</TD></TR>
+    </TABLE>>];
+"Assignment" [id=Assignment;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Assignment       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">moduleId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">description <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"AssignmentFile" [id=AssignmentFile;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       AssignmentFile       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">author <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">assignmentId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">type <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">content <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"AssignmentFile" [id=AssignmentFile;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       AssignmentFile       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">author <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">assignmentId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">type <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">content <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"Lesson" [id=Lesson;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Lesson       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">moduleId <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"Lesson" [id=Lesson;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Lesson       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">moduleId <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"StorySection" [id=StorySection;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       StorySection       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">lessonId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">order <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">content <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">teaches</TD></TR>
+    </TABLE>>];
+"StorySection" [id=StorySection;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       StorySection       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">lessonId <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">order <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">content <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">teaches</TD></TR>
+    </TABLE>>];
+"Character" [id=Character;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Character       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">displayName <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"Friends" [id=Friends;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Friends       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd">user1Id <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">user2Id <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">since <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+"FriendRequests" [id=FriendRequests;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       FriendRequests       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd">from <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">to <i>NOT NULL</i></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">accepted</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">requested <i>NOT NULL</i></TD></TR>
+    </TABLE>>];
+    
+      UserPreferences:f2:e -> User:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+Path:f7:e -> Character:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+UserPath:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+UserPath:f3:e -> Path:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Concept:f5:e -> Module:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+UserConcepts:f1:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+UserConcepts:f2:e -> Concept:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Module:f5:e -> Module:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Module:f6:e -> Path:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+UserModule:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+UserModule:f3:e -> Module:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Assignment:f2:e -> Module:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+AssignmentFile:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+AssignmentFile:f3:e -> Assignment:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Lesson:f2:e -> Module:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+StorySection:f2:e -> Lesson:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+StorySection:f5:e -> Concept:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+Friends:f1:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Friends:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+FriendRequests:f1:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+FriendRequests:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    }
