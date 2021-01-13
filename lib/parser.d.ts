@@ -1,4 +1,4 @@
-export default function createParser(input: any): {
+export default function parse(input: any): {
     project: any;
     tables: any;
     groups: any;

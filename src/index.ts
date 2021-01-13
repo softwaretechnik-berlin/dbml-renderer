@@ -19,8 +19,9 @@ const args = yargs(process.argv.slice(2))
       if (!fs.existsSync(arg) && !(arg === "-")) {
         throw new Error(`Could not find file '${arg}'`);
       }
-      return arg === "-" ?
-        fs.readFileSync(0, "utf-8") : fs.readFileSync(arg, "utf-8");
+      return arg === "-"
+        ? fs.readFileSync(0, "utf-8")
+        : fs.readFileSync(arg, "utf-8");
     },
   })
   .option("format", {
@@ -43,4 +44,9 @@ const args = yargs(process.argv.slice(2))
     },
   }).argv;
 
-args.output(render(args.input, args.format));
+try {
+  args.output(render(args.input, args.format));
+} catch (e) {
+  console.error(e.message);
+  process.exit(1);
+}

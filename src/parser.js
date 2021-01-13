@@ -66,8 +66,24 @@ const entriesTransformations = {
   },
 };
 
-export default function createParser(input) {
-  const parsed = dbml.parse(input);
+class SyntaxError extends Error {
+  constructor(pegJsError) {
+    super(`Could not parse input at line ${pegJsError.location.start.line}. ${pegJsError.message}`);
+    this.name = "SyntaxError";
+    this.pegJsError = pegJsError;
+  }
+}
+
+const parseDbml = (input) => {
+  try {
+    return dbml.parse(input);
+  } catch (e) {
+    throw e.name === "SyntaxError" ? new SyntaxError(e) : e;
+  }
+};
+
+export default function parse(input) {
+  const parsed = parseDbml(input);
 
   const obj = {};
   removeComments(parsed).forEach((entry) => {
