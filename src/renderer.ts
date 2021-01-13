@@ -29,10 +29,14 @@ class TableRenderer {
 
   constructor(table: Table) {
     this.table = table;
-    this.addRow("__TABLE_NAME__", `<font color="#ffffff"><B>       ${table.name}       </B></font>`, {
-      WIDTH: "150",
-      BGCOLOR: "#1d71b8",
-    });
+    this.addRow(
+      "__TABLE_NAME__",
+      `<font color="#ffffff"><B>       ${table.name}       </B></font>`,
+      {
+        WIDTH: "150",
+        BGCOLOR: "#1d71b8",
+      }
+    );
 
     table.columns.forEach((column) => {
       const nameTransformations: ((name: string) => string)[] = [];
@@ -63,6 +67,10 @@ class TableRenderer {
       name,
       new RowRenderer(this.columns.size, label, attributes || {})
     );
+  }
+
+  selfRef(): string {
+    return `${this.table.name}:0`;
   }
 
   ref(column: string): string {
