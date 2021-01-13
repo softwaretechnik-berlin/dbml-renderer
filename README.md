@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/%40softwaretechnik%2Fdbml-renderer.svg)](https://www.npmjs.com/package/@softwaretechnik/dbml-renderer)
+[![npm version](https://img.shields.io/npm/v/@softwaretechnik/dbml-renderer)](https://www.npmjs.com/package/@softwaretechnik/dbml-renderer)
 
 `dbml-renderer` renders [dbml](https://www.dbml.org/home/) files to
 svg images. It provides a command line interface, so that you can easily
