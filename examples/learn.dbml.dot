@@ -6,7 +6,7 @@ digraph dbml {
 
       
       
-      "User" [id=User;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      "User" [id=User;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       User       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">firstName <i>NOT NULL</i></TD></TR>
@@ -15,7 +15,7 @@ digraph dbml {
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">createdAt <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">updatedAt</TD></TR>
     </TABLE>>];
-"User" [id=User;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"User" [id=User;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       User       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">firstName <i>NOT NULL</i></TD></TR>
@@ -24,7 +24,7 @@ digraph dbml {
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">createdAt <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">updatedAt</TD></TR>
     </TABLE>>];
-"UserPreferences" [id=UserPreferences;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"UserPreferences" [id=UserPreferences;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPreferences       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">userId <i>NOT NULL</i></TD></TR>
@@ -32,7 +32,7 @@ digraph dbml {
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">why</TD></TR>
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">codingAbility</TD></TR>
     </TABLE>>];
-"Path" [id=Path;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"Path" [id=Path;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Path       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
@@ -42,7 +42,7 @@ digraph dbml {
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">updatedAt</TD></TR>
 <TR><TD PORT="f7" BGCOLOR="#e7e2dd">characterId <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"UserPath" [id=UserPath;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"UserPath" [id=UserPath;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPath       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">userId <i>NOT NULL</i></TD></TR>
@@ -50,7 +50,7 @@ digraph dbml {
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">completed <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">joined <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"Concept" [id=Concept;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"Concept" [id=Concept;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Concept       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
@@ -58,13 +58,13 @@ digraph dbml {
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">icon <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">taughtIn <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"UserConcepts" [id=UserConcepts;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"UserConcepts" [id=UserConcepts;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserConcepts       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">userId <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">conceptId <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">learned <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"Module" [id=Module;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"Module" [id=Module;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Module       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
@@ -73,7 +73,7 @@ digraph dbml {
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">previous</TD></TR>
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">pathId <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"Module" [id=Module;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"Module" [id=Module;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Module       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
@@ -82,20 +82,20 @@ digraph dbml {
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">previous</TD></TR>
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">pathId <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"UserModule" [id=UserModule;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"UserModule" [id=UserModule;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserModule       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">userId <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">moduleId <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">completedAt</TD></TR>
     </TABLE>>];
-"Assignment" [id=Assignment;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"Assignment" [id=Assignment;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Assignment       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">moduleId <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">description <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"AssignmentFile" [id=AssignmentFile;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"AssignmentFile" [id=AssignmentFile;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       AssignmentFile       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">author <i>NOT NULL</i></TD></TR>
@@ -104,7 +104,7 @@ digraph dbml {
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">type <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">content <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"AssignmentFile" [id=AssignmentFile;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"AssignmentFile" [id=AssignmentFile;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       AssignmentFile       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">author <i>NOT NULL</i></TD></TR>
@@ -113,17 +113,17 @@ digraph dbml {
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">type <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">content <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"Lesson" [id=Lesson;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"Lesson" [id=Lesson;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Lesson       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">moduleId <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"Lesson" [id=Lesson;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"Lesson" [id=Lesson;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Lesson       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">moduleId <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"StorySection" [id=StorySection;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"StorySection" [id=StorySection;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       StorySection       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">lessonId <i>NOT NULL</i></TD></TR>
@@ -131,7 +131,7 @@ digraph dbml {
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">content <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">teaches</TD></TR>
     </TABLE>>];
-"StorySection" [id=StorySection;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"StorySection" [id=StorySection;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       StorySection       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">lessonId <i>NOT NULL</i></TD></TR>
@@ -139,19 +139,19 @@ digraph dbml {
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">content <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">teaches</TD></TR>
     </TABLE>>];
-"Character" [id=Character;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"Character" [id=Character;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Character       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b> <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">name <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">displayName <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"Friends" [id=Friends;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"Friends" [id=Friends;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Friends       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">user1Id <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">user2Id <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">since <i>NOT NULL</i></TD></TR>
     </TABLE>>];
-"FriendRequests" [id=FriendRequests;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"FriendRequests" [id=FriendRequests;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       FriendRequests       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">from <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">to <i>NOT NULL</i></TD></TR>
@@ -159,25 +159,46 @@ digraph dbml {
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">requested <i>NOT NULL</i></TD></TR>
     </TABLE>>];
     
-      UserPreferences:f2:e -> User:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
-Path:f7:e -> Character:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
-UserPath:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-UserPath:f3:e -> Path:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-Concept:f5:e -> Module:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
-UserConcepts:f1:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-UserConcepts:f2:e -> Concept:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-Module:f5:e -> Module:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-Module:f6:e -> Path:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-UserModule:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-UserModule:f3:e -> Module:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-Assignment:f2:e -> Module:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-AssignmentFile:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-AssignmentFile:f3:e -> Assignment:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-Lesson:f2:e -> Module:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-StorySection:f2:e -> Lesson:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-StorySection:f5:e -> Concept:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
-Friends:f1:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-Friends:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-FriendRequests:f1:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-FriendRequests:f2:e -> User:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      UserPreferences:0 -> User:0 [style=invis, weight=100, color=red]
+    UserPreferences:f2:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+Path:0 -> Character:0 [style=invis, weight=100, color=red]
+    Path:f7:e -> Character:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+UserPath:0 -> User:0 [style=invis, weight=100, color=red]
+    UserPath:f2:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+UserPath:0 -> Path:0 [style=invis, weight=100, color=red]
+    UserPath:f3:e -> Path:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Concept:0 -> Module:0 [style=invis, weight=100, color=red]
+    Concept:f5:e -> Module:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+UserConcepts:0 -> User:0 [style=invis, weight=100, color=red]
+    UserConcepts:f1:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+UserConcepts:0 -> Concept:0 [style=invis, weight=100, color=red]
+    UserConcepts:f2:e -> Concept:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Module:0 -> Module:0 [style=invis, weight=100, color=red]
+    Module:f5:e -> Module:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Module:0 -> Path:0 [style=invis, weight=100, color=red]
+    Module:f6:e -> Path:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+UserModule:0 -> User:0 [style=invis, weight=100, color=red]
+    UserModule:f2:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+UserModule:0 -> Module:0 [style=invis, weight=100, color=red]
+    UserModule:f3:e -> Module:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Assignment:0 -> Module:0 [style=invis, weight=100, color=red]
+    Assignment:f2:e -> Module:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+AssignmentFile:0 -> User:0 [style=invis, weight=100, color=red]
+    AssignmentFile:f2:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+AssignmentFile:0 -> Assignment:0 [style=invis, weight=100, color=red]
+    AssignmentFile:f3:e -> Assignment:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Lesson:0 -> Module:0 [style=invis, weight=100, color=red]
+    Lesson:f2:e -> Module:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+StorySection:0 -> Lesson:0 [style=invis, weight=100, color=red]
+    StorySection:f2:e -> Lesson:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+StorySection:0 -> Concept:0 [style=invis, weight=100, color=red]
+    StorySection:f5:e -> Concept:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+Friends:0 -> User:0 [style=invis, weight=100, color=red]
+    Friends:f1:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+Friends:0 -> User:0 [style=invis, weight=100, color=red]
+    Friends:f2:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+FriendRequests:0 -> User:0 [style=invis, weight=100, color=red]
+    FriendRequests:f1:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+FriendRequests:0 -> User:0 [style=invis, weight=100, color=red]
+    FriendRequests:f2:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
     }

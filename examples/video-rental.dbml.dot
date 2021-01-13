@@ -6,7 +6,7 @@ digraph dbml {
 
       
       
-      "staff" [id=staff;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      "staff" [id=staff;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       staff       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">first_name</TD></TR>
@@ -20,14 +20,14 @@ digraph dbml {
 <TR><TD PORT="f10" BGCOLOR="#e7e2dd">password</TD></TR>
 <TR><TD PORT="f11" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"store" [id=store;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"store" [id=store;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       store       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">manager_staff_id</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">address_id</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"payment" [id=payment;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"payment" [id=payment;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payment       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">customer_id</TD></TR>
@@ -37,7 +37,7 @@ digraph dbml {
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">payment_date</TD></TR>
 <TR><TD PORT="f7" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"rental" [id=rental;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"rental" [id=rental;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       rental       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">rental_date</TD></TR>
@@ -47,20 +47,20 @@ digraph dbml {
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">staff_id</TD></TR>
 <TR><TD PORT="f7" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"country" [id=country;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"country" [id=country;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       country       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">country</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"city" [id=city;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"city" [id=city;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       city       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">city</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">country_id</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"address" [id=address;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"address" [id=address;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       address       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">address</TD></TR>
@@ -71,7 +71,7 @@ digraph dbml {
 <TR><TD PORT="f7" BGCOLOR="#e7e2dd">phone</TD></TR>
 <TR><TD PORT="f8" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"customer" [id=customer;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"customer" [id=customer;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       customer       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">store_id</TD></TR>
@@ -83,39 +83,39 @@ digraph dbml {
 <TR><TD PORT="f8" BGCOLOR="#e7e2dd">create_Date</TD></TR>
 <TR><TD PORT="f9" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"category" [id=category;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"category" [id=category;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       category       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"film_category" [id=film_category;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"film_category" [id=film_category;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film_category       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">category_id</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"language" [id=language;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"language" [id=language;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       language       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"film_text" [id=film_text;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"film_text" [id=film_text;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film_text       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">film_id</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">title</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">description</TD></TR>
     </TABLE>>];
-"actor" [id=actor;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"actor" [id=actor;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       actor       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">first_name</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">last_name</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"film" [id=film;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"film" [id=film;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">title</TD></TR>
@@ -131,14 +131,14 @@ digraph dbml {
 <TR><TD PORT="f12" BGCOLOR="#e7e2dd">special_feature</TD></TR>
 <TR><TD PORT="f13" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"film_actor" [id=film_actor;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"film_actor" [id=film_actor;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film_actor       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">film_id</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">actor_id</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
-"inventory" [id=inventory;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"inventory" [id=inventory;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       inventory       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">film_id</TD></TR>
@@ -146,19 +146,34 @@ digraph dbml {
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">last_update</TD></TR>
     </TABLE>>];
     
-      store:f1:e -> staff:f7:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-staff:f1:e -> store:f2:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-staff:f1:e -> payment:f3:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-rental:f1:e -> payment:f4:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-staff:f1:e -> rental:f6:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-country:f1:e -> city:f3:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-city:f1:e -> address:f5:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-address:f1:e -> customer:f6:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-category:f1:e -> film_category:f2:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-inventory:f2:e -> film_text:f2:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-language:f1:e -> film:f5:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-language:f1:e -> film:f6:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-film:f1:e -> film_actor:f2:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-actor:f1:e -> film_actor:f3:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
-film:f1:e -> inventory:f2:w [headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+      store:0 -> staff:0 [style=invis, weight=100, color=red]
+    store:f1:e -> staff:f7:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+staff:0 -> store:0 [style=invis, weight=100, color=red]
+    staff:f1:e -> store:f2:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+staff:0 -> payment:0 [style=invis, weight=100, color=red]
+    staff:f1:e -> payment:f3:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+rental:0 -> payment:0 [style=invis, weight=100, color=red]
+    rental:f1:e -> payment:f4:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+staff:0 -> rental:0 [style=invis, weight=100, color=red]
+    staff:f1:e -> rental:f6:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+country:0 -> city:0 [style=invis, weight=100, color=red]
+    country:f1:e -> city:f3:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+city:0 -> address:0 [style=invis, weight=100, color=red]
+    city:f1:e -> address:f5:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+address:0 -> customer:0 [style=invis, weight=100, color=red]
+    address:f1:e -> customer:f6:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+category:0 -> film_category:0 [style=invis, weight=100, color=red]
+    category:f1:e -> film_category:f2:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+inventory:0 -> film_text:0 [style=invis, weight=100, color=red]
+    inventory:f2:e -> film_text:f2:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+language:0 -> film:0 [style=invis, weight=100, color=red]
+    language:f1:e -> film:f5:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+language:0 -> film:0 [style=invis, weight=100, color=red]
+    language:f1:e -> film:f6:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+film:0 -> film_actor:0 [style=invis, weight=100, color=red]
+    film:f1:e -> film_actor:f2:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+actor:0 -> film_actor:0 [style=invis, weight=100, color=red]
+    actor:f1:e -> film_actor:f3:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+film:0 -> inventory:0 [style=invis, weight=100, color=red]
+    film:f1:e -> inventory:f2:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
     }

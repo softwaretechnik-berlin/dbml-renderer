@@ -6,14 +6,14 @@ digraph dbml {
 
       
       
-      "users" [id=users;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      "users" [id=users;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">username</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">role</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_at</TD></TR>
     </TABLE>>];
-"posts" [id=posts;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"posts" [id=posts;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       posts       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">title</TD></TR>
@@ -22,5 +22,6 @@ digraph dbml {
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">created_at</TD></TR>
     </TABLE>>];
     
-      posts:f4:e -> users:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      posts:0 -> users:0 [style=invis, weight=100, color=red]
+    posts:f4:e -> users:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
     }

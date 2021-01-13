@@ -10,7 +10,7 @@ digraph dbml {
       style=filled;
       color="#dddddd";
 
-      "merchants" [id=merchants;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      "merchants" [id=merchants;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       merchants       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">country_code</TD></TR>
@@ -19,7 +19,7 @@ digraph dbml {
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">admin_id</TD></TR>
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>country_code,id</i></font></TD></TR>
     </TABLE>>];
-"merchant_periods" [id=merchant_periods;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"merchant_periods" [id=merchant_periods;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       merchant_periods       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">merchant_id</TD></TR>
@@ -29,40 +29,40 @@ digraph dbml {
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>country_code,merchant_id</i></font></TD></TR>
     </TABLE>>];
     }
-      "users" [id=users;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      "users" [id=users;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">full_name</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">created_at</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">country_code</TD></TR>
     </TABLE>>];
-"users" [id=users;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"users" [id=users;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">full_name</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">created_at</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">country_code</TD></TR>
     </TABLE>>];
-"countries" [id=countries;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"countries" [id=countries;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       countries       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>code</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">continent_name</TD></TR>
     </TABLE>>];
-"order_items" [id=order_items;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"order_items" [id=order_items;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       order_items       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">order_id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">product_id</TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">quantity</TD></TR>
     </TABLE>>];
-"orders" [id=orders;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"orders" [id=orders;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       orders       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">user_id <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">status</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_at</TD></TR>
     </TABLE>>];
-"products" [id=products;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"products" [id=products;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       products       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
@@ -72,11 +72,18 @@ digraph dbml {
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">created_at</TD></TR>
     </TABLE>>];
     
-      users:f4:e -> countries:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-merchants:f2:e -> countries:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-order_items:f2:e -> products:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-products:f3:e -> merchants:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-merchant_periods:f6:e -> merchants:f6:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-order_items:f1:e -> orders:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-merchants:f5:e -> users:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      users:0 -> countries:0 [style=invis, weight=100, color=red]
+    users:f4:e -> countries:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+merchants:0 -> countries:0 [style=invis, weight=100, color=red]
+    merchants:f2:e -> countries:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+order_items:0 -> products:0 [style=invis, weight=100, color=red]
+    order_items:f2:e -> products:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+products:0 -> merchants:0 [style=invis, weight=100, color=red]
+    products:f3:e -> merchants:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+merchant_periods:0 -> merchants:0 [style=invis, weight=100, color=red]
+    merchant_periods:f6:e -> merchants:f6:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+order_items:0 -> orders:0 [style=invis, weight=100, color=red]
+    order_items:f1:e -> orders:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+merchants:0 -> users:0 [style=invis, weight=100, color=red]
+    merchants:f5:e -> users:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
     }

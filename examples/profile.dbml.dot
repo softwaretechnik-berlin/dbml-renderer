@@ -6,7 +6,7 @@ digraph dbml {
 
       
       
-      "user" [id=user;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      "user" [id=user;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       user       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">username <i>NOT NULL</i></TD></TR>
@@ -16,13 +16,13 @@ digraph dbml {
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">created_at</TD></TR>
 <TR><TD PORT="f7" BGCOLOR="#e7e2dd">updated_at</TD></TR>
     </TABLE>>];
-"profile" [id=profile;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"profile" [id=profile;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       profile       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">user_id <i>NOT NULL</i></TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">created_at</TD></TR>
     </TABLE>>];
-"basic_profile" [id=basic_profile;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"basic_profile" [id=basic_profile;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       basic_profile       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">profile_id <i>NOT NULL</i></TD></TR>
@@ -35,7 +35,7 @@ digraph dbml {
 <TR><TD PORT="f9" BGCOLOR="#e7e2dd">skillset</TD></TR>
 <TR><TD PORT="f10" BGCOLOR="#e7e2dd">career_objective</TD></TR>
     </TABLE>>];
-"education_profile" [id=education_profile;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"education_profile" [id=education_profile;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       education_profile       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">profile_id <i>NOT NULL</i></TD></TR>
@@ -45,7 +45,7 @@ digraph dbml {
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">major</TD></TR>
 <TR><TD PORT="f7" BGCOLOR="#e7e2dd">year_of_passing</TD></TR>
     </TABLE>>];
-"experience_profile" [id=experience_profile;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"experience_profile" [id=experience_profile;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       experience_profile       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">profile_id <i>NOT NULL</i></TD></TR>
@@ -56,7 +56,7 @@ digraph dbml {
 <TR><TD PORT="f7" BGCOLOR="#e7e2dd">end_date</TD></TR>
 <TR><TD PORT="f8" BGCOLOR="#e7e2dd">work_description</TD></TR>
     </TABLE>>];
-"company" [id=company;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"company" [id=company;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       company       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">company_id <i>NOT NULL</i></TD></TR>
@@ -67,7 +67,7 @@ digraph dbml {
 <TR><TD PORT="f7" BGCOLOR="#e7e2dd">contract_email</TD></TR>
 <TR><TD PORT="f8" BGCOLOR="#e7e2dd">contract_phone</TD></TR>
     </TABLE>>];
-"job" [id=job;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"job" [id=job;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       job       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">company_id <i>NOT NULL</i></TD></TR>
@@ -79,7 +79,7 @@ digraph dbml {
 <TR><TD PORT="f8" BGCOLOR="#e7e2dd">desc</TD></TR>
 <TR><TD PORT="f9" BGCOLOR="#e7e2dd">category</TD></TR>
     </TABLE>>];
-"job_application" [id=job_application;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"job_application" [id=job_application;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       job_application       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">job_id <i>NOT NULL</i></TD></TR>
@@ -89,7 +89,7 @@ digraph dbml {
 <TR><TD PORT="f6" BGCOLOR="#e7e2dd">created_at</TD></TR>
 <TR><TD PORT="f7" BGCOLOR="#e7e2dd">updated_at</TD></TR>
     </TABLE>>];
-"event" [id=event;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"event" [id=event;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       event       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">company_id <i>NOT NULL</i></TD></TR>
@@ -101,7 +101,7 @@ digraph dbml {
 <TR><TD PORT="f8" BGCOLOR="#e7e2dd">created_at</TD></TR>
 <TR><TD PORT="f9" BGCOLOR="#e7e2dd">updated_at</TD></TR>
     </TABLE>>];
-"event_regisiteration" [id=event_regisiteration;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+"event_regisiteration" [id=event_regisiteration;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       event_regisiteration       </B></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd">event_id <i>NOT NULL</i></TD></TR>
@@ -109,15 +109,26 @@ digraph dbml {
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">regisitered_at</TD></TR>
     </TABLE>>];
     
-      profile:f2:e -> user:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
-basic_profile:f2:e -> profile:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
-education_profile:f2:e -> profile:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-experience_profile:f2:e -> profile:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-company:f2:e -> user:f1:w [headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
-job:f2:e -> company:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-job_application:f2:e -> job:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-job_application:f3:e -> profile:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-event:f2:e -> company:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-event_regisiteration:f2:e -> event:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
-event_regisiteration:f3:e -> profile:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      profile:0 -> user:0 [style=invis, weight=100, color=red]
+    profile:f2:e -> user:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+basic_profile:0 -> profile:0 [style=invis, weight=100, color=red]
+    basic_profile:f2:e -> profile:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+education_profile:0 -> profile:0 [style=invis, weight=100, color=red]
+    education_profile:f2:e -> profile:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+experience_profile:0 -> profile:0 [style=invis, weight=100, color=red]
+    experience_profile:f2:e -> profile:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+company:0 -> user:0 [style=invis, weight=100, color=red]
+    company:f2:e -> user:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="1", arrowhead="normal", arrowtail="none"]
+job:0 -> company:0 [style=invis, weight=100, color=red]
+    job:f2:e -> company:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+job_application:0 -> job:0 [style=invis, weight=100, color=red]
+    job_application:f2:e -> job:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+job_application:0 -> profile:0 [style=invis, weight=100, color=red]
+    job_application:f3:e -> profile:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+event:0 -> company:0 [style=invis, weight=100, color=red]
+    event:f2:e -> company:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+event_regisiteration:0 -> event:0 [style=invis, weight=100, color=red]
+    event_regisiteration:f2:e -> event:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+event_regisiteration:0 -> profile:0 [style=invis, weight=100, color=red]
+    event_regisiteration:f3:e -> profile:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
     }

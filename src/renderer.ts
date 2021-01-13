@@ -199,12 +199,19 @@ class RefRenderer {
   private ref: Ref;
   private fromRef: string;
   private toRef: string;
+  private fromTable: TableRenderer;
+  private toTable: TableRenderer;
+
   constructor(ref: Ref, tables: TablesRenderer) {
     this.ref = ref;
 
-    this.fromRef = this.findRef(tables.get(ref.fromTable), ref.fromColumns);
-    this.toRef = this.findRef(tables.get(ref.toTable), ref.toColumns);
+    this.fromTable = tables.get(ref.fromTable);
+    this.toTable = tables.get(ref.toTable);
+
+    this.fromRef = this.findRef(this.fromTable, ref.fromColumns);
+    this.toRef = this.findRef(this.toTable, ref.toColumns);
   }
+
   private findRef(table: TableRenderer, columns: string[]): string {
     if (columns.length === 1) {
       return table.ref(columns[0]);
@@ -215,7 +222,8 @@ class RefRenderer {
 
   toDot(): string {
     const [tailLabel, headLabel] = refLabels[this.ref.cardinality];
-    return `${this.fromRef}:e -> ${this.toRef}:w [penwidth=3, color="#29235c", headlabel="${headLabel}", taillabel="${tailLabel}", arrowhead="normal", arrowtail="none"]`;
+    return `${this.fromTable.selfRef()} -> ${this.toTable.selfRef()} [style=invis, weight=100, color=red]
+    ${this.fromRef}:e -> ${this.toRef}:w [penwidth=3, color="#29235c", headlabel="${headLabel}", taillabel="${tailLabel}", arrowhead="normal", arrowtail="none"]`;
   }
 }
 
