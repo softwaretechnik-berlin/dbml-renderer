@@ -37,19 +37,3 @@ dbmlFiles.forEach(([dbmlFilename, dbmlFile]) => {
     t.is(currentOutput, expectedOutput);
   });
 });
-
-// test("foo", (t) => {
-//   t.pass();
-// });
-
-// test("bar", async (t) => {
-//   const bar = Promise.resolve("bar");
-//   t.is(await bar, "bar");
-// });
-
-// ["a", "b"].forEach((x) => {
-//   test(x, async (t) => {
-//     const bar = Promise.resolve("bar");
-//     t.is(await bar, "bar");
-//   });
-// });
