@@ -2,7 +2,7 @@
 
 set -uex
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 
 npm run generate-parser
 npm run build
