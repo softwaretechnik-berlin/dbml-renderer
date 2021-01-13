@@ -1,0 +1,26 @@
+digraph dbml {
+      rankdir=LR;
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
+
+      
+      
+      "users" [id=users;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">username</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">role</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_at</TD></TR>
+    </TABLE>>];
+"posts" [id=posts;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       posts       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">title</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">body</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">user_id</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">created_at</TD></TR>
+    </TABLE>>];
+    
+      posts:f4:e -> users:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    }

@@ -1,0 +1,135 @@
+Project Code_Mentoring {
+  database_type: 'PostgreSQL'
+  Note: 'learn.codementoring.co'
+}
+
+// ---------------------------------------------- User
+Table User as U {
+  id uuid [pk, unique, not null]
+  firstName varchar [not null]
+  lastName varchar [not null]
+  email varchar [not null, unique]
+  createdAt timestamp [not null]
+  updatedAt timestamp
+}
+
+Table UserPreferences {
+  id uuid [pk, unique, not null]
+  userId uuid [ref: - U.id, not null]
+  practiceGoal integer [note: '1-4']
+  why varchar
+  codingAbility integer [note: '1-10']
+}
+
+// ---------------------------------------------- Path
+Table Path {
+  id uuid [pk, unique, not null]
+  name varchar [not null, unique]
+  icon varchar [not null]
+  description varchar [not null]
+  createdAt timestamp [not null]
+  updatedAt timestamp
+  characterId uuid [ref: - Character.id, not null]
+}
+
+Table UserPath {
+  id uuid [pk, unique, not null]
+  userId uuid [ref: > U.id, not null]
+  pathId uuid [ref: > Path.id, not null]
+  completed boolean [not null]
+  joined timestamp [not null]
+}
+
+// ---------------------------------------------- Concept
+Table Concept {
+  id uuid [pk, unique, not null]
+  name varchar [not null, unique]
+  description text [not null]
+  icon varchar [not null]
+  taughtIn uuid [ref: - M.id, not null]
+}
+
+Table UserConcepts {
+  userId uuid [ref: > U.id, not null]
+  conceptId uuid [ref: > Concept.id, not null]
+  learned timestamp [not null]
+}
+
+
+// ---------------------------------------------- Module
+enum module_type {
+  lesson
+  assignment
+}
+Table Module as M{
+  id uuid [pk, unique, not null]
+  name varchar [not null, unique]
+  icon varchar [not null]
+  type module_type [not null, note: 'assignment OR lesson']
+  previous uuid [ref: > Module.id]
+  pathId uuid [ref: > Path.id, not null]
+}
+
+Table UserModule {
+  id uuid [pk, unique, not null]
+  userId uuid [ref: > U.id, not null]
+  moduleId uuid [ref: > M.id, not null]
+  completedAt timestamp
+}
+
+// ---------------------------------------------- Assignment
+Table Assignment {
+  id uuid [pk, unique, not null]
+  moduleId uuid [ref: > M.id, not null]
+  description varchar [not null]
+}
+
+Table AssignmentFile as AF {
+  id uuid [pk, unique, not null]
+  author uuid [ref: > U.id, not null]
+  assignmentId uuid [ref: > Assignment.id, not null]
+  name varchar [not null]
+  type varchar [not null, note: 'Mimetype']
+  content text [not null]
+}
+
+// ---------------------------------------------- Lesson
+Table Lesson as L {
+  id uuid [pk, unique, not null]
+  moduleId uuid [ref: > M.id, not null]
+}
+
+Table StorySection as SS {
+  id uuid [pk, unique, not null]
+  lessonId uuid [ref: > L.id, not null]
+  order int [not null]
+  content text [not null, note: "Markdown content"]
+  teaches uuid [ref: - Concept.id]
+}
+
+
+// ---------------------------------------------- Character
+table Character {
+  id uuid [pk, unique, not null]
+  name varchar [not null, unique]
+  displayName varchar [not null, unique]
+}
+
+
+// ---------------------------------------------- Friends
+table Friends {
+  user1Id uuid [ref: > U.id, not null]
+  user2Id uuid [ref: > U.id, not null]
+  since timestamp [not null]
+}
+
+table FriendRequests {
+  from uuid [ref: > U.id, not null]
+  to uuid [ref: > U.id, not null]
+  accepted boolean [note: '
+    null = Pending
+    true = create Friend join
+    false = Rejected
+  ']
+  requested timestamp [not null]
+}

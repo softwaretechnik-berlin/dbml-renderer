@@ -1,0 +1,149 @@
+Table user {
+    id integer [primary key, increment]
+
+    username varchar [unique, not null]
+    email varchar [unique, not null]
+    password_digest varchar
+    role integer [not null, note: 'user role']
+    created_at timestamp [default: `now()`]
+    updated_at timestamp [default: `now()`]
+
+    indexes {
+        (username, email)
+    }
+
+    note: 'user registration'
+}
+
+Table profile {
+    id integer [primary key, increment]
+    user_id varchar(32) [not null, ref: - user.id]
+    created_at timestamp
+    note: 'user profile'
+}
+
+Table basic_profile {
+    id integer [primary key, increment]
+    profile_id varchar(32) [unique, not null, ref: - profile.id]
+
+    avatar blob
+    name varchar [not null]
+    birth date [not null]
+    city varchar
+    state varchar
+    country varchar
+    skillset varchar
+    career_objective text
+
+    note: 'student basic information'
+}
+
+Table education_profile {
+    id integer [primary key, increment]
+    profile_id varchar(32) [not null, ref: > profile.id]
+
+    college_name varchar
+    location varchar
+    degree varchar
+    major varchar
+    year_of_passing date
+
+    note: 'student education experience'
+}
+
+Table experience_profile {
+    id integer [primary key, increment]
+    profile_id varchar(32) [not null, ref: > profile.id]
+
+    company_name varchar
+    title varchar
+    location varchar
+    start_date date
+    end_date date
+    work_description text
+
+    note: 'student work experience'
+}
+
+Table company {
+    id integer [primary key, increment]
+    company_id varchar(32) [unique, not null, ref: - user.id]
+
+    avatar blob
+    name varchar
+    location varchar
+    description varchar
+    contract_email varchar
+    contract_phone varchar
+
+    note: 'company basic information'
+}
+
+Table job {
+    id integer [primary key, increment]
+    company_id varchar(32) [unique, not null, ref: > company.id]
+
+    title varchar
+    created_at timestamp
+    application_deadline timestamp
+    location varchar
+    salary float
+    desc text
+    category job_category
+
+    note: 'job posts'
+}
+
+Table job_application {
+    id integer [primary key, increment]
+    job_id varchar(32) [not null, ref: > job.id]
+
+    applicant_id varchar(32) [not null, ref: > profile.id, note: 'applicant id']
+    resume varchar [note: 'resume local file']
+    status apply_status
+
+    created_at timestamp
+    updated_at timestamp
+
+    note: 'application'
+}
+
+Table event {
+    id integer [primary key, increment]
+    company_id varchar(32) [not null, ref: > company.id]
+
+    name varchar
+    description varchar
+    time date
+    location varchar
+    eligibility eligibility_status
+
+    created_at timestamp
+    updated_at timestamp
+}
+
+Table event_regisiteration {
+    id integer [primary key, increment]
+    event_id varchar(32) [not null, ref: > event.id]
+    applicant_id varchar(32) [not null, ref: > profile.id]
+
+    regisitered_at timestamp
+}
+
+enum job_category {
+    full_time
+    part_time
+    intern
+    on_campus
+}
+
+enum apply_status {
+    pending
+    reviewed
+    declined
+}
+
+enum eligibility_status {
+    all
+    special_major
+}

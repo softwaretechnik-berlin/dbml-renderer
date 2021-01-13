@@ -1,0 +1,181 @@
+digraph dbml {
+      rankdir=LR;
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
+
+      
+      
+      "groups" [id=groups;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       groups       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">active</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">paid_through</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"payment_types" [id=payment_types;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payment_types       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">group_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">stripe_token</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"payments" [id=payments;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payments       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">payment_type_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">amount</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"roles" [id=roles;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       roles       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
+    </TABLE>>];
+"users" [id=users;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">role_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">group_id</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">email</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">display_name</TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">password</TD></TR>
+<TR><TD PORT="f7" BGCOLOR="#e7e2dd">active</TD></TR>
+<TR><TD PORT="f8" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"transactions" [id=transactions;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       transactions       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">user_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">amount</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"tables" [id=tables;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       tables       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">group_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">name</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">seats</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"players" [id=players;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       players       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">user_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">table_id</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">stack</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">sitting_out</TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">seat</TD></TR>
+<TR><TD PORT="f7" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"players_active" [id=players_active;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       players_active       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">user_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">player_id</TD></TR>
+    </TABLE>>];
+"hands" [id=hands;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       hands       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">table_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">dealer_id</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">next_id</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">rounds</TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">state</TD></TR>
+<TR><TD PORT="f7" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"hands_active" [id=hands_active;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       hands_active       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">table_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">hand_id</TD></TR>
+    </TABLE>>];
+"pots" [id=pots;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       pots       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">hand_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">amount</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"betting_rounds" [id=betting_rounds;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       betting_rounds       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">hand_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">round_num</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">name</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">bet</TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">bettor</TD></TR>
+<TR><TD PORT="f7" BGCOLOR="#e7e2dd">state</TD></TR>
+<TR><TD PORT="f8" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"betting_rounds_active" [id=betting_rounds_active;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       betting_rounds_active       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">betting_round_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">hand_id</TD></TR>
+    </TABLE>>];
+"bets" [id=bets;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       bets       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">player_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">betting_round_id</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">amount</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"holdings" [id=holdings;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       holdings       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">player_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">hand_id</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">is_board</TD></TR>
+<TR><TD PORT="f5" BGCOLOR="#e7e2dd">active</TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+"cards" [id=cards;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       cards       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">code</TD></TR>
+    </TABLE>>];
+"holdings_to_cards" [id=holdings_to_cards;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       holdings_to_cards       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>holdings_id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><b>cards_id</b></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">exposed</TD></TR>
+    </TABLE>>];
+"actions" [id=actions;label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       actions       </B></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd">holding_id</TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd">type</TD></TR>
+<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+    </TABLE>>];
+    
+      payment_types:f2:e -> groups:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+payments:f2:e -> payment_types:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+users:f2:e -> roles:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+users:f3:e -> groups:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+transactions:f2:e -> users:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+tables:f2:e -> groups:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+players:f2:e -> users:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+players:f3:e -> tables:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+players_active:f2:e -> users:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+players_active:f3:e -> players:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+hands:f2:e -> tables:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+hands:f3:e -> players:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+hands:f4:e -> players:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+hands_active:f2:e -> tables:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+hands_active:f3:e -> hands:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+pots:f2:e -> hands:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+betting_rounds:f2:e -> hands:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+betting_rounds:f6:e -> players:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+betting_rounds_active:f2:e -> betting_rounds:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+betting_rounds_active:f3:e -> hands:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+bets:f2:e -> players:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+bets:f3:e -> betting_rounds:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+holdings:f2:e -> players:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+holdings:f3:e -> hands:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+holdings_to_cards:f1:e -> holdings:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+holdings_to_cards:f2:e -> cards:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+actions:f2:e -> holdings:f1:w [headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    }

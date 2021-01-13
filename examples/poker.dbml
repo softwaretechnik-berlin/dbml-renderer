@@ -1,0 +1,168 @@
+// A group registered with the service
+Table groups {
+  id int [pk]
+  name varchar [unique]
+  active boolean [default: true]
+  paid_through date [null]
+  created_utc datetime [default: 'now()']
+}
+
+Table payment_types {
+  id int [pk]
+  group_id int [ref: > groups.id]
+  stripe_token varchar
+  created_utc datetime [default: 'now()']
+}
+
+Table payments {
+  id int [pk]
+  payment_type_id int [ref: > payment_types.id]
+  amount int
+  created_utc datetime [default: 'now()']
+}
+
+// Enumerate possible roles here: admin, player, etc
+Table roles {
+  id int [pk]
+  name varchar
+}
+
+// A user of the service
+Table users {
+  id int [pk]
+  role_id int [ref: > roles.id]
+  group_id int [ref: > groups.id]
+  email varchar
+  display_name varchar [null]
+  password varchar
+  active boolean [default: true]
+  created_utc datetime [default: 'now()']
+}
+
+// Buy-ins and cash-outs
+Table transactions {
+  id int [pk]
+  user_id int [ref: > users.id]
+  amount int
+  created_utc datetime [default: 'now()']
+}
+
+// ========= END ADMIN DATA | BEGIN POKER DATA =========
+
+Table tables {
+  id int [pk]
+  group_id int [ref: > groups.id]
+  name varchar  // Currently a random string, remove?
+  seats int [note: "number of seats, max players allowed"]
+  created_utc datetime [default: 'now()']
+}
+
+// Persistent in-game player data. The player's session.
+Table players {
+  id int [pk]
+  user_id int [ref: > users.id]
+  table_id int [ref: > tables.id]
+  stack int [default: 0]   // Amount of money available to bet
+  sitting_out boolean [default: false]
+  seat int
+  created_utc datetime [default: 'now()']
+}
+
+// Mark user as having an active play session
+Table players_active {
+  id int [pk]
+  user_id int [ref: > users.id, unique]
+  player_id int [ref: > players.id]
+}
+
+// TODO - Should this live in DB or in server code?
+Enum states {
+  OPEN
+  CLOSED
+  VOID
+}
+
+Table hands {
+  id int [pk]
+  table_id int [ref: > tables.id]
+  dealer_id int [ref: > players.id]
+  next_id int [ref: > players.id]
+  rounds int [note: "Number of betting rounds per hand (e.g. 4 for NLHE: preflop, flop, turn river)"]
+  state states
+  created_utc datetime [default: 'now()']
+}
+
+Table hands_active {
+  id int [pk]
+  table_id int [ref: > tables.id]
+  hand_id int [ref: > hands.id]
+}
+
+// TODO - Need some way to represent a stack of pots to be resolved
+Table pots {
+  id int [pk]
+  hand_id int [ref: > hands.id]
+  amount int
+  created_utc datetime [default: 'now()']
+}
+
+Table betting_rounds {
+  id int [pk]
+  hand_id int [ref: > hands.id]
+  round_num int
+  name varchar [note: "e.g. preflop, flop, turn, etc"]  // Might not need this
+  bet int [note: "The highest current bet for the round. The amount that must be matched."]
+  bettor int [ref: > players.id, note: "The player who played the lead bet"]
+  state states
+  created_utc datetime [default: 'now()']
+}
+
+Table betting_rounds_active {
+  id int [pk]
+  betting_round_id int [ref: > betting_rounds.id]
+  hand_id int [ref: > hands.id]
+}
+
+Table bets {
+  id int [pk]
+  player_id int [ref: > players.id]
+  betting_round_id int [ref: > betting_rounds.id]
+  amount int
+  created_utc datetime [default: 'now()']
+}
+
+Table holdings {
+  id int [pk]
+  player_id int [ref: > players.id, null]
+  hand_id int [ref: > hands.id]
+  is_board boolean [default: False] // Must be true if player_id is False
+  active boolean [default: True]  // Set to False if hand folded
+  created_utc datetime [default: 'now()']
+}
+
+// Enumerate all cards
+Table cards {
+  id int [pk]
+  code int  // The deuces code for this card
+}
+
+// M2M relationship table, shows which cards a player had
+Table holdings_to_cards {
+  holdings_id int [pk, ref: > holdings.id]
+  cards_id int [pk, ref: > cards.id]
+  exposed boolean [default: False]  // Set true for face-up cards
+}
+
+Enum action_types {
+  BLIND
+  FOLD
+  CHECK
+  BET
+}
+
+Table actions {
+  id int [pk]
+  holding_id int [ref: > holdings.id] // Blind actions occur before player sees cards, but holdings record will already exist
+  type action_types
+  created_utc datetime [default: 'now()']
+}
