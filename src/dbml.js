@@ -143,8 +143,8 @@ function peg$parse(input, options) {
 
       peg$c0 = function(all) { return all.filter(e => e); },
       peg$c1 = function() {},
-      peg$c2 = "Project",
-      peg$c3 = peg$literalExpectation("Project", false),
+      peg$c2 = "project",
+      peg$c3 = peg$literalExpectation("Project", true),
       peg$c4 = "{",
       peg$c5 = peg$literalExpectation("{", false),
       peg$c6 = "}",
@@ -155,8 +155,8 @@ function peg$parse(input, options) {
       peg$c11 = ":",
       peg$c12 = peg$literalExpectation(":", false),
       peg$c13 = function(key, value) { return { [key]: value } },
-      peg$c14 = "Table",
-      peg$c15 = peg$literalExpectation("Table", false),
+      peg$c14 = "table",
+      peg$c15 = peg$literalExpectation("Table", true),
       peg$c16 = function(name, alias, items) { return { type: "table", name, items: items || [], alias }},
       peg$c17 = "as",
       peg$c18 = peg$literalExpectation("as", false),
@@ -169,8 +169,8 @@ function peg$parse(input, options) {
       peg$c25 = /^[a-zA-Z_()0-9,]/,
       peg$c26 = peg$classExpectation([["a", "z"], ["A", "Z"], "_", "(", ")", ["0", "9"], ","], false, false),
       peg$c27 = function() { return text(); },
-      peg$c28 = "Indexes",
-      peg$c29 = peg$literalExpectation("Indexes", false),
+      peg$c28 = "indexes",
+      peg$c29 = peg$literalExpectation("Indexes", true),
       peg$c30 = function(indices) { return { item: "indices", indices }; },
       peg$c31 = function(head, index) { return index; },
       peg$c32 = function(name) { return [name]; },
@@ -197,11 +197,11 @@ function peg$parse(input, options) {
       peg$c53 = function() { return text().trim(); },
       peg$c54 = /^[^,\]]/,
       peg$c55 = peg$classExpectation([",", "]"], true, false),
-      peg$c56 = "TableGroup",
-      peg$c57 = peg$literalExpectation("TableGroup", false),
+      peg$c56 = "tablegroup",
+      peg$c57 = peg$literalExpectation("TableGroup", true),
       peg$c58 = function(name, tables) { return { type: "group", name, tables: tables || [] }; },
-      peg$c59 = "Ref",
-      peg$c60 = peg$literalExpectation("Ref", false),
+      peg$c59 = "ref",
+      peg$c60 = peg$literalExpectation("Ref", true),
       peg$c61 = ".",
       peg$c62 = peg$literalExpectation(".", false),
       peg$c63 = function(fromTable, fromColumns, cardinality, toTable, toColumns) { return { type: "ref", cardinality, fromTable, fromColumns, toTable, toColumns }; },
@@ -213,8 +213,8 @@ function peg$parse(input, options) {
       peg$c69 = peg$literalExpectation("<", false),
       peg$c70 = function(head, name) { return name; },
       peg$c71 = function(columns) { return columns; },
-      peg$c72 = "Enum",
-      peg$c73 = peg$literalExpectation("Enum", false),
+      peg$c72 = "enum",
+      peg$c73 = peg$literalExpectation("Enum", true),
       peg$c74 = function(name, values) { return { type: "enum", values: values || [] }},
       peg$c75 = function(head, tail) { return [head, ...tail].filter(i => i); },
       peg$c76 = function(name, settings) { return { name, settings: settings || {} }; },
@@ -451,8 +451,8 @@ function peg$parse(input, options) {
     var s0, s1, s2, s3, s4, s5, s6, s7, s8;
 
     s0 = peg$currPos;
-    if (input.substr(peg$currPos, 7) === peg$c2) {
-      s1 = peg$c2;
+    if (input.substr(peg$currPos, 7).toLowerCase() === peg$c2) {
+      s1 = input.substr(peg$currPos, 7);
       peg$currPos += 7;
     } else {
       s1 = peg$FAILED;
@@ -677,8 +677,8 @@ function peg$parse(input, options) {
     var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12;
 
     s0 = peg$currPos;
-    if (input.substr(peg$currPos, 5) === peg$c14) {
-      s1 = peg$c14;
+    if (input.substr(peg$currPos, 5).toLowerCase() === peg$c14) {
+      s1 = input.substr(peg$currPos, 5);
       peg$currPos += 5;
     } else {
       s1 = peg$FAILED;
@@ -1033,8 +1033,8 @@ function peg$parse(input, options) {
     var s0, s1, s2, s3, s4, s5, s6, s7, s8;
 
     s0 = peg$currPos;
-    if (input.substr(peg$currPos, 7) === peg$c28) {
-      s1 = peg$c28;
+    if (input.substr(peg$currPos, 7).toLowerCase() === peg$c28) {
+      s1 = input.substr(peg$currPos, 7);
       peg$currPos += 7;
     } else {
       s1 = peg$FAILED;
@@ -1688,8 +1688,8 @@ function peg$parse(input, options) {
     var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10;
 
     s0 = peg$currPos;
-    if (input.substr(peg$currPos, 10) === peg$c56) {
-      s1 = peg$c56;
+    if (input.substr(peg$currPos, 10).toLowerCase() === peg$c56) {
+      s1 = input.substr(peg$currPos, 10);
       peg$currPos += 10;
     } else {
       s1 = peg$FAILED;
@@ -1864,8 +1864,8 @@ function peg$parse(input, options) {
     var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15;
 
     s0 = peg$currPos;
-    if (input.substr(peg$currPos, 3) === peg$c59) {
-      s1 = peg$c59;
+    if (input.substr(peg$currPos, 3).toLowerCase() === peg$c59) {
+      s1 = input.substr(peg$currPos, 3);
       peg$currPos += 3;
     } else {
       s1 = peg$FAILED;
@@ -2183,8 +2183,8 @@ function peg$parse(input, options) {
     var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10;
 
     s0 = peg$currPos;
-    if (input.substr(peg$currPos, 4) === peg$c72) {
-      s1 = peg$c72;
+    if (input.substr(peg$currPos, 4).toLowerCase() === peg$c72) {
+      s1 = input.substr(peg$currPos, 4);
       peg$currPos += 4;
     } else {
       s1 = peg$FAILED;

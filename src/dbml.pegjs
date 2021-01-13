@@ -9,7 +9,7 @@ DBML =
   / Enum
   / NewLine {}
 
-Project = "Project" _ "{" __ options:Options Comment? __ "}"
+Project = "Project"i _ "{" __ options:Options Comment? __ "}"
   { return { type: "project", options } }
 Options = (head:Option tail:(EOL __ opt:Option { return opt; })* { return [head, ...tail].reduce((a, b) => Object.assign(a, b), {}); })?
 Option = key:OptionKey _ ":" _ value:OptionValue _ Comment?
@@ -17,7 +17,7 @@ Option = key:OptionKey _ ":" _ value:OptionValue _ Comment?
 OptionKey = Name
 OptionValue = MultiLineString / SimpleString
 
-Table = "Table" _ name: TableName _ alias:TableAlias? _ "{" __ items:TableItems Comment? __ "}"
+Table = "Table"i _ name: TableName _ alias:TableAlias? _ "{" __ items:TableItems Comment? __ "}"
   { return { type: "table", name, items: items || [], alias }}
 TableName =  String / Name
 TableAlias = "as" _ alias:Name { return alias; }
@@ -35,7 +35,7 @@ Column = name:ColumnName _ type:ColumnType _ settings:Settings? { return { item:
 ColumnName = Name / String
 ColumnType = [a-zA-Z_()0-9,]+ { return text(); }
 
-Indices = "Indexes" _ "{" __ indices:IndicesList Comment? __ "}"
+Indices = "Indexes"i _ "{" __ indices:IndicesList Comment? __ "}"
    { return { item: "indices", indices }; }
 IndicesList = (head:IndexItem tail:(EOL __ index:IndexItem { return index; })* { return [head, ...tail]; })?
 IndexItem =
@@ -52,13 +52,13 @@ Setting = key:SettingKey _ value:(":" _ v:SettingValue { return v; })? { return 
 SettingKey = [^,\]:]+ { return text().trim(); }
 SettingValue = SimpleString / ([^,\]]+ { return text().trim(); })
 
-TableGroup = "TableGroup" _ name:TableName _ "{" __ tables:TableGroupItems Comment? __ "}" { return { type: "group", name, tables: tables || [] }; }
+TableGroup = "TableGroup"i _ name:TableName _ "{" __ tables:TableGroupItems Comment? __ "}" { return { type: "group", name, tables: tables || [] }; }
 TableGroupItems = (head:TableGroupItem tail:(EOL __ item:TableGroupItem { return item; })* { return [head, ...tail]; })?
 TableGroupItem =
   Comment
   / TableName
 
-Ref = "Ref" _ ":" _ fromTable:TableName '.' fromColumns:RefColumns _ cardinality:Cardinality _ toTable:TableName '.' toColumns:RefColumns _ Comment?
+Ref = "Ref"i _ ":" _ fromTable:TableName '.' fromColumns:RefColumns _ cardinality:Cardinality _ toTable:TableName '.' toColumns:RefColumns _ Comment?
   { return { type: "ref", cardinality, fromTable, fromColumns, toTable, toColumns }; }
 RefColumns =
   (name:ColumnName { return [name]; })
@@ -67,7 +67,7 @@ Cardinality = '-' / '>' / '<'
 
 CompositeKey = "(" _ columns:(head:ColumnName tail:(_ "," _ name:ColumnName { return name; })* { return [head, ...tail]; } )? _ ")" { return columns; }
 
-Enum = "Enum" _ name:Name _ "{" __  values:EnumValues Comment? __ "}" { return { type: "enum", values: values || [] }}
+Enum = "Enum"i _ name:Name _ "{" __  values:EnumValues Comment? __ "}" { return { type: "enum", values: values || [] }}
 EnumValues = (head:EnumValue tail:(EOL __ item:EnumValue { return item; })* { return [head, ...tail].filter(i => i); })?
 EnumValue =
   name:Name _ settings:Settings? { return { name, settings: settings || {} }; }
