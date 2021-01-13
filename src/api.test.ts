@@ -49,7 +49,7 @@ const comparisonPage =
       border-collapse: collapse;
     }
     img {
-      width: 600px;
+      width: 100%;
       height: auto;
     }
   </style>
