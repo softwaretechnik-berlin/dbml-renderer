@@ -70,7 +70,7 @@ class TableRenderer {
   }
 
   selfRef(): string {
-    return `${this.table.name}:0`;
+    return `${this.table.name}:f0`;
   }
 
   ref(column: string): string {

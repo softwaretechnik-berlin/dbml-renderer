@@ -11,23 +11,23 @@
 <!-- users -->
 <g id="users" class="node">
 <title>users</title>
-<ellipse fill="none" stroke="black" stroke-width="0" cx="516.83" cy="-257.39" rx="161.44" ry="214.92"/>
-<polygon fill="#1d71b8" stroke="transparent" points="404.83,-347.39 404.83,-407.39 628.83,-407.39 628.83,-347.39 404.83,-347.39"/>
-<polygon fill="none" stroke="#29235c" points="404.83,-347.39 404.83,-407.39 628.83,-407.39 628.83,-347.39 404.83,-347.39"/>
-<text text-anchor="start" x="415.47" y="-368.59" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#ffffff"> &#160;&#160;&#160;&#160;&#160;&#160;users &#160;&#160;&#160;&#160;&#160;&#160;</text>
-<polygon fill="#e7e2dd" stroke="transparent" points="404.83,-287.39 404.83,-347.39 628.83,-347.39 628.83,-287.39 404.83,-287.39"/>
-<polygon fill="none" stroke="#29235c" points="404.83,-287.39 404.83,-347.39 628.83,-347.39 628.83,-287.39 404.83,-287.39"/>
-<text text-anchor="start" x="504.39" y="-307.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">id</text>
-<polygon fill="#e7e2dd" stroke="transparent" points="404.83,-227.39 404.83,-287.39 628.83,-287.39 628.83,-227.39 404.83,-227.39"/>
-<polygon fill="none" stroke="#29235c" points="404.83,-227.39 404.83,-287.39 628.83,-287.39 628.83,-227.39 404.83,-227.39"/>
-<text text-anchor="start" x="445.71" y="-247.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">username</text>
-<polygon fill="#e7e2dd" stroke="transparent" points="404.83,-167.39 404.83,-227.39 628.83,-227.39 628.83,-167.39 404.83,-167.39"/>
-<polygon fill="none" stroke="#29235c" points="404.83,-167.39 404.83,-227.39 628.83,-227.39 628.83,-167.39 404.83,-167.39"/>
-<text text-anchor="start" x="490.17" y="-187.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">role</text>
-<polygon fill="#e7e2dd" stroke="transparent" points="404.83,-107.39 404.83,-167.39 628.83,-167.39 628.83,-107.39 404.83,-107.39"/>
-<polygon fill="none" stroke="#29235c" points="404.83,-107.39 404.83,-167.39 628.83,-167.39 628.83,-107.39 404.83,-107.39"/>
-<text text-anchor="start" x="441.25" y="-127.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">created_at</text>
-<polygon fill="none" stroke="#29235c" stroke-width="2" points="403.83,-106.39 403.83,-408.39 629.83,-408.39 629.83,-106.39 403.83,-106.39"/>
+<ellipse fill="none" stroke="black" stroke-width="0" cx="516.83" cy="-287.39" rx="161.44" ry="214.92"/>
+<polygon fill="#1d71b8" stroke="transparent" points="404.83,-377.39 404.83,-437.39 628.83,-437.39 628.83,-377.39 404.83,-377.39"/>
+<polygon fill="none" stroke="#29235c" points="404.83,-377.39 404.83,-437.39 628.83,-437.39 628.83,-377.39 404.83,-377.39"/>
+<text text-anchor="start" x="415.47" y="-398.59" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#ffffff"> &#160;&#160;&#160;&#160;&#160;&#160;users &#160;&#160;&#160;&#160;&#160;&#160;</text>
+<polygon fill="#e7e2dd" stroke="transparent" points="404.83,-317.39 404.83,-377.39 628.83,-377.39 628.83,-317.39 404.83,-317.39"/>
+<polygon fill="none" stroke="#29235c" points="404.83,-317.39 404.83,-377.39 628.83,-377.39 628.83,-317.39 404.83,-317.39"/>
+<text text-anchor="start" x="504.39" y="-337.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">id</text>
+<polygon fill="#e7e2dd" stroke="transparent" points="404.83,-257.39 404.83,-317.39 628.83,-317.39 628.83,-257.39 404.83,-257.39"/>
+<polygon fill="none" stroke="#29235c" points="404.83,-257.39 404.83,-317.39 628.83,-317.39 628.83,-257.39 404.83,-257.39"/>
+<text text-anchor="start" x="445.71" y="-277.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">username</text>
+<polygon fill="#e7e2dd" stroke="transparent" points="404.83,-197.39 404.83,-257.39 628.83,-257.39 628.83,-197.39 404.83,-197.39"/>
+<polygon fill="none" stroke="#29235c" points="404.83,-197.39 404.83,-257.39 628.83,-257.39 628.83,-197.39 404.83,-197.39"/>
+<text text-anchor="start" x="490.17" y="-217.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">role</text>
+<polygon fill="#e7e2dd" stroke="transparent" points="404.83,-137.39 404.83,-197.39 628.83,-197.39 628.83,-137.39 404.83,-137.39"/>
+<polygon fill="none" stroke="#29235c" points="404.83,-137.39 404.83,-197.39 628.83,-197.39 628.83,-137.39 404.83,-137.39"/>
+<text text-anchor="start" x="441.25" y="-157.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">created_at</text>
+<polygon fill="none" stroke="#29235c" stroke-width="2" points="403.83,-136.39 403.83,-438.39 629.83,-438.39 629.83,-136.39 403.83,-136.39"/>
 </g>
 <!-- posts -->
 <g id="posts" class="node">
@@ -57,9 +57,9 @@
 <!-- posts&#45;&gt;users -->
 <g id="edge2" class="edge">
 <title>posts:e&#45;&gt;users:w</title>
-<path fill="none" stroke="#29235c" stroke-width="3" d="M271.81,-167.39C356.98,-167.39 318.53,-305.33 393.56,-316.65"/>
-<polygon fill="#29235c" stroke="#29235c" stroke-width="3" points="393.61,-320.16 403.83,-317.39 394.11,-313.18 393.61,-320.16"/>
-<text text-anchor="middle" x="394.94" y="-326.99" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">1</text>
+<path fill="none" stroke="#29235c" stroke-width="3" d="M271.81,-167.39C367.43,-167.39 309.2,-334.61 393.71,-346.7"/>
+<polygon fill="#29235c" stroke="#29235c" stroke-width="3" points="393.62,-350.2 403.83,-347.39 394.09,-343.22 393.62,-350.2"/>
+<text text-anchor="middle" x="394.94" y="-356.99" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">1</text>
 <text text-anchor="middle" x="265.58" y="-138.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">*</text>
 </g>
 </g>

@@ -22,6 +22,6 @@ digraph dbml {
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">created_at</TD></TR>
     </TABLE>>];
     
-      posts:0 -> users:0 [style=invis, weight=100, color=red]
+      posts:f0 -> users:f0 [style=invis, weight=100, color=red]
     posts:f4:e -> users:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
     }
