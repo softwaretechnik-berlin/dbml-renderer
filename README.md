@@ -37,7 +37,7 @@ Table posts {
 Ref: posts.user_id > users.id
 ```
 
-![Posts example output](examples/user-posts.svg)
+![Posts example output](examples/user-posts.dbml.svg)
 
 The [examples directory](examples/) contains other input and output examples.
 
