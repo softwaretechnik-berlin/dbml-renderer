@@ -4,6 +4,24 @@ digraph dbml {
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
+      "job_category" [id=job_category;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       job_category       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    full_time    </i></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    part_time    </i></font></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    intern    </i></font></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    on_campus    </i></font></TD></TR>
+    </TABLE>>];
+"apply_status" [id=apply_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       apply_status       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    pending    </i></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    reviewed    </i></font></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    declined    </i></font></TD></TR>
+    </TABLE>>];
+"eligibility_status" [id=eligibility_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       eligibility_status       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    all    </i></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    special_major    </i></font></TD></TR>
+    </TABLE>>];
       
       
       "user" [id=user;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
@@ -635,4 +653,7 @@ event_regisiteration:f0 -> event:f0 [style=invis, weight=100, color=red]
     event_regisiteration:f2:e -> event:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
 event_regisiteration:f0 -> profile:f0 [style=invis, weight=100, color=red]
     event_regisiteration:f3:e -> profile:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      job:f9:e -> job_category:f0:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]
+job_application:f5:e -> apply_status:f0:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]
+event:f7:e -> eligibility_status:f0:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]
     }

@@ -4,6 +4,11 @@ digraph dbml {
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
+      "module_type" [id=module_type;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       module_type       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    lesson    </i></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    assignment    </i></font></TD></TR>
+    </TABLE>>];
       
       
       "User" [id=User;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
@@ -845,4 +850,5 @@ FriendRequests:f0 -> User:f0 [style=invis, weight=100, color=red]
     FriendRequests:f1:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
 FriendRequests:f0 -> User:f0 [style=invis, weight=100, color=red]
     FriendRequests:f2:e -> User:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      Module:f4:e -> module_type:f0:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]
     }

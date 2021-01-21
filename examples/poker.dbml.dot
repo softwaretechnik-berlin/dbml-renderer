@@ -4,6 +4,19 @@ digraph dbml {
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
+      "states" [id=states;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       states       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    OPEN    </i></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    CLOSED    </i></font></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    VOID    </i></font></TD></TR>
+    </TABLE>>];
+"action_types" [id=action_types;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       action_types       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    BLIND    </i></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    FOLD    </i></font></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    CHECK    </i></font></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    BET    </i></font></TD></TR>
+    </TABLE>>];
       
       
       "groups" [id=groups;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
@@ -814,4 +827,7 @@ holdings_to_cards:f0 -> cards:f0 [style=invis, weight=100, color=red]
     holdings_to_cards:f2:e -> cards:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
 actions:f0 -> holdings:f0 [style=invis, weight=100, color=red]
     actions:f2:e -> holdings:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      hands:f6:e -> states:f0:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]
+betting_rounds:f7:e -> states:f0:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]
+actions:f3:e -> action_types:f0:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]
     }

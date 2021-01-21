@@ -6,6 +6,7 @@ digraph dbml {
 
       
       
+      
       "users" [id=users;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
@@ -87,4 +88,5 @@ digraph dbml {
     
       posts:f0 -> users:f0 [style=invis, weight=100, color=red]
     posts:f4:e -> users:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      
     }

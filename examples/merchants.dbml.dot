@@ -4,6 +4,12 @@ digraph dbml {
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
+      "products_status" [id=products_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       products_status       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    out_of_stock    </i></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    in_stock    </i></font></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    running_low    </i></font></TD></TR>
+    </TABLE>>];
       
       subgraph cluster_merchants {
       label = "merchants"
@@ -324,4 +330,5 @@ order_items:f0 -> orders:f0 [style=invis, weight=100, color=red]
     order_items:f1:e -> orders:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
 merchants:f0 -> users:f0 [style=invis, weight=100, color=red]
     merchants:f5:e -> users:f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      products:f5:e -> products_status:f0:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]
     }
