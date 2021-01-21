@@ -125,9 +125,19 @@ class TableRenderer {
 
   refAll(columns: string[]): string {
     //TODO: check that all columns exist
-    //TODO: check that columns together are pk
-    //TODO: sort by the order that they appear on the table
-    const name = columns.sort().join(",");
+
+    const columnIndex: Record<string, any> = {};
+    columns.map(
+      (columnName) =>
+        (columnIndex[columnName] =
+          this.columns.findIndex((c) => c.name === columnName) + 1 ||
+          Number.MAX_SAFE_INTEGER)
+    );
+
+    const name = columns
+      .sort((a, b) => columnIndex[a] - columnIndex[b])
+      .join(",");
+
     const column = this.findColumn(name);
     if (!column) {
       this.columns.push(
