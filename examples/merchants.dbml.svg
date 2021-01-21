@@ -65,7 +65,7 @@
 <text text-anchor="start" x="1639.85" y="-871.73" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="1290.63,-790.53 1290.63,-850.53 1684.63,-850.53 1684.63,-790.53 1290.63,-790.53"/>
 <polygon fill="none" stroke="#29235c" points="1290.63,-790.53 1290.63,-850.53 1684.63,-850.53 1684.63,-790.53 1290.63,-790.53"/>
-<text text-anchor="start" x="1334.69" y="-811.73" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#1d71b8"> &#160;&#160;&#160;country_code, id &#160;&#160;&#160;</text>
+<text text-anchor="start" x="1334.69" y="-811.73" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#1d71b8"> &#160;&#160;&#160;id, country_code &#160;&#160;&#160;</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="1289.63,-789.53 1289.63,-1211.53 1685.63,-1211.53 1685.63,-789.53 1289.63,-789.53"/>
 </g>
 <!-- users -->
@@ -173,7 +173,7 @@
 <text text-anchor="start" x="934.97" y="-871.73" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">datetime</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="589.67,-790.53 589.67,-850.53 1068.67,-850.53 1068.67,-790.53 589.67,-790.53"/>
 <polygon fill="none" stroke="#29235c" points="589.67,-790.53 589.67,-850.53 1068.67,-850.53 1068.67,-790.53 589.67,-790.53"/>
-<text text-anchor="start" x="600.65" y="-811.73" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#1d71b8"> &#160;&#160;&#160;country_code, merchant_id &#160;&#160;&#160;</text>
+<text text-anchor="start" x="600.65" y="-811.73" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#1d71b8"> &#160;&#160;&#160;merchant_id, country_code &#160;&#160;&#160;</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="588.17,-789.53 588.17,-1211.53 1069.17,-1211.53 1069.17,-789.53 588.17,-789.53"/>
 </g>
 <!-- merchant_periods&#45;&gt;merchants -->

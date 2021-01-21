@@ -58,7 +58,7 @@ digraph dbml {
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    country_code, id    </i></font></TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    id, country_code    </i></font></TD></TR>
     </TABLE>>];
 "merchant_periods" [id=merchant_periods;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       merchant_periods       </B></font></TD></TR>
@@ -102,7 +102,7 @@ digraph dbml {
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    country_code, merchant_id    </i></font></TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    merchant_id, country_code    </i></font></TD></TR>
     </TABLE>>];
     }
       "users" [id=users;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
