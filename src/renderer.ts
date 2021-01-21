@@ -1,4 +1,12 @@
-import parse, { Table, Cardinality, Group, DBML, Ref, Column } from "./parser";
+import parse, {
+  Table,
+  Cardinality,
+  Group,
+  DBML,
+  Ref,
+  Column,
+  Enum,
+} from "./parser";
 
 export type Format = "dot" | "svg";
 
@@ -130,7 +138,7 @@ class TableRenderer {
   }
 }
 
-class TablesRenderer {
+class TableRendererMap {
   private renderers: Map<string, TableRenderer> = new Map();
 
   constructor(tables: Table[]) {
@@ -186,8 +194,8 @@ class UngroupedRenderer {
 class GroupsRenderer {
   private groups: GroupRenderer[];
   private ungrouped: UngroupedRenderer;
+  constructor(groups: Group[], tables: TableRendererMap) {
 
-  constructor(groups: Group[], tables: TablesRenderer) {
     const remainingTables = tables.names();
     this.groups = groups.map((group) => {
       return new GroupRenderer(
@@ -229,7 +237,7 @@ class RefRenderer {
   private fromTable: TableRenderer;
   private toTable: TableRenderer;
 
-  constructor(ref: Ref, tables: TablesRenderer) {
+  constructor(ref: Ref, tables: TableRendererMap) {
     this.ref = ref;
 
     this.fromTable = tables.get(ref.fromTable);
@@ -256,19 +264,99 @@ class RefRenderer {
   }
 }
 
-//TODO: render enums
+class EnumRenderer {
+  private enumType: Enum;
+
+  constructor(enumType: Enum) {
+    this.enumType = enumType;
+  }
+
+  selfRef(): string {
+    return `${this.enumType.name}:f0`;
+  }
+
+  toDot(): string {
+    return `"${this.enumType.name}" [id=${
+      this.enumType.name
+    };label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       ${
+      this.enumType.name
+    }       </B></font></TD></TR>
+    ${this.enumType.values
+      .map((value, i) => this.valueDot(value.name, i))
+      .join("\n")}
+    </TABLE>>];`;
+  }
+
+  private valueDot(name: string, i: number): string {
+    return `<TR><TD PORT="f${i}" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    ${name}    </i></font></TD></TR>`;
+  }
+}
+
+class EnumsRenderer {
+  private renderers: Map<string, EnumRenderer> = new Map();
+
+  constructor(enums: Enum[]) {
+    enums.forEach((enumType) =>
+      this.renderers.set(enumType.name, new EnumRenderer(enumType))
+    );
+  }
+
+  get(name: string): EnumRenderer | undefined {
+    return this.renderers.get(name);
+  }
+
+  toDot(): string {
+    return Array.from(this.renderers.values())
+      .map((renderer) => renderer.toDot())
+      .join("\n");
+  }
+}
+
+class EnumDefinitionRenderer {
+  private columnRef: string;
+  private enumRef: string;
+
+  constructor(columnRef: string, enumRef: string) {
+    this.columnRef = columnRef;
+    this.enumRef = enumRef;
+  }
+
+  toDot(): string {
+    return `${this.columnRef}:e -> ${this.enumRef}:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]`;
+  }
+}
+
 class DbmlRenderer {
   private groups: GroupsRenderer;
   private refs: RefRenderer[];
+  private enumDefs: EnumDefinitionRenderer[];
+  private enums: EnumsRenderer;
 
   constructor(dbml: DBML) {
-    const tables = new TablesRenderer(dbml.tables);
+    this.enums = new EnumsRenderer(dbml.enums);
+    const tables = new TableRendererMap(dbml.tables);
 
     this.groups = new GroupsRenderer(dbml.groups, tables);
 
     this.refs = dbml.refs
       .concat(this.findRefsInSettings(dbml.tables))
       .map((ref) => new RefRenderer(ref, tables));
+
+    this.enumDefs = [];
+    dbml.tables.forEach((table) =>
+      table.columns.forEach((column) => {
+        const columnType = this.enums.get(column.type);
+        if (columnType) {
+          this.enumDefs.push(
+            new EnumDefinitionRenderer(
+              tables.get(table.name).ref(column.name),
+              columnType.selfRef()
+            )
+          );
+        }
+      })
+    );
   }
 
   private findRefsInSettings(tables: Table[]): Ref[] {
@@ -301,8 +389,10 @@ class DbmlRenderer {
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
+      ${this.enums.toDot()}
       ${this.groups.toDot()}
       ${this.refs.map((ref) => ref.toDot()).join("\n")}
+      ${this.enumDefs.map((def) => def.toDot()).join("\n")}
     }`;
   }
 }

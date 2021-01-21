@@ -36,10 +36,11 @@ export type Group = {
 };
 
 export type Enum = {
+  name: string;
   values: {
     name: string;
     settings: Settings;
-  };
+  }[];
 };
 
 export type Ref = {
@@ -50,7 +51,7 @@ export type Ref = {
   toColumns: string[];
 };
 
-export type Cardinality =  ">" | "<" | "-";
+export type Cardinality = ">" | "<" | "-";
 
 export type Options = {
   [string]: string;

@@ -68,7 +68,7 @@ Cardinality = '-' / '>' / '<'
 
 CompositeKey = "(" _ columns:(head:ColumnName tail:(_ "," _ name:ColumnName { return name; })* { return [head, ...tail]; } )? _ ")" { return columns; }
 
-Enum = "Enum"i _ name:Name _ "{" __  values:EnumValues Comment? __ "}" { return { type: "enum", values: values || [] }}
+Enum = "Enum"i _ name:Name _ "{" __  values:EnumValues Comment? __ "}" { return { type: "enum", name, values: values || [] }}
 EnumValues = (head:EnumValue tail:(EOL __ item:EnumValue { return item; })* { return [head, ...tail].filter(i => i); })?
 EnumValue =
   name:Name _ settings:Settings? { return { name, settings: settings || {} }; }

@@ -215,7 +215,7 @@ function peg$parse(input, options) {
       peg$c71 = function(columns) { return columns; },
       peg$c72 = "enum",
       peg$c73 = peg$literalExpectation("Enum", true),
-      peg$c74 = function(name, values) { return { type: "enum", values: values || [] }},
+      peg$c74 = function(name, values) { return { type: "enum", name, values: values || [] }},
       peg$c75 = function(head, tail) { return [head, ...tail].filter(i => i); },
       peg$c76 = function(name, settings) { return { name, settings: settings || {} }; },
       peg$c77 = /^[a-zA-Z_]/,
