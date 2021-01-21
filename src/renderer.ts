@@ -195,7 +195,6 @@ class GroupsRenderer {
   private groups: GroupRenderer[];
   private ungrouped: UngroupedRenderer;
   constructor(groups: Group[], tables: TableRendererMap) {
-
     const remainingTables = tables.names();
     this.groups = groups.map((group) => {
       return new GroupRenderer(
