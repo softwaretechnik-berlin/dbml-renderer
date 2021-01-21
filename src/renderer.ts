@@ -1,4 +1,4 @@
-import parse, { Table, Cardinality, Group, DBML, Ref } from "./parser";
+import parse, { Table, Cardinality, Group, DBML, Ref, Column } from "./parser";
 
 export type Format = "dot" | "svg";
 
@@ -6,100 +6,144 @@ type RowAttributes = {
   [key: string]: string;
 };
 
-class RowRenderer {
-  readonly port: string;
-  private label: string;
-  private attributes: string;
+// class RowRenderer {
+//   readonly port: string;
+//   private label: string;
+//   private attributes: string;
 
-  constructor(port: number, label: string, attributes: RowAttributes) {
-    this.port = `f${port}`;
-    this.label = label;
-    this.attributes = Object.entries(attributes)
-      .map(([key, value]) => `${key}="${value}"`)
-      .join(" ");
+//   constructor(port: number, label: string, attributes: RowAttributes) {
+//     this.port = `f${port}`;
+//     this.label = label;
+//     this.attributes = Object.entries(attributes)
+//       .map(([key, value]) => `${key}="${value}"`)
+//       .join(" ");
+//   }
+//   toDot(): string {
+//     //TODO: make it a table that has two columns with the name and types
+//     return `<TR><TD PORT="${this.port}" ${this.attributes}>${this.label}</TD></TR>`;
+//   }
+// }
+
+interface RowRenderer {
+  readonly name: string;
+  readonly port: string;
+  toDot(): string;
+}
+
+class TableNameRowRenderer implements RowRenderer {
+  readonly name = "__TABLE__";
+  readonly port = "f0";
+  private table: Table;
+
+  constructor(table: Table) {
+    this.table = table;
   }
+
   toDot(): string {
+    return `<TR><TD PORT="${this.port}" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       ${this.table.name}       </B></font></TD></TR>`;
+  }
+}
+
+class ColumnRowRenderer implements RowRenderer {
+  private column: Column;
+  readonly name: string;
+  readonly port: string;
+
+  constructor(port: string, column: Column) {
+    this.column = column;
+    this.name = column.name;
+    this.port = port;
+  }
+
+  toDot(): string {
+    const nameTransformations: ((name: string) => string)[] = [];
+    if ("pk" in this.column.settings) {
+      nameTransformations.push((name: string) => `<b>${name}</b>`);
+    }
+    if ("not null" in this.column.settings) {
+      nameTransformations.push((name: string) => name + " <i>NOT NULL</i>");
+    }
+
+    const transformName = nameTransformations.reduce(
+      (a, b) => (name: string) => b(a(name)),
+      (n) => n
+    );
+
     //TODO: make it a table that has two columns with the name and types
-    return `<TR><TD PORT="${this.port}" ${this.attributes}>${this.label}</TD></TR>`;
+    return `<TR><TD PORT="${this.port}" BGCOLOR="#e7e2dd">${transformName(
+      this.name
+    )}</TD></TR>`;
+  }
+}
+
+class CompositeKeyRowRenderer implements RowRenderer {
+  private columns: string[];
+  readonly name: string;
+  readonly port: string;
+
+  constructor(port: string, name: string, columns: string[]) {
+    this.columns = columns;
+    this.port = port;
+    this.name = name;
+  }
+
+  toDot(): string {
+    return `<TR><TD PORT="${
+      this.port
+    }" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>${this.columns.join(
+      ", "
+    )}</i></font></TD></TR>`;
   }
 }
 
 class TableRenderer {
   private table: Table;
-  private columns: Map<string, RowRenderer> = new Map();
+  private columns: RowRenderer[] = [];
 
   constructor(table: Table) {
     this.table = table;
-    this.addRow(
-      "__TABLE_NAME__",
-      `<font color="#ffffff"><B>       ${table.name}       </B></font>`,
-      {
-        WIDTH: "150",
-        BGCOLOR: "#1d71b8",
-      }
-    );
-
-    table.columns.forEach((column) => {
-      const nameTransformations: ((name: string) => string)[] = [];
-      if ("pk" in column.settings) {
-        nameTransformations.push((name: string) => `<b>${name}</b>`);
-      }
-      if ("not null" in column.settings) {
-        nameTransformations.push((name: string) => name + " <i>NOT NULL</i>");
-      }
-
-      const transformName = nameTransformations.reduce(
-        (a, b) => (name: string) => b(a(name)),
-        (n) => n
-      );
-
-      this.addRow(column.name, transformName(column.name), {
-        BGCOLOR: "#e7e2dd",
-      });
-    });
-  }
-
-  private addRow(
-    name: string,
-    label: string,
-    attributes?: RowAttributes
-  ): void {
-    this.columns.set(
-      name,
-      new RowRenderer(this.columns.size, label, attributes || {})
+    this.columns.push(new TableNameRowRenderer(table));
+    this.columns.push(
+      ...table.columns.map(
+        (column, i) => new ColumnRowRenderer(`f${i + 1}`, column)
+      )
     );
   }
 
   selfRef(): string {
-    return `${this.table.name}:f0`;
+    return `${this.table.name}:${this.columns[0].port}`;
   }
 
-  ref(column: string): string {
-    if (!this.columns.has(column)) {
+  ref(columnName: string): string {
+    const column = this.findColumn(columnName);
+    if (!column) {
       throw new Error(`Unknown column ${this.table.name}.${column}`);
     }
-    return `${this.table.name}:${this.columns.get(column)!.port}`;
+    return `${this.table.name}:${column.port}`;
+  }
+
+  private findColumn(columnName: string) {
+    return this.columns.find((c) => c.name === columnName);
   }
 
   refAll(columns: string[]): string {
     //TODO: check that all columns exist
     //TODO: check that columns together are pk
-    const key = columns.sort().join(",");
-    if (!this.columns.has(key)) {
-      this.addRow(key, `<font color="#1d71b8"><i>${key}</i></font>`, {
-        BGCOLOR: "#e7e2dd",
-      });
+    const name = columns.sort().join(",");
+    const column = this.findColumn(name);
+    if (!column) {
+      this.columns.push(
+        new CompositeKeyRowRenderer(`f${this.columns.length}`, name, columns)
+      );
     }
-    return this.ref(key);
+    return this.ref(name);
   }
 
   toDot(): string {
     return `"${this.table.name}" [id=${
       this.table.name
     };label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      ${Array.from(this.columns.values())
-        .map((column) => column.toDot())
-        .join("\n")}
+      ${this.columns.map((column) => column.toDot()).join("\n")}
     </TABLE>>];`;
   }
 }
@@ -224,7 +268,9 @@ class RefRenderer {
   toDot(): string {
     const [tailLabel, headLabel] = refLabels[this.ref.cardinality];
     return `${this.fromTable.selfRef()} -> ${this.toTable.selfRef()} [style=invis, weight=100, color=red]
-    ${this.fromRef}:e -> ${this.toRef}:w [penwidth=3, color="#29235c", headlabel="${headLabel}", taillabel="${tailLabel}", arrowhead="normal", arrowtail="none"]`;
+    ${this.fromRef}:e -> ${
+      this.toRef
+    }:w [penwidth=3, color="#29235c", headlabel="${headLabel}", taillabel="${tailLabel}", arrowhead="normal", arrowtail="none"]`;
   }
 }
 

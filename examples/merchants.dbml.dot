@@ -17,7 +17,7 @@ digraph dbml {
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">merchant_name</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">created at</TD></TR>
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">admin_id</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>country_code,id</i></font></TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>country_code, id</i></font></TD></TR>
     </TABLE>>];
 "merchant_periods" [id=merchant_periods;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       merchant_periods       </B></font></TD></TR>
@@ -26,7 +26,7 @@ digraph dbml {
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd">country_code</TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd">start_date</TD></TR>
 <TR><TD PORT="f5" BGCOLOR="#e7e2dd">end_date</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>country_code,merchant_id</i></font></TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>country_code, merchant_id</i></font></TD></TR>
     </TABLE>>];
     }
       "users" [id=users;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
