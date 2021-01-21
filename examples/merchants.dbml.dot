@@ -21,7 +21,7 @@ digraph dbml {
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">id<FONT>    </FONT></TD>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
           <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
         </TR>
       </TABLE>
@@ -29,7 +29,7 @@ digraph dbml {
 <TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">country_code<FONT>    </FONT></TD>
+          <TD ALIGN="LEFT"><b>country_code</b><FONT>    </FONT></TD>
           <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
         </TR>
       </TABLE>

@@ -6,6 +6,7 @@ import parse, {
   Ref,
   Column,
   Enum,
+  Settings,
 } from "./parser";
 
 export type Format = "dot" | "svg";
@@ -32,19 +33,27 @@ class TableNameRowRenderer implements RowRenderer {
 
 class ColumnRowRenderer implements RowRenderer {
   private column: Column;
+  private table: Table;
   readonly name: string;
   readonly port: string;
 
-  constructor(port: string, column: Column) {
+  constructor(port: string, column: Column, table: Table) {
     this.column = column;
+    this.table = table;
     this.name = column.name;
     this.port = port;
   }
 
   toDot(): string {
+    const relatedIndexSettings = this.table.indices
+      .filter((index) => index.columns.includes(this.column.name))
+      .map((index) => index.settings);
+    const isPk = (settings: Settings): boolean =>
+      "pk" in settings || "primary key" in settings;
+
     var name = this.column.name;
     const settings = this.column.settings;
-    if ("pk" in settings || "primary key" in settings) {
+    if (isPk(settings) || relatedIndexSettings.some(isPk)) {
       name = `<b>${name}</b>`;
     }
 
@@ -94,7 +103,7 @@ class TableRenderer {
     this.columns.push(new TableNameRowRenderer(table));
     this.columns.push(
       ...table.columns.map(
-        (column, i) => new ColumnRowRenderer(`f${i + 1}`, column)
+        (column, i) => new ColumnRowRenderer(`f${i + 1}`, column, table)
       )
     );
   }

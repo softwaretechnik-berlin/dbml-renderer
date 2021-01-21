@@ -40,12 +40,12 @@
 <text text-anchor="start" x="1350.7" y="-1171.73" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#ffffff"> &#160;&#160;&#160;&#160;&#160;&#160;merchants &#160;&#160;&#160;&#160;&#160;&#160;</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="1290.63,-1090.53 1290.63,-1150.53 1684.63,-1150.53 1684.63,-1090.53 1290.63,-1090.53"/>
 <polygon fill="none" stroke="#29235c" points="1290.63,-1090.53 1290.63,-1150.53 1684.63,-1150.53 1684.63,-1090.53 1290.63,-1090.53"/>
-<text text-anchor="start" x="1301.63" y="-1111.73" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">id</text>
+<text text-anchor="start" x="1301.63" y="-1111.73" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">id</text>
 <text text-anchor="start" x="1326.52" y="-1111.73" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
 <text text-anchor="start" x="1639.85" y="-1111.73" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="1290.63,-1030.53 1290.63,-1090.53 1684.63,-1090.53 1684.63,-1030.53 1290.63,-1030.53"/>
 <polygon fill="none" stroke="#29235c" points="1290.63,-1030.53 1290.63,-1090.53 1684.63,-1090.53 1684.63,-1030.53 1290.63,-1030.53"/>
-<text text-anchor="start" x="1301.63" y="-1051.73" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">country_code</text>
+<text text-anchor="start" x="1301.63" y="-1051.73" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">country_code</text>
 <text text-anchor="start" x="1493.69" y="-1051.73" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
 <text text-anchor="start" x="1639.85" y="-1051.73" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="1290.63,-970.53 1290.63,-1030.53 1684.63,-1030.53 1684.63,-970.53 1290.63,-970.53"/>
