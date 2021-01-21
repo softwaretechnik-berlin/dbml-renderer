@@ -93,7 +93,6 @@ class CompositeKeyRowRenderer implements RowRenderer {
   }
 }
 
-//TODO: use indices to look for primary keys
 class TableRenderer {
   private table: Table;
   private columns: RowRenderer[] = [];
