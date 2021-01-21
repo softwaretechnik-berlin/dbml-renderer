@@ -12,64 +12,302 @@ digraph dbml {
 
       "merchants" [id=merchants;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       merchants       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd">id</TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">country_code</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">merchant_name</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created at</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">admin_id</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>country_code, id</i></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">country_code<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">merchant_name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created at<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">admin_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    country_code, id    </i></font></TD></TR>
     </TABLE>>];
 "merchant_periods" [id=merchant_periods;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       merchant_periods       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">merchant_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">country_code</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">start_date</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">end_date</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>country_code, merchant_id</i></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">merchant_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">country_code<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">start_date<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">end_date<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD PORT="f6" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    country_code, merchant_id    </i></font></TD></TR>
     </TABLE>>];
     }
       "users" [id=users;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">full_name</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">created_at</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">country_code</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">full_name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">country_code<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "users" [id=users;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">full_name</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">created_at</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">country_code</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">full_name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">country_code<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "countries" [id=countries;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       countries       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>code</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">continent_name</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>code</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">continent_name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "order_items" [id=order_items;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       order_items       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd">order_id</TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">product_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">quantity</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">order_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">product_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">quantity<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "orders" [id=orders;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       orders       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">user_id <i>NOT NULL</i></TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">status</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_at</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">user_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i> <b>(!)</b></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">status<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "products" [id=products;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       products       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">merchant_id <i>NOT NULL</i></TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">price</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">status</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd">created_at</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">merchant_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i> <b>(!)</b></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">price<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">status<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>products_status</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
     
       users:f0 -> countries:f0 [style=invis, weight=100, color=red]

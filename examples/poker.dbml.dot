@@ -8,147 +8,756 @@ digraph dbml {
       
       "groups" [id=groups;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       groups       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">active</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">paid_through</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">active<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>boolean</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">paid_through<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>date</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "payment_types" [id=payment_types;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payment_types       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">group_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">stripe_token</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">group_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">stripe_token<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "payments" [id=payments;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payments       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">payment_type_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">amount</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">payment_type_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">amount<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "roles" [id=roles;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       roles       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">name</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "users" [id=users;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">role_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">group_id</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">email</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">display_name</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd">password</TD></TR>
-<TR><TD PORT="f7" BGCOLOR="#e7e2dd">active</TD></TR>
-<TR><TD PORT="f8" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">role_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">group_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">email<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">display_name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">password<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">active<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>boolean</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f8" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "transactions" [id=transactions;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       transactions       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">user_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">amount</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">user_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">amount<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "tables" [id=tables;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       tables       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">group_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">name</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">seats</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">group_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">seats<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "players" [id=players;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       players       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">user_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">table_id</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">stack</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">sitting_out</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd">seat</TD></TR>
-<TR><TD PORT="f7" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">user_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">table_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">stack<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">sitting_out<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>boolean</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">seat<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "players_active" [id=players_active;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       players_active       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">user_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">player_id</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">user_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">player_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "hands" [id=hands;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       hands       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">table_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">dealer_id</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">next_id</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">rounds</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd">state</TD></TR>
-<TR><TD PORT="f7" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">table_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">dealer_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">next_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">rounds<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">state<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>states</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "hands_active" [id=hands_active;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       hands_active       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">table_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">hand_id</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">table_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">hand_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "pots" [id=pots;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       pots       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">hand_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">amount</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">hand_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">amount<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "betting_rounds" [id=betting_rounds;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       betting_rounds       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">hand_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">round_num</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">name</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">bet</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd">bettor</TD></TR>
-<TR><TD PORT="f7" BGCOLOR="#e7e2dd">state</TD></TR>
-<TR><TD PORT="f8" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">hand_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">round_num<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">bet<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">bettor<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">state<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>states</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f8" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "betting_rounds_active" [id=betting_rounds_active;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       betting_rounds_active       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">betting_round_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">hand_id</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">betting_round_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">hand_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "bets" [id=bets;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       bets       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">player_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">betting_round_id</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">amount</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">player_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">betting_round_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">amount<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "holdings" [id=holdings;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       holdings       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">player_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">hand_id</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">is_board</TD></TR>
-<TR><TD PORT="f5" BGCOLOR="#e7e2dd">active</TD></TR>
-<TR><TD PORT="f6" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">player_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">hand_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">is_board<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>boolean</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">active<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>boolean</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "cards" [id=cards;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       cards       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">code</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">code<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "holdings_to_cards" [id=holdings_to_cards;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       holdings_to_cards       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>holdings_id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><b>cards_id</b></TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">exposed</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>holdings_id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>cards_id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">exposed<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>boolean</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
 "actions" [id=actions;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       actions       </B></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><b>id</b></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd">holding_id</TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd">type</TD></TR>
-<TR><TD PORT="f4" BGCOLOR="#e7e2dd">created_utc</TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">holding_id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">type<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>action_types</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_utc<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>datetime</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
     </TABLE>>];
     
       payment_types:f0 -> groups:f0 [style=invis, weight=100, color=red]

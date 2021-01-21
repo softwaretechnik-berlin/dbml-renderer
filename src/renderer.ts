@@ -2,28 +2,6 @@ import parse, { Table, Cardinality, Group, DBML, Ref, Column } from "./parser";
 
 export type Format = "dot" | "svg";
 
-type RowAttributes = {
-  [key: string]: string;
-};
-
-// class RowRenderer {
-//   readonly port: string;
-//   private label: string;
-//   private attributes: string;
-
-//   constructor(port: number, label: string, attributes: RowAttributes) {
-//     this.port = `f${port}`;
-//     this.label = label;
-//     this.attributes = Object.entries(attributes)
-//       .map(([key, value]) => `${key}="${value}"`)
-//       .join(" ");
-//   }
-//   toDot(): string {
-//     //TODO: make it a table that has two columns with the name and types
-//     return `<TR><TD PORT="${this.port}" ${this.attributes}>${this.label}</TD></TR>`;
-//   }
-// }
-
 interface RowRenderer {
   readonly name: string;
   readonly port: string;
@@ -56,23 +34,25 @@ class ColumnRowRenderer implements RowRenderer {
   }
 
   toDot(): string {
-    const nameTransformations: ((name: string) => string)[] = [];
-    if ("pk" in this.column.settings) {
-      nameTransformations.push((name: string) => `<b>${name}</b>`);
-    }
-    if ("not null" in this.column.settings) {
-      nameTransformations.push((name: string) => name + " <i>NOT NULL</i>");
+    var name = this.column.name;
+    const settings = this.column.settings;
+    if ("pk" in settings || "primary key" in settings) {
+      name = `<b>${name}</b>`;
     }
 
-    const transformName = nameTransformations.reduce(
-      (a, b) => (name: string) => b(a(name)),
-      (n) => n
-    );
+    var type = `<i>${this.column.type}</i>`;
+    if ("not null" in settings) {
+      type = type + " <b>(!)</b>";
+    }
 
-    //TODO: make it a table that has two columns with the name and types
-    return `<TR><TD PORT="${this.port}" BGCOLOR="#e7e2dd">${transformName(
-      this.name
-    )}</TD></TR>`;
+    return `<TR><TD ALIGN="left" PORT="${this.port}" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">${name}<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font>${type}</font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>`;
   }
 }
 
@@ -90,9 +70,9 @@ class CompositeKeyRowRenderer implements RowRenderer {
   toDot(): string {
     return `<TR><TD PORT="${
       this.port
-    }" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>${this.columns.join(
+    }" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    ${this.columns.join(
       ", "
-    )}</i></font></TD></TR>`;
+    )}    </i></font></TD></TR>`;
   }
 }
 
@@ -274,6 +254,7 @@ class RefRenderer {
   }
 }
 
+//TODO: render enums
 class DbmlRenderer {
   private groups: GroupsRenderer;
   private refs: RefRenderer[];
