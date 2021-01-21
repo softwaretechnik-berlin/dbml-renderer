@@ -76,6 +76,7 @@ class CompositeKeyRowRenderer implements RowRenderer {
   }
 }
 
+//TODO: use indices to look for primary keys
 class TableRenderer {
   private table: Table;
   private columns: RowRenderer[] = [];
@@ -109,6 +110,7 @@ class TableRenderer {
   refAll(columns: string[]): string {
     //TODO: check that all columns exist
     //TODO: check that columns together are pk
+    //TODO: sort by the order that they appear on the table
     const name = columns.sort().join(",");
     const column = this.findColumn(name);
     if (!column) {
