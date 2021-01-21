@@ -19,6 +19,7 @@ class RowRenderer {
       .join(" ");
   }
   toDot(): string {
+    //TODO: make it a table that has two columns with the name and types
     return `<TR><TD PORT="${this.port}" ${this.attributes}>${this.label}</TD></TR>`;
   }
 }
