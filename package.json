@@ -12,6 +12,8 @@
   },
   "scripts": {
     "generate-parser": "pegjs src/dbml.pegjs",
+    "format": "prettier --write src/ package.json",
+    "format:check": "prettier --check src/ package.json",
     "build": "tsc",
     "test": "ava"
   },

@@ -68,7 +68,9 @@ const entriesTransformations = {
 
 class SyntaxError extends Error {
   constructor(pegJsError) {
-    super(`Could not parse input at line ${pegJsError.location.start.line}. ${pegJsError.message}`);
+    super(
+      `Could not parse input at line ${pegJsError.location.start.line}. ${pegJsError.message}`
+    );
     this.name = "SyntaxError";
     this.pegJsError = pegJsError;
   }
