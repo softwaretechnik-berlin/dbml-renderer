@@ -255,7 +255,16 @@ class RefRenderer {
   private toTable: TableRenderer;
 
   constructor(ref: Ref, tables: TableRendererMap) {
-    this.ref = ref;
+    this.ref =
+      ref.cardinality !== "<"
+        ? ref
+        : {
+            fromTable: ref.toTable,
+            fromColumns: ref.toColumns,
+            toTable: ref.fromTable,
+            toColumns: ref.fromColumns,
+            cardinality: ref.cardinality,
+          };
 
     this.fromTable = tables.get(ref.fromTable);
     this.toTable = tables.get(ref.toTable);
