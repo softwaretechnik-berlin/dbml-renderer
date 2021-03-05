@@ -148,9 +148,9 @@ class TableRenderer {
   }
 
   toDot(): string {
-    return `"${this.table.name}" [id=${
+    return `"${this.table.name}" [id="${
       this.table.name
-    };label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+    }";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       ${this.columns.map((column) => column.toDot()).join("\n")}
     </TABLE>>];`;
   }
