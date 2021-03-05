@@ -58,7 +58,7 @@ TableGroupItem =
   Comment
   / TableName
 
-Ref = "Ref"i _ ":" _ fromTable:TableName '.' fromColumns:RefColumns _ cardinality:Cardinality _ toTable:TableName '.' toColumns:RefColumns _ Comment?
+Ref = "Ref"i _ name:Name? _ ":" _ fromTable:TableName '.' fromColumns:RefColumns _ cardinality:Cardinality _ toTable:TableName '.' toColumns:RefColumns _ Comment?
   { return { type: "ref", cardinality, fromTable, fromColumns, toTable, toColumns }; }
 RefColumns =
   (name:ColumnName { return [name]; })
