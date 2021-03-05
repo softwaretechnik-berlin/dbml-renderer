@@ -1,0 +1,13 @@
+Table "[dbo].[Order]"{
+  "id" uniqueidentifier [not null, pk]
+  "client_fullname" nvarchar(261) [not null, Note: '''
+    This is the fullname of the client.
+    It should concatenate first and last names.
+  ''']
+}
+Table "[dbo].[OrderItem]"{
+  "id" uniqueidentifier [not null, pk]
+  "order_id" int [not null, pk]
+}
+
+Ref fk_order_item_to_order: "[dbo].[OrderItem]".(order_id) > "[dbo].[Order]".(id)[delete: Cascade, update: Cascade]

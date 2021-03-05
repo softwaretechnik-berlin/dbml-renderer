@@ -1,0 +1,52 @@
+digraph dbml {
+      rankdir=LR;
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
+
+      
+      
+      
+      "[dbo].[Order]" [id="[dbo].[Order]";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       [dbo].[Order]       </B></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>uniqueidentifier</i> <b>(!)</b></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">client_fullname<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>nvarchar(261)</i> <b>(!)</b></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"[dbo].[OrderItem]" [id="[dbo].[OrderItem]";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       [dbo].[OrderItem]       </B></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>uniqueidentifier</i> <b>(!)</b></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>order_id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i> <b>(!)</b></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+    
+      "[dbo].[OrderItem]":f0 -> "[dbo].[Order]":f0 [style=invis, weight=100, color=red]
+    "[dbo].[OrderItem]":f2:e -> "[dbo].[Order]":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      
+    }
