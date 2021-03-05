@@ -1,15 +1,13 @@
-Table "[graph].[ProcedureInstance]"{
-  "Procedure_fullname" nvarchar(261) [not null, Note: '''
-  (concat('[',[RepoObject_schema_name],'].[',[RepoObject_name],']'))
+Table "[dbo].[Order]"{
+  "id" uniqueidentifier [not null, pk]
+  "client_fullname" nvarchar(261) [not null, Note: '''
+    This is the fullname of the client.
+    It should concatenate first and last names.
   ''']
-  "Procedure_RepoObject_guid" uniqueidentifier [not null]
 }
-Table "[graph].[ProcedureInstance_S]"{
-  "Procedure_RepoObject_guid" uniqueidentifier [not null, pk]
-  "Instance" varchar(500) [not null, pk]
-  "Procedure_fullname" nvarchar(261) [not null, Note: '''
-  (concat('[',[RepoObject_schema_name],'].[',[RepoObject_name],']'))
-  ''']
+Table "[dbo].[OrderItem]"{
+  "id" uniqueidentifier [not null, pk]
+  "order_id" int [not null, pk]
 }
 
-Ref ref_name: "[graph].[ProcedureInstance]".(Procedure_fullname) > "[graph].[ProcedureInstance_S]".(Instance)[delete: Cascade, update: Cascade]
+Ref fk_order_item_to_order: "[dbo].[OrderItem]".(order_id) > "[dbo].[Order]".(id)[delete: Cascade, update: Cascade]
