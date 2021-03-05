@@ -108,7 +108,7 @@ class TableRenderer {
   }
 
   selfRef(): string {
-    return `${this.table.name}:${this.columns[0].port}`;
+    return `"${this.table.name}":${this.columns[0].port}`;
   }
 
   ref(columnName: string): string {
@@ -116,7 +116,7 @@ class TableRenderer {
     if (!column) {
       throw new Error(`Unknown column ${this.table.name}.${column}`);
     }
-    return `${this.table.name}:${column.port}`;
+    return `"${this.table.name}":${column.port}`;
   }
 
   private findColumn(columnName: string) {
@@ -298,7 +298,7 @@ class EnumRenderer {
   }
 
   selfRef(): string {
-    return `${this.enumType.name}:f0`;
+    return `"${this.enumType.name}":f0`;
   }
 
   toDot(): string {
