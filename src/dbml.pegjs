@@ -46,12 +46,11 @@ Index = columns:((name:ColumnName { return [name]; }) / CompositeIndex) _ settin
 CompositeIndex = "(" _ entries:(head:CompositeIndexEntry tail:(_ "," _ entry:CompositeIndexEntry { return entry; })* { return [head, ...tail]; } )? _ ")" { return entries; }
 CompositeIndexEntry = ColumnName / Function
 
-
 Settings = "[" pairs:SettingsPairs "]" { return pairs; }
 SettingsPairs = (head:Setting tail:(_ "," _ setting:Setting _ { return setting; })* { return [head, ...tail].reduce((a, b) => Object.assign(a,b), {}); })?
 Setting = key:SettingKey _ value:(":" _ v:SettingValue { return v; })? { return {[key]: value}; }
 SettingKey = [^,\]:]+ { return text().trim(); }
-SettingValue = SimpleString / ([^,\]]+ { return text().trim(); })
+SettingValue = MultiLineString / SimpleString / ([^,\]]+ { return text().trim(); })
 
 TableGroup = "TableGroup"i _ name:TableName _ "{" __ tables:TableGroupItems Comment? __ "}" { return { type: "group", name, tables: tables || [] }; }
 TableGroupItems = (head:TableGroupItem tail:(EOL __ item:TableGroupItem { return item; })* { return [head, ...tail]; })?
