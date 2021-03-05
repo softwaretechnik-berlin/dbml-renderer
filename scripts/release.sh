@@ -6,6 +6,7 @@ cd "$(dirname "$0")/.."
 
 npm install
 npm run generate-parser
+npm run formats
 npm run format:check
 npm run build
 npm test
