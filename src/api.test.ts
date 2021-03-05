@@ -34,7 +34,7 @@ dbmlFiles.forEach(([dbmlFilename, dbmlFile]) => {
     const expectedOutput = readFileSync(`${dbmlFile}.dot`, "utf-8");
     const currentOutput = readFileSync(outputFile("dot"), "utf-8");
 
-    t.is(currentOutput, expectedOutput);
+    t.true(currentOutput === expectedOutput);
   });
 });
 
