@@ -54,11 +54,11 @@ export type Ref = {
 export type Cardinality = ">" | "<" | "-";
 
 export type Options = {
-  [string]: string;
+  [name: string]: string;
 };
 
 export type Settings = {
-  [string]: string;
+  [name: string]: string;
 };
 
 export default function parse(input: string): DBML;

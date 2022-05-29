@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 import fs from "fs";
 import render, { Format } from "./renderer";
 
-const args = yargs(process.argv.slice(2))
+const args = yargs(hideBin(process.argv))
   .scriptName("dbml-renderer")
   .usage("Usage: $0 [options]")
   .example("$0 -i schema.dbml", "Render the given file and output to stdout")
@@ -42,11 +43,11 @@ const args = yargs(process.argv.slice(2))
         ? console.log
         : (content: string) => fs.writeFileSync(arg, content);
     },
-  }).argv;
+  }).parseSync();
 
 try {
   args.output(render(args.input, args.format));
 } catch (e) {
-  console.error(e.message);
+  console.error((e as any).message || e);
   process.exit(1);
 }
