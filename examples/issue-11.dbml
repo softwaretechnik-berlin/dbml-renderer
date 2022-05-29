@@ -10,3 +10,18 @@ Table orders {
     id int [pk, increment]
     status order_status
 }
+
+
+// https://github.com/softwaretechnik-berlin/dbml-renderer/issues/11#issuecomment-1050266563
+
+Enum "dbml_test_string_enum" {
+  Choice1
+  Choice2
+  Choice3
+}
+
+Enum dbml_test_number_enum {
+  1
+  2
+  3
+}

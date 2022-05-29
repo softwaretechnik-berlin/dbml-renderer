@@ -12,6 +12,18 @@ digraph dbml {
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    Shipped    </i></font></TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    Delivered    </i></font></TD></TR>
     </TABLE>>];
+"dbml_test_string_enum" [id=dbml_test_string_enum;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       dbml_test_string_enum       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    Choice1    </i></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    Choice2    </i></font></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    Choice3    </i></font></TD></TR>
+    </TABLE>>];
+"dbml_test_number_enum" [id=dbml_test_number_enum;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       dbml_test_number_enum       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    1    </i></font></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    2    </i></font></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    3    </i></font></TD></TR>
+    </TABLE>>];
       
       
       "orders" [id="orders";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
