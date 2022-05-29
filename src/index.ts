@@ -43,7 +43,8 @@ const args = yargs(hideBin(process.argv))
         ? console.log
         : (content: string) => fs.writeFileSync(arg, content);
     },
-  }).parseSync();
+  })
+  .parseSync();
 
 try {
   args.output(render(args.input, args.format));
