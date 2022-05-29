@@ -30,7 +30,7 @@
     "typescript": "^4.7.2"
   },
   "dependencies": {
-    "@aduh95/viz.js": "^3.6.0",
+    "@aduh95/viz.js": "3.4.0",
     "yargs": "^17.5.1"
   },
   "bugs": {

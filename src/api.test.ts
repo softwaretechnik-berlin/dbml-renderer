@@ -29,16 +29,16 @@ dbmlFiles.forEach(([dbmlFilename, dbmlFile]) => {
 
       t.pass();
     });
-  });
 
-  test(`${dbmlFile} dot output is consistent`, async (t) => {
-    const expectedOutput = readFile(`${dbmlFile}.dot`, "utf-8");
-    const currentOutput = readFile(outputFile("dot"), "utf-8");
+    test(`${dbmlFile} ${format} output is consistent`, async (t) => {
+      const expectedOutput = readFile(`${dbmlFile}.${format}`, "utf-8");
+      const currentOutput = readFile(outputFile(format), "utf-8");
 
-    await t.notThrowsAsync(expectedOutput);
-    await t.notThrowsAsync(currentOutput);
+      await t.notThrowsAsync(expectedOutput);
+      await t.notThrowsAsync(currentOutput);
 
-    t.deepEqual(await currentOutput, await expectedOutput);
+      t.deepEqual(await currentOutput, await expectedOutput);
+    });
   });
 });
 
