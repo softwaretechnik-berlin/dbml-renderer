@@ -1,0 +1,5 @@
+Table galleries {
+  gallery_id "int(3) unsigned zerofill" [pk, not null, increment]
+  title varchar(255) [not null]
+  comment text [not null]
+}

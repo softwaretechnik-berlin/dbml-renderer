@@ -11,16 +11,16 @@ DBML =
 
 Project = "Project"i _ ProjectName? _ "{" __ options:Options Comment? __ "}"
   { return { type: "project", options } }
-ProjectName = String / Name
+ProjectName = Name
 Options = (head:Option tail:(EOL __ opt:Option { return opt; })* { return [head, ...tail].reduce((a, b) => Object.assign(a, b), {}); })?
 Option = key:OptionKey _ ":" _ value:OptionValue _ Comment?
   { return { [key]: value } }
 OptionKey = Name
-OptionValue = MultiLineString / SimpleString
+OptionValue = AnyString
 
-Table = "Table"i _ name: TableName _ alias:TableAlias? _ "{" __ items:TableItems Comment? __ "}"
+Table = "Table"i _ name:TableName _ alias:TableAlias? _ "{" __ items:TableItems Comment? __ "}"
   { return { type: "table", name, items: items || [], alias }}
-TableName =  String / Name
+TableName = Name
 TableAlias = "as" _ alias:Name { return alias; }
 TableItems = (head:TableItem tail:(EOL __ item:TableItem { return item; })* { return [head, ...tail]; })?
 TableItem =
@@ -33,8 +33,8 @@ TableItem =
 TableSettings = settings:Settings { return { item: "settings", settings }; }
 
 Column = name:ColumnName _ type:ColumnType _ settings:Settings? { return { item: "column", name, type, settings: settings || {} } }
-ColumnName = Name / String
-ColumnType = [a-zA-Z_()0-9,]+ { return text(); }
+ColumnName = Name
+ColumnType = prefix:Name _ suffix:$('(' RawName? ')')? { return prefix + suffix }
 
 Indices = "Indexes"i _ "{" __ indices:IndicesList Comment? __ "}"
    { return { item: "indices", indices }; }
@@ -50,7 +50,7 @@ Settings = "[" pairs:SettingsPairs "]" { return pairs; }
 SettingsPairs = (head:Setting tail:(_ "," _ setting:Setting _ { return setting; })* { return [head, ...tail].reduce((a, b) => Object.assign(a,b), {}); })?
 Setting = key:SettingKey _ value:(":" _ v:SettingValue { return v; })? { return {[key]: value}; }
 SettingKey = [^,\]:]+ { return text().trim(); }
-SettingValue = MultiLineString / SimpleString / ([^,\]]+ { return text().trim(); })
+SettingValue = AnyString / Function / ([^,\]]+ { return text().trim(); })
 
 TableGroup = "TableGroup"i _ name:TableName _ "{" __ tables:TableGroupItems Comment? __ "}" { return { type: "group", name, tables: tables || [] }; }
 TableGroupItems = (head:TableGroupItem tail:(EOL __ item:TableGroupItem { return item; })* { return [head, ...tail]; })?
@@ -73,13 +73,15 @@ EnumValue =
   name:Name _ settings:Settings? { return { name, settings: settings || {} }; }
   / Comment
 
-Name = [a-zA-Z_][a-zA-Z_0-9]* { return text(); }
+Name = RawName / QuotedName
+RawName = $[a-zA-Z0-9_]+
+QuotedName = '"' content:$[^"\n\r]* '"' { return content; }
 
-AnyString = MultiLineString / SimpleString / String
-String = '"' content:[^"\n\r]* '"' { return content.join(""); }
-SimpleString = "'" content:[^'\n\r]* "'" { return content.join(""); }
+AnyString = MultiLineString / SingleQuotedString / DoubleQuotedString
 MultiLineString = "'''" content:(("'''" { return ""; }) / MultiLineStringContent) { return content; }
 MultiLineStringContent = head:. tail:(!"'''" c:. { return c; })* "'''" { return [head, ...tail].join(""); }
+SingleQuotedString = "'" content:($[^'\\]+ / "\\'" { return "'" } / [\\])* "'" { return content.join(""); }
+DoubleQuotedString = '"' content:($[^"\\]+ / '\\"' { return '"' } / [\\])* "'" { return content.join(""); }
 
 Function = '`' [^`]* '`' { return text(); }
 

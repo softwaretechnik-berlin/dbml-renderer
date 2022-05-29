@@ -1,0 +1,6 @@
+Table issues {
+    number integer [default: 9]
+    title varchar [default: 'Question: How to escape quotes?']
+
+    Note: 'The reporter of #9 didn\'t give a DBML sample, but they had trouble escaping the word "Farmer\'s" in a single-quoted string used as a note.'
+}

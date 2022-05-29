@@ -1,0 +1,12 @@
+Enum order_status {
+    "Abandoned Cart"
+    Submitted
+    Paid
+    Shipped
+    Delivered
+}
+
+Table orders {
+    id int [pk, increment]
+    status order_status
+}

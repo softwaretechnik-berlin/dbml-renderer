@@ -1,0 +1,10 @@
+Table Users {
+  UserKey random_id [unique, default: `{"Format":"0U","Prefix":"","Length":"12"}`]
+  FirstName string
+  LastName string
+  FullName formula(string) [default: `CONVERT(NVarChar(255), (CASE WHEN [@field:LastName] = '' THEN '' ELSE [@field:LastName] + ', ' END + FirstName))`]
+  Email string
+  Username string [unique]
+  Created timestamp [default: `{"OnInsert":"True","OnUpdate":"False","TimeZone":"UTC"}`]
+  LastUpdated timestamp [default: `{"OnInsert":"True","OnUpdate":"True","TimeZone":"UTC"}`]
+}
