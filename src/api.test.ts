@@ -1,6 +1,7 @@
 import render from "./api";
 import test from "ava";
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from "fs";
+import { readFile } from "fs/promises";
 import { join } from "path";
 import { Format } from "./renderer";
 
@@ -30,11 +31,14 @@ dbmlFiles.forEach(([dbmlFilename, dbmlFile]) => {
     });
   });
 
-  test(`${dbmlFile} dot output is consistent`, (t) => {
-    const expectedOutput = readFileSync(`${dbmlFile}.dot`, "utf-8");
-    const currentOutput = readFileSync(outputFile("dot"), "utf-8");
+  test(`${dbmlFile} dot output is consistent`, async (t) => {
+    const expectedOutput = readFile(`${dbmlFile}.dot`, "utf-8");
+    const currentOutput = readFile(outputFile("dot"), "utf-8");
 
-    t.deepEqual(currentOutput, expectedOutput);
+    await t.notThrowsAsync(expectedOutput);
+    await t.notThrowsAsync(currentOutput);
+
+    t.deepEqual(await currentOutput, await expectedOutput);
   });
 });
 
