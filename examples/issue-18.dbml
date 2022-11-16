@@ -1,0 +1,7 @@
+Table "Source" {
+  "id" "int" [pk]
+  "Target" "int" [ref: < "Target"."id"]
+}
+Table "Target" {
+  "id" "int" [pk]
+}

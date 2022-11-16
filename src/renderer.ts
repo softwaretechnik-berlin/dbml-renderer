@@ -391,15 +391,22 @@ class DbmlRenderer {
       table.columns.forEach((column) => {
         if ("ref" in column.settings) {
           const ref: string = column.settings["ref"];
-          const [_, cardinality, toTable, toColumn] = ref.split(
-            /([-<>])\s+([\w_]+)\.([\w_]+)/
+          const [
+            _,
+            cardinality,
+            toTableUnquoted,
+            toTableQuoted,
+            toColumnUnquoted,
+            toColumnQuoted,
+          ] = ref.split(
+            /([-<>])\s+(?:([\w_]+)|"([^"\\]+)")\.(?:([\w_]+)|"([^"\\]+)")/
           );
           extraRefs.push({
             cardinality: cardinality as Cardinality,
             fromTable: table.name,
             fromColumns: [column.name],
-            toTable,
-            toColumns: [toColumn],
+            toTable: toTableUnquoted || toTableQuoted,
+            toColumns: [toColumnUnquoted || toColumnQuoted],
           });
         }
       });
