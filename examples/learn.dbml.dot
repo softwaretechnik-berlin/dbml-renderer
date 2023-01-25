@@ -5,14 +5,14 @@ digraph dbml {
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
       "module_type" [id=module_type;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       module_type       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       module_type       </B></font></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    lesson    </i></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    assignment    </i></font></TD></TR>
     </TABLE>>];
       
       
       "User" [id="User";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       User       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       User       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -63,7 +63,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "User" [id="User";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       User       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       User       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -114,7 +114,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "UserPreferences" [id="UserPreferences";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPreferences       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPreferences       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -157,7 +157,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "Path" [id="Path";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Path       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Path       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -216,7 +216,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "UserPath" [id="UserPath";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPath       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPath       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -259,7 +259,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "Concept" [id="Concept";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Concept       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Concept       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -302,7 +302,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "UserConcepts" [id="UserConcepts";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserConcepts       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserConcepts       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -329,7 +329,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "Module" [id="Module";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Module       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Module       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -380,7 +380,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "Module" [id="Module";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Module       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Module       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -431,7 +431,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "UserModule" [id="UserModule";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserModule       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserModule       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -466,7 +466,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "Assignment" [id="Assignment";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Assignment       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Assignment       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -493,7 +493,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "AssignmentFile" [id="AssignmentFile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       AssignmentFile       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       AssignmentFile       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -544,7 +544,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "AssignmentFile" [id="AssignmentFile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       AssignmentFile       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       AssignmentFile       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -595,7 +595,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "Lesson" [id="Lesson";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Lesson       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Lesson       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -614,7 +614,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "Lesson" [id="Lesson";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Lesson       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Lesson       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -633,7 +633,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "StorySection" [id="StorySection";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       StorySection       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       StorySection       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -676,7 +676,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "StorySection" [id="StorySection";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       StorySection       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       StorySection       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -719,7 +719,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "Character" [id="Character";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Character       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Character       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -746,7 +746,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "Friends" [id="Friends";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Friends       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Friends       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -773,7 +773,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "FriendRequests" [id="FriendRequests";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       FriendRequests       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       FriendRequests       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>

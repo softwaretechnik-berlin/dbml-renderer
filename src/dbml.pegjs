@@ -9,7 +9,7 @@ DBML =
   / Enum
   / NewLine {}
 
-Project = "Project"i _ ProjectName? _ "{" __ options:Options Comment? __ "}"
+Project = "Project"i _ ProjectName? __ "{" __ options:Options Comment? __ "}"
   { return { type: "project", options } }
 ProjectName = Name
 Options = (head:Option tail:(EOL __ opt:Option { return opt; })* { return [head, ...tail].reduce((a, b) => Object.assign(a, b), {}); })?
@@ -18,8 +18,12 @@ Option = key:OptionKey _ ":" _ value:OptionValue _ Comment?
 OptionKey = Name
 OptionValue = AnyString
 
-Table = "Table"i _ name:TableName _ alias:TableAlias? _ "{" __ items:TableItems Comment? __ "}"
-  { return { type: "table", name, items: items || [], alias }}
+SchemaName = Name
+FullTableName = schema:(SchemaName ".")? name:TableName
+  { return Array.isArray(schema) && schema.length > 0 ? schema[0]+"."+name : name }
+
+Table = "Table"i _ schema:(SchemaName ".")? name:TableName _ alias:TableAlias? _ "{" __ items:TableItems Comment? __ "}"
+  { return { type: "table", name: (Array.isArray(schema) && schema.length > 0 ? schema[0]+"." : "") + name, items: items || [], alias }}
 TableName = Name
 TableAlias = "as" _ alias:Name { return alias; }
 TableItems = (head:TableItem tail:(EOL __ item:TableItem { return item; })* { return [head, ...tail]; })?
@@ -56,10 +60,10 @@ TableGroup = "TableGroup"i _ name:TableName _ "{" __ tables:TableGroupItems Comm
 TableGroupItems = (head:TableGroupItem tail:(EOL __ item:TableGroupItem { return item; })* { return [head, ...tail]; })?
 TableGroupItem =
   Comment
-  / TableName
+  / FullTableName
 
-Ref = "Ref"i _ name:Name? _ ":" _ fromTable:TableName '.' fromColumns:RefColumns _ cardinality:Cardinality _ toTable:TableName '.' toColumns:RefColumns _ settings:Settings? Comment?
-  { return { type: "ref", cardinality, fromTable, fromColumns, toTable, toColumns }; }
+Ref = "Ref"i _ name:Name? _ ":" _ fromTable:(SchemaName '.' TableName '.' / TableName '.') fromColumns:RefColumns _ cardinality:Cardinality _ toTable:(SchemaName '.' TableName '.' / TableName '.') toColumns:RefColumns _ settings:Settings? Comment?
+  { return { type: "ref", cardinality, fromTable: fromTable.length > 3 ? fromTable[0]+"."+fromTable[2] : fromTable[0], fromColumns, toTable: toTable.length > 3 ? toTable[0]+"."+toTable[2] : toTable[0], toColumns }; }
 RefColumns =
   (name:ColumnName { return [name]; })
   / CompositeKey

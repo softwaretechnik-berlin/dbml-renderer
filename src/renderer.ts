@@ -27,7 +27,7 @@ class TableNameRowRenderer implements RowRenderer {
   }
 
   toDot(): string {
-    return `<TR><TD PORT="${this.port}" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       ${this.table.name}       </B></font></TD></TR>`;
+    return `<TR><TD PORT="${this.port}" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       ${this.table.name}       </B></font></TD></TR>`;
   }
 }
 
@@ -305,7 +305,7 @@ class EnumRenderer {
     return `"${this.enumType.name}" [id=${
       this.enumType.name
     };label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       ${
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       ${
       this.enumType.name
     }       </B></font></TD></TR>
     ${this.enumType.values
@@ -399,7 +399,7 @@ class DbmlRenderer {
             toColumnUnquoted,
             toColumnQuoted,
           ] = ref.split(
-            /([-<>])\s+(?:([\w_]+)|"([^"\\]+)")\.(?:([\w_]+)|"([^"\\]+)")/
+            /([-<>])\s+(?:([\w\._]+)|"([^"\\\.]+)")\.(?:([\w_]+)|"([^"\\]+)")/
           );
           extraRefs.push({
             cardinality: cardinality as Cardinality,

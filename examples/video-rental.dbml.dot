@@ -8,7 +8,7 @@ digraph dbml {
       
       
       "staff" [id="staff";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       staff       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       staff       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -99,7 +99,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "store" [id="store";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       store       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       store       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -134,7 +134,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "payment" [id="payment";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payment       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payment       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -193,7 +193,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "rental" [id="rental";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       rental       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       rental       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -252,7 +252,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "country" [id="country";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       country       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       country       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -279,7 +279,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "city" [id="city";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       city       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       city       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -314,7 +314,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "address" [id="address";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       address       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       address       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -381,7 +381,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "customer" [id="customer";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       customer       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       customer       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -456,7 +456,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "category" [id="category";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       category       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       category       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -483,7 +483,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "film_category" [id="film_category";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film_category       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film_category       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -510,7 +510,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "language" [id="language";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       language       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       language       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -537,7 +537,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "film_text" [id="film_text";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film_text       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film_text       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -572,7 +572,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "actor" [id="actor";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       actor       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       actor       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -607,7 +607,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "film" [id="film";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -714,7 +714,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "film_actor" [id="film_actor";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film_actor       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       film_actor       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -749,7 +749,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "inventory" [id="inventory";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       inventory       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       inventory       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>

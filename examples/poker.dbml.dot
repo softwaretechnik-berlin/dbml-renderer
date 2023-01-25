@@ -5,13 +5,13 @@ digraph dbml {
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
       "states" [id=states;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       states       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       states       </B></font></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    OPEN    </i></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    CLOSED    </i></font></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    VOID    </i></font></TD></TR>
     </TABLE>>];
 "action_types" [id=action_types;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       action_types       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       action_types       </B></font></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    BLIND    </i></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    FOLD    </i></font></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    CHECK    </i></font></TD></TR>
@@ -20,7 +20,7 @@ digraph dbml {
       
       
       "groups" [id="groups";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       groups       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       groups       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -63,7 +63,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "payment_types" [id="payment_types";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payment_types       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payment_types       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -98,7 +98,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "payments" [id="payments";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payments       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       payments       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -133,7 +133,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "roles" [id="roles";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       roles       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       roles       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -152,7 +152,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "users" [id="users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -219,7 +219,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "transactions" [id="transactions";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       transactions       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       transactions       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -254,7 +254,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "tables" [id="tables";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       tables       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       tables       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -297,7 +297,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "players" [id="players";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       players       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       players       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -356,7 +356,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "players_active" [id="players_active";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       players_active       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       players_active       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -383,7 +383,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "hands" [id="hands";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       hands       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       hands       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -442,7 +442,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "hands_active" [id="hands_active";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       hands_active       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       hands_active       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -469,7 +469,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "pots" [id="pots";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       pots       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       pots       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -504,7 +504,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "betting_rounds" [id="betting_rounds";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       betting_rounds       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       betting_rounds       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -571,7 +571,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "betting_rounds_active" [id="betting_rounds_active";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       betting_rounds_active       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       betting_rounds_active       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -598,7 +598,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "bets" [id="bets";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       bets       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       bets       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -641,7 +641,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "holdings" [id="holdings";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       holdings       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       holdings       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -692,7 +692,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "cards" [id="cards";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       cards       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       cards       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -711,7 +711,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "holdings_to_cards" [id="holdings_to_cards";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       holdings_to_cards       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       holdings_to_cards       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -738,7 +738,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "actions" [id="actions";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       actions       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       actions       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>

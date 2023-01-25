@@ -5,27 +5,27 @@ digraph dbml {
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
       "job_category" [id=job_category;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       job_category       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       job_category       </B></font></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    full_time    </i></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    part_time    </i></font></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    intern    </i></font></TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    on_campus    </i></font></TD></TR>
     </TABLE>>];
 "apply_status" [id=apply_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       apply_status       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       apply_status       </B></font></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    pending    </i></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    reviewed    </i></font></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    declined    </i></font></TD></TR>
     </TABLE>>];
 "eligibility_status" [id=eligibility_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       eligibility_status       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       eligibility_status       </B></font></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    all    </i></font></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    special_major    </i></font></TD></TR>
     </TABLE>>];
       
       
       "user" [id="user";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       user       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       user       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -84,7 +84,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "profile" [id="profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       profile       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       profile       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -111,7 +111,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "basic_profile" [id="basic_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       basic_profile       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       basic_profile       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -194,7 +194,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "education_profile" [id="education_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       education_profile       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       education_profile       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -253,7 +253,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "experience_profile" [id="experience_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       experience_profile       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       experience_profile       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -320,7 +320,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "company" [id="company";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       company       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       company       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -387,7 +387,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "job" [id="job";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       job       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       job       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -462,7 +462,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "job_application" [id="job_application";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       job_application       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       job_application       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -521,7 +521,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "event" [id="event";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       event       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       event       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
@@ -596,7 +596,7 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
 "event_regisiteration" [id="event_regisiteration";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       event_regisiteration       </B></font></TD></TR>
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       event_regisiteration       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>

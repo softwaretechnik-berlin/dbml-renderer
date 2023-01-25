@@ -1,3 +1,4 @@
 /node_modules/
 /.test-output/
 /.compare-test-output.html
+.idea
