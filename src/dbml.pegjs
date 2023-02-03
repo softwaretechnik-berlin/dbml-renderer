@@ -1,7 +1,7 @@
 File = all:DBML+ { return all.filter(e => e); }
 
 DBML =
-  Comment
+  comment: Comment { return { "comment": comment } }
   / Project
   / Table
   / TableGroup
@@ -89,7 +89,10 @@ DoubleQuotedString = '"' content:($[^"\\]+ / '\\"' { return '"' } / [\\])* "'" {
 
 Function = '`' [^`]* '`' { return text(); }
 
-Comment = _ "//" _ comment:LineOfText { return { comment }; }
+Comment = SingleLineComment / MultiLineComment
+SingleLineComment = _ "//" _ comment:LineOfText { return { comment }; }
+MultiLineComment = "/*" comment:(("*/" { return ""; }) / MultiLineCommentContent) { return comment; }
+MultiLineCommentContent = head:. tail:(!"*/" c:. { return c; })* "*/" { return [head, ...tail].join(""); }
 LineOfText = text:$([^\n\r]*)
 EOL = NewLine / (Comment NewLine) / EOF
 NewLine = '\n' / '\r' '\n'
