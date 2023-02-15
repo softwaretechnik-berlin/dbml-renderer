@@ -22,8 +22,8 @@ SchemaName = Name
 FullTableName = schema:(SchemaName ".")? name:TableName
   { return Array.isArray(schema) && schema.length > 0 ? schema[0]+"."+name : name }
 
-Table = "Table"i _ schema:(SchemaName ".")? name:TableName _ alias:TableAlias? _ "{" __ items:TableItems Comment? __ "}"
-  { return { type: "table", name: (Array.isArray(schema) && schema.length > 0 ? schema[0]+"." : "") + name, items: items || [], alias }}
+Table = "Table"i _ schema:(SchemaName ".")? name:TableName _ alias:TableAlias? _ settings:TableSettings? _ "{" __ items:TableItems Comment? __ "}"
+  { return { type: "table", name: (Array.isArray(schema) && schema.length > 0 ? schema[0]+"." : "") + name, items: items || [], alias, settings }}
 TableName = Name
 TableAlias = "as" _ alias:Name { return alias; }
 TableItems = (head:TableItem tail:(EOL __ item:TableItem { return item; })* { return [head, ...tail]; })?
@@ -31,10 +31,9 @@ TableItem =
   Comment
   / Column
   / Indices
-  / TableSettings
   / option:Option { return { item: "option", option }; }
 
-TableSettings = settings:Settings { return { item: "settings", settings }; }
+TableSettings = settings:Settings { return settings; }
 
 Column = name:ColumnName _ type:ColumnType _ settings:Settings? { return { item: "column", name, type, settings: settings || {} } }
 ColumnName = Name
