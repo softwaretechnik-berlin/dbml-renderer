@@ -22,5 +22,4 @@ if [[ "${1:-}" == "--release" ]]; then
     git push
     git push --tags
     npm publish
-    #TODO: make a github release
 fi

@@ -14,7 +14,9 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - name: release
+      - name: NPM
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: ./scripts/build.sh --release
+      - name: GitHub
+        uses: softprops/action-gh-release@v1

@@ -16,5 +16,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: build
+      - name: Build and Test
         run: ./scripts/build.sh
