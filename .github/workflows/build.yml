@@ -1,3 +1,5 @@
+name: Build
+
 on:
   push:
     branches:
@@ -14,17 +16,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: setup
-        run: npm ci
-      - name: test
-        run: npm test
       - name: build
-        run: npm run build
-      - name: check files
-        run: |-
-          npm run generate-parser
-          npm run format
-          if `git status --porcelain | grep -v -e "^[MADR]\s"`; then
-            echo "The working copy has unstaged changes"
-            exit 1
-          fi
+        run: ./scripts/build.sh
