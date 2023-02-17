@@ -58,3 +58,5 @@ cp .test-output/* examples/
 
 To aid the visual inspection, you can open `.compare-test-output.html` to
 compare side-by-side each generated SVG.
+
+blah
