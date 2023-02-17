@@ -1,4 +1,11 @@
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,9 +20,11 @@ jobs:
         run: npm test
       - name: build
         run: npm run build
-      - name: check generated files
+      - name: check files
         run: |-
           npm run generate-parser
-          git status --porcelain | grep -v -e "^[MADR]\s"
-      - name: check format
-        run: npm run format:check
+          npm run format
+          if `git status --porcelain | grep -v -e "^[MADR]\s"`; then
+            echo "The working copy has unstaged changes"
+            exit 1
+          fi
