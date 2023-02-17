@@ -164,7 +164,7 @@ class TableRenderer {
       this.table.options.Note === undefined
         ? ""
         : `tooltip="${this.table.name}\\n${this.table.options.Note.replace(
-            '"',
+            /"/g,
             '\\"'
           )}";`;
     return `"${this.table.name}" [id="${

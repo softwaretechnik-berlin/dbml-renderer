@@ -165,7 +165,7 @@ function peg$parse(input, options) {
       return all.filter((e) => e);
     },
     peg$c1 = function (comment) {
-      return { comment: comment };
+      return { comment };
     },
     peg$c2 = function () {},
     peg$c3 = "project",

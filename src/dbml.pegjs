@@ -1,7 +1,7 @@
 File = all:DBML+ { return all.filter(e => e); }
 
 DBML =
-  comment: Comment { return { "comment": comment } }
+  comment: Comment { return { comment } }
   / Project
   / Table
   / TableGroup
