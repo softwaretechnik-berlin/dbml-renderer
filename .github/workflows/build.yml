@@ -1,0 +1,21 @@
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: setup
+        run: npm ci
+      - name: test
+        run: npm test
+      - name: build
+        run: npm run build
+      - name: check generated files
+        run: |-
+          npm run generate-parser
+          git status --porcelain | grep -v -e "^[MADR]\s"
+      - name: check format
+        run: npm run format:check

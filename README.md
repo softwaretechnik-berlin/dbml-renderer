@@ -1,4 +1,4 @@
-[![npm version](https://img.shields.io/npm/v/@softwaretechnik/dbml-renderer)](https://www.npmjs.com/package/@softwaretechnik/dbml-renderer)
+[![npm version](https://img.shields.io/npm/v/@softwaretechnik/dbml-renderer)](https://www.npmjs.com/package/@softwaretechnik/dbml-renderer) [![.github/workflows/build.yml](https://github.com/softwaretechnik-berlin/dbml-renderer/actions/workflows/build.yml/badge.svg)](https://github.com/softwaretechnik-berlin/dbml-renderer/actions/workflows/build.yml)
 
 `dbml-renderer` renders [DBML](https://www.dbml.org/home/) files to SVG images.
 It provides a command line interface, so that you can easily use it in your
