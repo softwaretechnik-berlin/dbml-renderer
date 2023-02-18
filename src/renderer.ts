@@ -17,6 +17,11 @@ interface RowRenderer {
   toDot(): string;
 }
 
+function escapeString(text: string): string {
+  text = JSON.stringify(text);
+  return text.substring(1, text.length - 1);
+}
+
 class TableNameRowRenderer implements RowRenderer {
   readonly name = "__TABLE__";
   readonly port = "f0";
@@ -163,9 +168,8 @@ class TableRenderer {
     const tooltip =
       this.table.options.Note === undefined
         ? ""
-        : `tooltip="${this.table.name}\\n${this.table.options.Note.replace(
-            /"/g,
-            '\\"'
+        : `tooltip="${this.table.name}\\n${escapeString(
+            this.table.options.Note
           )}";`;
     return `"${this.table.name}" [id="${
       this.table.name
