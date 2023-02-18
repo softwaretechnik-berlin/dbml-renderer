@@ -14,10 +14,12 @@ if git status --porcelain | grep -v -e "^[MADR]\s"; then
     exit 1
 fi
 
-if [[ "${0:-}" == "--release" ]]; then
+if [[ "${1:-}" == "--release" ]]; then
+    git config --global user.email "info@softwaretechnik.berlin"
+    git config --global user.name "Softwaretechnik Berlin"
+
     npm version patch
     git push
     git push --tags
     npm publish
-    #TODO: make a github release
 fi
