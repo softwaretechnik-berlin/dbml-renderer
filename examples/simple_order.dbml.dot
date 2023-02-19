@@ -6,7 +6,6 @@ digraph dbml {
 
       
       
-      
       "[dbo].[Order]" [id="[dbo].[Order]";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       [dbo].[Order]       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
@@ -45,7 +44,6 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-    
       "[dbo].[OrderItem]":f0 -> "[dbo].[Order]":f0 [style=invis, weight=100, color=red]
     "[dbo].[OrderItem]":f2:e -> "[dbo].[Order]":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
       

@@ -6,7 +6,6 @@ digraph dbml {
 
       
       
-      
       "staff" [id="staff";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       staff       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
@@ -783,7 +782,6 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-    
       "store":f0 -> "staff":f0 [style=invis, weight=100, color=red]
     "store":f1:e -> "staff":f7:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
 "staff":f0 -> "store":f0 [style=invis, weight=100, color=red]
