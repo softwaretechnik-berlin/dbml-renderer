@@ -2,7 +2,7 @@ import test from "ava";
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import { readFile } from "fs/promises";
 import { join } from "path";
-import render from "./api";
+import { run } from "./api";
 import { parse } from "./dbml";
 import { Format } from "./renderer";
 
@@ -29,7 +29,7 @@ dbmlFiles.forEach(([dbmlFilename, dbmlFile]) => {
 
   formats.forEach((format) => {
     test(`${dbmlFile} can be converted to ${format}`, (t) => {
-      const output = render(input, format);
+      const output = run(input, format);
 
       writeFileSync(outputFile(format), output, "utf-8");
 

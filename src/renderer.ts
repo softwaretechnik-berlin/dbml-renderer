@@ -1,20 +1,36 @@
-import { parse } from "./parser";
+import { tableName } from "./common";
+import { Cardinality, Column, Settings, Table, TableIndices } from "./types";
 import {
-  Cardinality,
-  Column,
-  Entity,
-  Enum,
-  Output,
-  Ref,
-  Settings,
-  Table,
-  TableGroup,
-  TableIndices,
-  TableOption,
-  TableRef,
-} from "./types";
+  NormalizedEnum,
+  NormalizedGroup,
+  NormalizedOutput,
+  NormalizedRef,
+  NormalizedTable,
+} from "./verifier";
 
 export type Format = "dot" | "svg";
+
+export const render = (input: NormalizedOutput, format: Format): string => {
+  const dotString = dot(input);
+
+  if (format === "dot") {
+    // viz.js can return the dot format too, but it needs node.js' global
+    // 'process' object to be present, but it isn't available in graal's
+    // script engine.
+    return dotString;
+  }
+  const vizRenderStringSync = require("@aduh95/viz.js/sync");
+
+  return vizRenderStringSync(dotString, {
+    engine: "dot",
+    format: format,
+  });
+};
+
+const dot = (input: NormalizedOutput): string => {
+  const dbml = new DbmlRenderer(input);
+  return dbml.toDot();
+};
 
 interface RowRenderer {
   readonly name: string;
@@ -22,18 +38,15 @@ interface RowRenderer {
   toDot(): string;
 }
 
-const escapeString = (text: string): string => {
-  text = JSON.stringify(text);
-  return text.substring(1, text.length - 1);
-};
-
-class TableNameRowRenderer implements RowRenderer {
+class TableNameRenderer implements RowRenderer {
+  private table: Table;
+  private displayName: string;
   readonly name = "__TABLE__";
   readonly port = "f0";
-  private table: Table;
 
-  constructor(table: Table) {
+  constructor(table: Table, displayName: string) {
     this.table = table;
+    this.displayName = displayName;
   }
 
   toDot(): string {
@@ -50,11 +63,11 @@ class TableNameRowRenderer implements RowRenderer {
         fontColor = "#000000";
       }
     }
-    return `<TR><TD PORT="${this.port}" BGCOLOR="${tableColor}"><font color="${fontColor}"><B>       ${this.table.name}       </B></font></TD></TR>`;
+    return `<TR><TD PORT="${this.port}" BGCOLOR="${tableColor}"><font color="${fontColor}"><B>       ${this.displayName}       </B></font></TD></TR>`;
   }
 }
 
-class ColumnRowRenderer implements RowRenderer {
+class ColumnRenderer implements RowRenderer {
   private indices: TableIndices;
   readonly actual: Column;
   readonly name: string;
@@ -70,6 +83,10 @@ class ColumnRowRenderer implements RowRenderer {
     ) as TableIndices) || { type: "indices", indices: [] };
   }
 
+  dataType(): string {
+    return this.actual.data;
+  }
+
   toDot(): string {
     const relatedIndexSettings = this.indices.indices
       .filter((index) => index.columns.includes(this.actual.name))
@@ -83,7 +100,7 @@ class ColumnRowRenderer implements RowRenderer {
       name = `<b>${name}</b>`;
     }
 
-    let type = `<i>${this.actual.data}</i>`;
+    let type = `<i>${this.dataType()}</i>`;
     if ("not null" in settings) {
       type = type + " <b>(!)</b>";
     }
@@ -121,36 +138,32 @@ class CompositeKeyRowRenderer implements RowRenderer {
 
 class TableRenderer {
   private renderers: RowRenderer[];
-  private options: Record<string, string>;
-  readonly actual: Table;
-  readonly columns: ColumnRowRenderer[];
+  readonly table: NormalizedTable;
+  readonly columns: ColumnRenderer[];
 
-  constructor(table: Table) {
-    this.actual = table;
+  constructor(table: NormalizedTable) {
+    this.table = table;
 
     this.columns = [];
-    table.items.forEach((item, i) => {
-      if (item.type === "column") {
-        this.columns.push(new ColumnRowRenderer(`f${i + 1}`, item, table));
-      }
+    table.columns.forEach((column, i) => {
+      this.columns.push(new ColumnRenderer(`f${i + 1}`, column, table.actual));
     });
-    this.renderers = [new TableNameRowRenderer(table), ...this.columns];
-
-    this.options = table.items.reduce((acc, item) => {
-      return item.type === "option" ? { ...acc, ...item.option } : acc;
-    }, {} as Record<string, string>);
+    this.renderers = [
+      new TableNameRenderer(table.actual, this.displayName()),
+      ...this.columns,
+    ];
   }
 
   selfRef(): string {
-    return `"${this.name()}":${this.renderers[0].port}`;
+    return `"${this.displayName()}":${this.renderers[0].port}`;
   }
 
   ref(columnName: string): string {
     const column = this.findColumn(columnName);
     if (!column) {
-      throw new Error(`Unknown column ${this.name()}.${column}`);
+      throw new Error(`Unknown column ${this.displayName()}.${column}`);
     }
-    return `"${this.name()}":${column.port}`;
+    return `"${this.displayName()}":${column.port}`;
   }
 
   private findColumn(columnName: string) {
@@ -161,7 +174,7 @@ class TableRenderer {
     //TODO: check that all columns exist
 
     const columnIndex: Record<string, any> = {};
-    columns.map(
+    columns.forEach(
       (columnName) =>
         (columnIndex[columnName] =
           this.renderers.findIndex((c) => c.name === columnName) + 1 ||
@@ -181,54 +194,29 @@ class TableRenderer {
     return this.ref(name);
   }
 
-  name(): string {
-    return tableName(this.actual);
+  private displayName(): string {
+    return tableName(this.table.actual);
   }
 
   toDot(): string {
-    const tooltip = !this.options.Note
+    const note = this.table.options.Note;
+    const tooltip = !note
       ? ""
-      : `tooltip="${this.name()}\\n${escapeString(this.options.Note)}";`;
+      : `tooltip="${this.displayName()}\\n${escapeString(note)}";`;
 
-    return `"${this.name()}" [id="${this.name()}";${tooltip}label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+    return `"${this.displayName()}" [id="${this.displayName()}";${tooltip}label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       ${this.renderers.map((column) => column.toDot()).join("\n")}
     </TABLE>>];`;
   }
 }
 
-class TableRendererMap {
-  readonly tables: Map<string, TableRenderer> = new Map();
-
-  constructor(tables: Table[]) {
-    tables.forEach((table) => {
-      const renderer = new TableRenderer(table);
-      this.tables.set(renderer.name(), renderer);
-      table.alias && this.tables.set(table.alias, renderer);
-    });
-  }
-
-  get(table: SimplifiedTableRef | string): TableRenderer {
-    const name = typeof table === "string" ? table : tableName(table);
-    if (!this.tables.has(name)) {
-      throw new Error(`Unknown table ${table}`);
-    }
-    return this.tables.get(name)!;
-  }
-
-  names(): Set<string> {
-    return new Set(
-      Array.from(this.tables.values()).map((t) => tableName(t.actual))
-    );
-  }
-}
-
 class GroupRenderer {
-  readonly name: string;
-  private tables: TableRenderer[];
+  private name: string;
+  readonly tables: TableRenderer[];
 
-  constructor(group: TableGroup, tables: TableRenderer[]) {
-    this.name = group.name || "-unnamed-";
-    this.tables = tables;
+  constructor(group: NormalizedGroup) {
+    this.name = group.actual.name || "-unnamed-";
+    this.tables = group.tables.map((table) => new TableRenderer(table));
   }
 
   toDot(): string {
@@ -242,58 +230,6 @@ class GroupRenderer {
   }
 }
 
-class UngroupedRenderer {
-  private tables: TableRenderer[];
-
-  constructor(tables: TableRenderer[]) {
-    this.tables = tables;
-  }
-
-  toDot(): string {
-    return this.tables.map((table) => table.toDot()).join("\n");
-  }
-}
-
-class GroupsRenderer {
-  private groups: GroupRenderer[];
-  private ungrouped: UngroupedRenderer;
-
-  constructor(groups: TableGroup[], tables: TableRendererMap) {
-    const remainingTables = tables.names();
-
-    // validate that all referenced tables exist and do not belong to more than a single group
-    groups.forEach((group) => {
-      group.items.forEach((item) => {
-        if (item.type === "table" && !remainingTables.delete(tableName(item))) {
-          throw new Error(
-            `Table ${item.name} does not exist or belongs to two groups`
-          );
-        }
-      });
-    });
-
-    this.groups = groups.map((group) => {
-      return new GroupRenderer(
-        group,
-        group.items.flatMap((item) =>
-          item.type === "table" ? [tables.get(item)] : []
-        )
-      );
-    });
-
-    this.ungrouped = new UngroupedRenderer(
-      Array.from(remainingTables).map((table) => tables.get(table))
-    );
-  }
-
-  toDot(): string {
-    return `
-      ${this.groups.map((group) => group.toDot()).join("\n")}
-      ${this.ungrouped.toDot()}
-    `;
-  }
-}
-
 const refLabels: Record<Cardinality, [string, string]> = {
   ">": ["*", "1"],
   "<": ["1", "*"],
@@ -301,30 +237,34 @@ const refLabels: Record<Cardinality, [string, string]> = {
 };
 
 class RefRenderer {
-  private ref: Ref;
+  private ref: NormalizedRef;
   private fromRef: string;
   private toRef: string;
   private fromTable: TableRenderer;
   private toTable: TableRenderer;
 
-  constructor(ref: Ref, tables: TableRendererMap) {
+  constructor(ref: NormalizedRef, tables: TableRenderer[]) {
     // reverse ref if cardinality is "<"
     this.ref =
-      ref.cardinality !== "<"
+      ref.actual.cardinality !== "<"
         ? ref
         : {
-            type: "ref",
-            cardinality: ref.cardinality,
-            from: ref.to,
-            to: ref.from,
-            settings: ref.settings,
+            actual: {
+              type: "ref",
+              cardinality: ref.actual.cardinality,
+              from: ref.actual.to,
+              to: ref.actual.from,
+              settings: ref.actual.settings,
+            },
+            fromTable: ref.toTable,
+            toTable: ref.fromTable,
           };
 
-    this.fromTable = tables.get(ref.from);
-    this.toTable = tables.get(ref.to);
+    this.fromTable = tables.find((t) => t.table === ref.fromTable)!;
+    this.toTable = tables.find((t) => t.table === ref.toTable)!;
 
-    this.fromRef = this.findRef(this.fromTable, ref.from.columns);
-    this.toRef = this.findRef(this.toTable, ref.to.columns);
+    this.fromRef = this.findRef(this.fromTable, ref.actual.from.columns);
+    this.toRef = this.findRef(this.toTable, ref.actual.to.columns);
   }
 
   private findRef(table: TableRenderer, columns: string[]): string {
@@ -336,7 +276,7 @@ class RefRenderer {
   }
 
   toDot(): string {
-    const [tailLabel, headLabel] = refLabels[this.ref.cardinality];
+    const [tailLabel, headLabel] = refLabels[this.ref.actual.cardinality];
     return `${this.fromTable.selfRef()} -> ${this.toTable.selfRef()} [style=invis, weight=100, color=red]
     ${this.fromRef}:e -> ${
       this.toRef
@@ -345,28 +285,24 @@ class RefRenderer {
 }
 
 class EnumRenderer {
-  private enumType: Enum;
-  private values: string[];
+  readonly enumType: NormalizedEnum;
 
-  constructor(enumType: Enum) {
+  constructor(enumType: NormalizedEnum) {
     this.enumType = enumType;
-    this.values = enumType.items.flatMap((item) =>
-      item.type === "value" ? [item.name] : []
-    );
+  }
+
+  name(): string {
+    return this.enumType.actual.name;
   }
 
   selfRef(): string {
-    return `"${this.enumType.name}":f0`;
+    return `"${this.name()}":f0`;
   }
 
   toDot(): string {
-    return `"${this.enumType.name}" [id=${
-      this.enumType.name
-    };label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       ${
-      this.enumType.name
-    }       </B></font></TD></TR>
-    ${this.values.map((name, i) => this.valueDot(name, i)).join("\n")}
+    return `"${this.name()}" [id=${this.name()};label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       ${this.name()}       </B></font></TD></TR>
+    ${this.enumType.values.map((name, i) => this.valueDot(name, i)).join("\n")}
     </TABLE>>];`;
   }
 
@@ -375,27 +311,7 @@ class EnumRenderer {
   }
 }
 
-class EnumsRenderer {
-  private renderers: Map<string, EnumRenderer> = new Map();
-
-  constructor(enums: Enum[]) {
-    enums.forEach((enumType) =>
-      this.renderers.set(enumType.name, new EnumRenderer(enumType))
-    );
-  }
-
-  get(name: string): EnumRenderer | undefined {
-    return this.renderers.get(name);
-  }
-
-  toDot(): string {
-    return Array.from(this.renderers.values())
-      .map((renderer) => renderer.toDot())
-      .join("\n");
-  }
-}
-
-class EnumDefinitionRenderer {
+class EnumReferenceRenderer {
   private columnRef: string;
   private enumRef: string;
 
@@ -410,50 +326,28 @@ class EnumDefinitionRenderer {
 }
 
 class DbmlRenderer {
-  private groups: GroupsRenderer;
+  private enums: EnumRenderer[];
+  private groups: GroupRenderer[];
+  private ungroupedTables: TableRenderer[];
   private refs: RefRenderer[];
-  private enumDefs: EnumDefinitionRenderer[];
-  private enums: EnumsRenderer;
+  private enumRefs: EnumReferenceRenderer[];
 
-  constructor(dbml: Output) {
-    this.enums = new EnumsRenderer(extract("enum", dbml));
-    const tables = new TableRendererMap(extract("table", dbml));
+  constructor(dbml: NormalizedOutput) {
+    this.groups = dbml.groups.map((group) => new GroupRenderer(group));
+    this.ungroupedTables = dbml
+      .ungroupedTables()
+      .map((table) => new TableRenderer(table));
 
-    this.groups = new GroupsRenderer(extract("group", dbml), tables);
+    const allTables = this.groups
+      .flatMap((group) => group.tables)
+      .concat(this.ungroupedTables);
 
-    this.refs = extract("ref", dbml)
-      .concat(this.findRefsInSettings(tables.tables))
-      .map((ref) => new RefRenderer(ref, tables));
+    this.refs = dbml.refs.map((ref) => new RefRenderer(ref, allTables));
+    this.enums = dbml.enums.map((e) => new EnumRenderer(e));
 
-    this.enumDefs = [];
-    tables.tables.forEach((table) => {
-      table.columns.forEach((column) => {
-        const enumType = this.enums.get(column.actual.data);
-        if (enumType) {
-          this.enumDefs.push(
-            new EnumDefinitionRenderer(
-              tables.get(table.actual).ref(column.name),
-              enumType.selfRef()
-            )
-          );
-        }
-      })
-    });
-  }
-
-  private findRefsInSettings(tables: Map<string, TableRenderer>): Ref[] {
-    return Array.from(tables.values()).flatMap((table) =>
-      table.columns.flatMap((column) => {
-        const ref = column.actual.settings["ref"];
-        if (!ref) {
-          return [];
-        }
-
-        // create a virtual ref, parse it and add it to the list of refs
-        const virtualRef = `Ref: ${table.name()}.${column.name} ${ref}`;
-        return extract("ref", parse(virtualRef));
-      })
-    );
+    this.enumRefs = this.groups
+      .flatMap((group) => enumRefs(group.tables, this.enums))
+      .concat(enumRefs(this.ungroupedTables, this.enums));
   }
 
   //--light-blue: #1d71b8;--dark-blue: #29235c;--grey: #e7e2dd;--white: #ffffff;--orange: #ea5b0c
@@ -464,51 +358,31 @@ class DbmlRenderer {
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
-      ${this.enums.toDot()}
-      ${this.groups.toDot()}
+      ${this.enums.map((e) => e.toDot()).join("\n")}
+      ${this.groups.map((group) => group.toDot()).join("\n")}
+      ${this.ungroupedTables.map((table) => table.toDot()).join("\n")}
       ${this.refs.map((ref) => ref.toDot()).join("\n")}
-      ${this.enumDefs.map((def) => def.toDot()).join("\n")}
+      ${this.enumRefs.map((def) => def.toDot()).join("\n")}
     }`;
   }
 }
 
-const extract = <T extends Entity["type"]>(
-  type: T,
-  output: Output
-): Extract<Entity, { type: T }>[] => {
-  return output.filter((entity) => entity.type === type) as Extract<
-    Entity,
-    { type: T }
-  >[];
-};
+const enumRefs = (tables: TableRenderer[], enums: EnumRenderer[]) =>
+  tables.flatMap((table) =>
+    table.columns.flatMap((column) => {
+      const enumType = enums.find((e) => e.name() === column.dataType());
+      if (!enumType) {
+        return [];
+      }
 
-export const dot = (input: string): string => {
-  const dbml = new DbmlRenderer(parse(input));
-  return dbml.toDot();
-};
+      const columnRef = table.ref(column.name);
+      const enumRef = enumType.selfRef();
 
-export const render = (input: string, format: Format): string => {
-  const dotString = dot(input);
+      return new EnumReferenceRenderer(columnRef, enumRef);
+    })
+  );
 
-  if (format === "dot") {
-    // viz.js can return the dot format too, but it needs node.js' global
-    // 'process' object to be present, but it isn't available in graal's
-    // script engine.
-    return dotString;
-  }
-  const vizRenderStringSync = require("@aduh95/viz.js/sync");
-
-  return vizRenderStringSync(dotString, {
-    engine: "dot",
-    format: format,
-  });
-};
-
-type SimplifiedTableRef = {
-  schema: string | null;
-  name: string;
-};
-
-const tableName = (table: SimplifiedTableRef): string => {
-  return table.schema ? `${table.schema}.${table.name}` : table.name;
+const escapeString = (text: string): string => {
+  text = JSON.stringify(text);
+  return text.substring(1, text.length - 1);
 };

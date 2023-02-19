@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
+import fs from "fs";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import fs from "fs";
 import render, { Format } from "./renderer";
 
 const args = yargs(hideBin(process.argv))

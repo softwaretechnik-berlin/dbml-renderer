@@ -89,18 +89,18 @@ export const Cardinality = z.union([
 ]);
 export type Cardinality = z.infer<typeof Cardinality>;
 
-const ColumnsRef = z.object({
+const ColumnRef = z.object({
   schema: z.string().nullable(),
   name: z.string(),
   columns: z.array(z.string()),
 });
-export type ColumnsRef = z.infer<typeof ColumnsRef>;
+export type ColumnRef = z.infer<typeof ColumnRef>;
 
 export const Ref = z.object({
   type: z.literal("ref"),
   cardinality: Cardinality,
-  from: ColumnsRef,
-  to: ColumnsRef,
+  from: ColumnRef,
+  to: ColumnRef,
   settings: Settings.nullable().transform((v) => v || {}),
 });
 export type Ref = z.infer<typeof Ref>;
