@@ -1,13 +1,18 @@
-import parse, {
-  Table,
+import { parse } from "./parser";
+import {
   Cardinality,
-  Group,
-  DBML,
-  Ref,
   Column,
+  Entity,
   Enum,
+  Output,
+  Ref,
   Settings,
-} from "./parser";
+  Table,
+  TableGroup,
+  TableIndices,
+  TableOption,
+  TableRef,
+} from "./types";
 
 export type Format = "dot" | "svg";
 
@@ -17,10 +22,10 @@ interface RowRenderer {
   toDot(): string;
 }
 
-function escapeString(text: string): string {
+const escapeString = (text: string): string => {
   text = JSON.stringify(text);
   return text.substring(1, text.length - 1);
-}
+};
 
 class TableNameRowRenderer implements RowRenderer {
   readonly name = "__TABLE__";
@@ -32,49 +37,53 @@ class TableNameRowRenderer implements RowRenderer {
   }
 
   toDot(): string {
-    const tableColor =
-      this.table.settings?.headercolor === undefined
-        ? "#1d71b8"
-        : this.table.settings.headercolor;
-    var fontColor = "#ffffff";
+    const tableColor = !this.table.settings?.headercolor
+      ? "#1d71b8"
+      : this.table.settings.headercolor;
+    let fontColor = "#ffffff";
     if (tableColor.startsWith("#") && tableColor.length == 7) {
       // Best contrast selection computation based on https://stackoverflow.com/a/41491220
-      var r = parseInt(tableColor.substring(1, 3), 16);
-      var g = parseInt(tableColor.substring(3, 5), 16);
-      var b = parseInt(tableColor.substring(5, 7), 16);
-      if (r * 0.299 + g * 0.587 + b * 0.114 > 186) fontColor = "#000000";
+      const r = parseInt(tableColor.substring(1, 3), 16);
+      const g = parseInt(tableColor.substring(3, 5), 16);
+      const b = parseInt(tableColor.substring(5, 7), 16);
+      if (r * 0.299 + g * 0.587 + b * 0.114 > 186) {
+        fontColor = "#000000";
+      }
     }
     return `<TR><TD PORT="${this.port}" BGCOLOR="${tableColor}"><font color="${fontColor}"><B>       ${this.table.name}       </B></font></TD></TR>`;
   }
 }
 
 class ColumnRowRenderer implements RowRenderer {
-  private column: Column;
-  private table: Table;
+  private indices: TableIndices;
+  readonly actual: Column;
   readonly name: string;
   readonly port: string;
 
   constructor(port: string, column: Column, table: Table) {
-    this.column = column;
-    this.table = table;
+    this.actual = column;
     this.name = column.name;
     this.port = port;
+
+    this.indices = (table.items.find(
+      (item) => item.type === "indices"
+    ) as TableIndices) || { type: "indices", indices: [] };
   }
 
   toDot(): string {
-    const relatedIndexSettings = this.table.indices
-      .filter((index) => index.columns.includes(this.column.name))
+    const relatedIndexSettings = this.indices.indices
+      .filter((index) => index.columns.includes(this.actual.name))
       .map((index) => index.settings);
     const isPk = (settings: Settings): boolean =>
       "pk" in settings || "primary key" in settings;
 
-    var name = this.column.name;
-    const settings = this.column.settings;
+    let name = this.actual.name;
+    const settings = this.actual.settings || {};
     if (isPk(settings) || relatedIndexSettings.some(isPk)) {
       name = `<b>${name}</b>`;
     }
 
-    var type = `<i>${this.column.type}</i>`;
+    let type = `<i>${this.actual.data}</i>`;
     if ("not null" in settings) {
       type = type + " <b>(!)</b>";
     }
@@ -111,33 +120,41 @@ class CompositeKeyRowRenderer implements RowRenderer {
 }
 
 class TableRenderer {
-  private table: Table;
-  private columns: RowRenderer[] = [];
+  private renderers: RowRenderer[];
+  private options: Record<string, string>;
+  readonly actual: Table;
+  readonly columns: ColumnRowRenderer[];
 
   constructor(table: Table) {
-    this.table = table;
-    this.columns.push(new TableNameRowRenderer(table));
-    this.columns.push(
-      ...table.columns.map(
-        (column, i) => new ColumnRowRenderer(`f${i + 1}`, column, table)
-      )
-    );
+    this.actual = table;
+
+    this.columns = [];
+    table.items.forEach((item, i) => {
+      if (item.type === "column") {
+        this.columns.push(new ColumnRowRenderer(`f${i + 1}`, item, table));
+      }
+    });
+    this.renderers = [new TableNameRowRenderer(table), ...this.columns];
+
+    this.options = table.items.reduce((acc, item) => {
+      return item.type === "option" ? { ...acc, ...item.option } : acc;
+    }, {} as Record<string, string>);
   }
 
   selfRef(): string {
-    return `"${this.table.name}":${this.columns[0].port}`;
+    return `"${this.name()}":${this.renderers[0].port}`;
   }
 
   ref(columnName: string): string {
     const column = this.findColumn(columnName);
     if (!column) {
-      throw new Error(`Unknown column ${this.table.name}.${column}`);
+      throw new Error(`Unknown column ${this.name()}.${column}`);
     }
-    return `"${this.table.name}":${column.port}`;
+    return `"${this.name()}":${column.port}`;
   }
 
   private findColumn(columnName: string) {
-    return this.columns.find((c) => c.name === columnName);
+    return this.renderers.find((c) => c.name === columnName);
   }
 
   refAll(columns: string[]): string {
@@ -147,7 +164,7 @@ class TableRenderer {
     columns.map(
       (columnName) =>
         (columnIndex[columnName] =
-          this.columns.findIndex((c) => c.name === columnName) + 1 ||
+          this.renderers.findIndex((c) => c.name === columnName) + 1 ||
           Number.MAX_SAFE_INTEGER)
     );
 
@@ -157,57 +174,60 @@ class TableRenderer {
 
     const column = this.findColumn(name);
     if (!column) {
-      this.columns.push(
-        new CompositeKeyRowRenderer(`f${this.columns.length}`, name, columns)
+      this.renderers.push(
+        new CompositeKeyRowRenderer(`f${this.renderers.length}`, name, columns)
       );
     }
     return this.ref(name);
   }
 
+  name(): string {
+    return tableName(this.actual);
+  }
+
   toDot(): string {
-    const tooltip =
-      this.table.options.Note === undefined
-        ? ""
-        : `tooltip="${this.table.name}\\n${escapeString(
-            this.table.options.Note
-          )}";`;
-    return `"${this.table.name}" [id="${
-      this.table.name
-    }";${tooltip}label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      ${this.columns.map((column) => column.toDot()).join("\n")}
+    const tooltip = !this.options.Note
+      ? ""
+      : `tooltip="${this.name()}\\n${escapeString(this.options.Note)}";`;
+
+    return `"${this.name()}" [id="${this.name()}";${tooltip}label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      ${this.renderers.map((column) => column.toDot()).join("\n")}
     </TABLE>>];`;
   }
 }
 
 class TableRendererMap {
-  private renderers: Map<string, TableRenderer> = new Map();
+  readonly tables: Map<string, TableRenderer> = new Map();
 
   constructor(tables: Table[]) {
     tables.forEach((table) => {
       const renderer = new TableRenderer(table);
-      this.renderers.set(table.name, renderer);
-      table.alias && this.renderers.set(table.alias, renderer);
+      this.tables.set(renderer.name(), renderer);
+      table.alias && this.tables.set(table.alias, renderer);
     });
   }
 
-  get(table: string): TableRenderer {
-    const tableRenderer = this.renderers.get(table);
-    if (!tableRenderer) {
+  get(table: SimplifiedTableRef | string): TableRenderer {
+    const name = typeof table === "string" ? table : tableName(table);
+    if (!this.tables.has(name)) {
       throw new Error(`Unknown table ${table}`);
     }
-    return tableRenderer;
+    return this.tables.get(name)!;
   }
 
   names(): Set<string> {
-    return new Set(this.renderers.keys());
+    return new Set(
+      Array.from(this.tables.values()).map((t) => tableName(t.actual))
+    );
   }
 }
 
 class GroupRenderer {
   readonly name: string;
   private tables: TableRenderer[];
-  constructor(group: Group, tables: TableRenderer[]) {
-    this.name = group.name;
+
+  constructor(group: TableGroup, tables: TableRenderer[]) {
+    this.name = group.name || "-unnamed-";
     this.tables = tables;
   }
 
@@ -224,9 +244,11 @@ class GroupRenderer {
 
 class UngroupedRenderer {
   private tables: TableRenderer[];
+
   constructor(tables: TableRenderer[]) {
     this.tables = tables;
   }
+
   toDot(): string {
     return this.tables.map((table) => table.toDot()).join("\n");
   }
@@ -235,19 +257,27 @@ class UngroupedRenderer {
 class GroupsRenderer {
   private groups: GroupRenderer[];
   private ungrouped: UngroupedRenderer;
-  constructor(groups: Group[], tables: TableRendererMap) {
+
+  constructor(groups: TableGroup[], tables: TableRendererMap) {
     const remainingTables = tables.names();
+
+    // validate that all referenced tables exist and do not belong to more than a single group
+    groups.forEach((group) => {
+      group.items.forEach((item) => {
+        if (item.type === "table" && !remainingTables.delete(tableName(item))) {
+          throw new Error(
+            `Table ${item.name} does not exist or belongs to two groups`
+          );
+        }
+      });
+    });
+
     this.groups = groups.map((group) => {
       return new GroupRenderer(
         group,
-        group.tables.map((name) => {
-          if (!remainingTables.delete(name)) {
-            throw new Error(
-              `Table ${name} does not exist or belongs to two groups`
-            );
-          }
-          return tables.get(name);
-        })
+        group.items.flatMap((item) =>
+          item.type === "table" ? [tables.get(item)] : []
+        )
       );
     });
 
@@ -264,7 +294,7 @@ class GroupsRenderer {
   }
 }
 
-const refLabels = {
+const refLabels: Record<Cardinality, [string, string]> = {
   ">": ["*", "1"],
   "<": ["1", "*"],
   "-": ["1", "1"],
@@ -278,22 +308,23 @@ class RefRenderer {
   private toTable: TableRenderer;
 
   constructor(ref: Ref, tables: TableRendererMap) {
+    // reverse ref if cardinality is "<"
     this.ref =
       ref.cardinality !== "<"
         ? ref
         : {
-            fromTable: ref.toTable,
-            fromColumns: ref.toColumns,
-            toTable: ref.fromTable,
-            toColumns: ref.fromColumns,
+            type: "ref",
             cardinality: ref.cardinality,
+            from: ref.to,
+            to: ref.from,
+            settings: ref.settings,
           };
 
-    this.fromTable = tables.get(ref.fromTable);
-    this.toTable = tables.get(ref.toTable);
+    this.fromTable = tables.get(ref.from);
+    this.toTable = tables.get(ref.to);
 
-    this.fromRef = this.findRef(this.fromTable, ref.fromColumns);
-    this.toRef = this.findRef(this.toTable, ref.toColumns);
+    this.fromRef = this.findRef(this.fromTable, ref.from.columns);
+    this.toRef = this.findRef(this.toTable, ref.to.columns);
   }
 
   private findRef(table: TableRenderer, columns: string[]): string {
@@ -315,9 +346,13 @@ class RefRenderer {
 
 class EnumRenderer {
   private enumType: Enum;
+  private values: string[];
 
   constructor(enumType: Enum) {
     this.enumType = enumType;
+    this.values = enumType.items.flatMap((item) =>
+      item.type === "value" ? [item.name] : []
+    );
   }
 
   selfRef(): string {
@@ -331,9 +366,7 @@ class EnumRenderer {
     <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       ${
       this.enumType.name
     }       </B></font></TD></TR>
-    ${this.enumType.values
-      .map((value, i) => this.valueDot(value.name, i))
-      .join("\n")}
+    ${this.values.map((name, i) => this.valueDot(name, i)).join("\n")}
     </TABLE>>];`;
   }
 
@@ -382,59 +415,45 @@ class DbmlRenderer {
   private enumDefs: EnumDefinitionRenderer[];
   private enums: EnumsRenderer;
 
-  constructor(dbml: DBML) {
-    this.enums = new EnumsRenderer(dbml.enums);
-    const tables = new TableRendererMap(dbml.tables);
+  constructor(dbml: Output) {
+    this.enums = new EnumsRenderer(extract("enum", dbml));
+    const tables = new TableRendererMap(extract("table", dbml));
 
-    this.groups = new GroupsRenderer(dbml.groups, tables);
+    this.groups = new GroupsRenderer(extract("group", dbml), tables);
 
-    this.refs = dbml.refs
-      .concat(this.findRefsInSettings(dbml.tables))
+    this.refs = extract("ref", dbml)
+      .concat(this.findRefsInSettings(tables.tables))
       .map((ref) => new RefRenderer(ref, tables));
 
     this.enumDefs = [];
-    dbml.tables.forEach((table) =>
+    tables.tables.forEach((table) => {
       table.columns.forEach((column) => {
-        const columnType = this.enums.get(column.type);
-        if (columnType) {
+        const enumType = this.enums.get(column.actual.data);
+        if (enumType) {
           this.enumDefs.push(
             new EnumDefinitionRenderer(
-              tables.get(table.name).ref(column.name),
-              columnType.selfRef()
+              tables.get(table.actual).ref(column.name),
+              enumType.selfRef()
             )
           );
         }
       })
-    );
+    });
   }
 
-  private findRefsInSettings(tables: Table[]): Ref[] {
-    const extraRefs: Ref[] = [];
-    tables.forEach((table) => {
-      table.columns.forEach((column) => {
-        if ("ref" in column.settings) {
-          const ref: string = column.settings["ref"];
-          const [
-            _,
-            cardinality,
-            toTableUnquoted,
-            toTableQuoted,
-            toColumnUnquoted,
-            toColumnQuoted,
-          ] = ref.split(
-            /([-<>])\s+(?:([\w\._]+)|"([^"\\\.]+)")\.(?:([\w_]+)|"([^"\\]+)")/
-          );
-          extraRefs.push({
-            cardinality: cardinality as Cardinality,
-            fromTable: table.name,
-            fromColumns: [column.name],
-            toTable: toTableUnquoted || toTableQuoted,
-            toColumns: [toColumnUnquoted || toColumnQuoted],
-          });
+  private findRefsInSettings(tables: Map<string, TableRenderer>): Ref[] {
+    return Array.from(tables.values()).flatMap((table) =>
+      table.columns.flatMap((column) => {
+        const ref = column.actual.settings["ref"];
+        if (!ref) {
+          return [];
         }
-      });
-    });
-    return extraRefs;
+
+        // create a virtual ref, parse it and add it to the list of refs
+        const virtualRef = `Ref: ${table.name()}.${column.name} ${ref}`;
+        return extract("ref", parse(virtualRef));
+      })
+    );
   }
 
   //--light-blue: #1d71b8;--dark-blue: #29235c;--grey: #e7e2dd;--white: #ffffff;--orange: #ea5b0c
@@ -453,12 +472,22 @@ class DbmlRenderer {
   }
 }
 
-export function dot(input: string): string {
+const extract = <T extends Entity["type"]>(
+  type: T,
+  output: Output
+): Extract<Entity, { type: T }>[] => {
+  return output.filter((entity) => entity.type === type) as Extract<
+    Entity,
+    { type: T }
+  >[];
+};
+
+export const dot = (input: string): string => {
   const dbml = new DbmlRenderer(parse(input));
   return dbml.toDot();
-}
+};
 
-export default function render(input: string, format: Format): string {
+export const render = (input: string, format: Format): string => {
   const dotString = dot(input);
 
   if (format === "dot") {
@@ -473,4 +502,13 @@ export default function render(input: string, format: Format): string {
     engine: "dot",
     format: format,
   });
-}
+};
+
+type SimplifiedTableRef = {
+  schema: string | null;
+  name: string;
+};
+
+const tableName = (table: SimplifiedTableRef): string => {
+  return table.schema ? `${table.schema}.${table.name}` : table.name;
+};

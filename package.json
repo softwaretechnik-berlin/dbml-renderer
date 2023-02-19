@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "@aduh95/viz.js": "3.4.0",
-    "yargs": "^17.5.1"
+    "yargs": "^17.5.1",
+    "zod": "^3.20.6"
   },
   "bugs": {
     "url": "https://github.com/softwaretechnik-berlin/dbml-renderer/issues"
