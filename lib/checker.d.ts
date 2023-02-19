@@ -1,4 +1,5 @@
-export declare const parse: (input: string) => ({
+import { Column, Enum, Project, Ref, Table, TableGroup, TableIndices } from "./types";
+export declare const check: (input: ({
     type: "comment";
     comment: string;
 } | {
@@ -65,4 +66,39 @@ export declare const parse: (input: string) => ({
         columns: string[];
         schema: string | null;
     };
-})[];
+})[]) => NormalizedOutput;
+export type NormalizedTable = {
+    actual: Table;
+    columns: Column[];
+    indices?: TableIndices;
+    options: Record<string, string>;
+};
+export type NormalizedGroup = {
+    actual: TableGroup;
+    tables: NormalizedTable[];
+};
+export type NormalizedEnum = {
+    actual: Enum;
+    values: string[];
+};
+export type NormalizedRef = {
+    actual: Ref;
+    fromTable: NormalizedTable;
+    toTable: NormalizedTable;
+};
+export declare class NormalizedOutput {
+    readonly project?: Project;
+    readonly tables: NormalizedTable[];
+    readonly groups: NormalizedGroup[];
+    readonly refs: NormalizedRef[];
+    readonly enums: NormalizedEnum[];
+    constructor({ project, tables, groups, refs, enums, }: {
+        project?: Project;
+        tables: NormalizedTable[];
+        groups: NormalizedGroup[];
+        refs: NormalizedRef[];
+        enums: NormalizedEnum[];
+    });
+    table(id: string): NormalizedTable | undefined;
+    ungroupedTables(): NormalizedTable[];
+}

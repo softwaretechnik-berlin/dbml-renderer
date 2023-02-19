@@ -1,2 +1,2 @@
-import render from "./renderer";
-export default render;
+import { Format } from "./renderer";
+export declare const run: (input: string, format: Format) => string;

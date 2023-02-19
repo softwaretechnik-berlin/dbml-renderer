@@ -1,3 +1,3 @@
+import { NormalizedOutput } from "./checker";
 export type Format = "dot" | "svg";
-export declare function dot(input: string): string;
-export default function render(input: string, format: Format): string;
+export declare const render: (input: NormalizedOutput, format: Format) => string;
