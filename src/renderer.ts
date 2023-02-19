@@ -17,6 +17,11 @@ interface RowRenderer {
   toDot(): string;
 }
 
+function escapeString(text: string): string {
+  text = JSON.stringify(text);
+  return text.substring(1, text.length - 1);
+}
+
 class TableNameRowRenderer implements RowRenderer {
   readonly name = "__TABLE__";
   readonly port = "f0";
@@ -27,7 +32,19 @@ class TableNameRowRenderer implements RowRenderer {
   }
 
   toDot(): string {
-    return `<TR><TD PORT="${this.port}" WIDTH="150" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       ${this.table.name}       </B></font></TD></TR>`;
+    const tableColor =
+      this.table.settings?.headercolor === undefined
+        ? "#1d71b8"
+        : this.table.settings.headercolor;
+    var fontColor = "#ffffff";
+    if (tableColor.startsWith("#") && tableColor.length == 7) {
+      // Best contrast selection computation based on https://stackoverflow.com/a/41491220
+      var r = parseInt(tableColor.substring(1, 3), 16);
+      var g = parseInt(tableColor.substring(3, 5), 16);
+      var b = parseInt(tableColor.substring(5, 7), 16);
+      if (r * 0.299 + g * 0.587 + b * 0.114 > 186) fontColor = "#000000";
+    }
+    return `<TR><TD PORT="${this.port}" BGCOLOR="${tableColor}"><font color="${fontColor}"><B>       ${this.table.name}       </B></font></TD></TR>`;
   }
 }
 
@@ -148,9 +165,15 @@ class TableRenderer {
   }
 
   toDot(): string {
+    const tooltip =
+      this.table.options.Note === undefined
+        ? ""
+        : `tooltip="${this.table.name}\\n${escapeString(
+            this.table.options.Note
+          )}";`;
     return `"${this.table.name}" [id="${
       this.table.name
-    }";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+    }";${tooltip}label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       ${this.columns.map((column) => column.toDot()).join("\n")}
     </TABLE>>];`;
   }
@@ -305,7 +328,7 @@ class EnumRenderer {
     return `"${this.enumType.name}" [id=${
       this.enumType.name
     };label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" WIDTH="150" BGCOLOR="#29235c"><font color="#ffffff"><B>       ${
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       ${
       this.enumType.name
     }       </B></font></TD></TR>
     ${this.enumType.values
@@ -399,7 +422,7 @@ class DbmlRenderer {
             toColumnUnquoted,
             toColumnQuoted,
           ] = ref.split(
-            /([-<>])\s+(?:([\w_]+)|"([^"\\]+)")\.(?:([\w_]+)|"([^"\\]+)")/
+            /([-<>])\s+(?:([\w\._]+)|"([^"\\\.]+)")\.(?:([\w_]+)|"([^"\\]+)")/
           );
           extraRefs.push({
             cardinality: cardinality as Cardinality,

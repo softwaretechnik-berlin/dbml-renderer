@@ -1,0 +1,115 @@
+digraph dbml {
+      rankdir=LR;
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
+
+      
+      
+      subgraph cluster_users {
+      label = "users"
+      style=filled;
+      color="#dddddd";
+
+      "users.users" [id="users.users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" BGCOLOR="#D3D3D3"><font color="#000000"><B>       users.users       </B></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>Id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i> <b>(!)</b></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">Name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar(max)</i> <b>(!)</b></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">Sex<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"users.sexes" [id="users.sexes";tooltip="users.sexes\nMale or female";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" BGCOLOR="#200000"><font color="#ffffff"><B>       users.sexes       </B></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>Id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i> <b>(!)</b></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">Name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar(10)</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+    }
+      "teams" [id="teams";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       teams       </B></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>Id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">Name<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>varchar(20)</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"teams_users" [id="teams_users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       teams_users       </B></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><b>Id</b><FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">TeamId<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">UserId<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+    
+      "users.users":f0 -> "users.sexes":f0 [style=invis, weight=100, color=red]
+    "users.users":f3:e -> "users.sexes":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+"teams_users":f0 -> "teams":f0 [style=invis, weight=100, color=red]
+    "teams_users":f2:e -> "teams":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+"teams_users":f0 -> "users.users":f0 [style=invis, weight=100, color=red]
+    "teams_users":f3:e -> "users.users":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      
+    }

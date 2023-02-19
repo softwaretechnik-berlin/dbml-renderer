@@ -32,16 +32,12 @@ const entriesTransformations = {
     const obj = {
       name: table.name,
       alias: table.alias,
+      settings: table.settings,
     };
     table.items.forEach((item) => {
       const itemKey = item.item + "s";
       (obj[itemKey] = obj[itemKey] || []).push(item);
     });
-    const settings = obj.settingss || [];
-    delete obj.settingss;
-    obj.settings = settings
-      .map((s) => s.settings)
-      .reduce((a, b) => Object.assign(a, b), {});
     const options = obj.options || [];
     obj.options = options
       .map((o) => o.option)
