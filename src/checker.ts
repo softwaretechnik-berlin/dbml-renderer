@@ -12,7 +12,7 @@ import {
   TableIndices,
 } from "./types";
 
-export const verify = (input: Output): NormalizedOutput => {
+export const check = (input: Output): NormalizedOutput => {
   const tables = extract("table", input).map((table) => ({
     actual: table,
     columns: table.items.filter((i) => i.type === "column") as Column[],

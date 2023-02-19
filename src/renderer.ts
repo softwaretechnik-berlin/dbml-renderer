@@ -1,12 +1,12 @@
-import { tableName } from "./common";
-import { Cardinality, Column, Settings, Table, TableIndices } from "./types";
 import {
   NormalizedEnum,
   NormalizedGroup,
   NormalizedOutput,
   NormalizedRef,
   NormalizedTable,
-} from "./verifier";
+} from "./checker";
+import { tableName } from "./common";
+import { Cardinality, Column, Settings, Table, TableIndices } from "./types";
 
 export type Format = "dot" | "svg";
 
