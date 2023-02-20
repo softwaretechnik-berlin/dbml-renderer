@@ -2,7 +2,6 @@ import { tableName } from "./common";
 import { parse } from "./parser";
 import {
   Column,
-  Entity,
   Enum,
   Output,
   Project,
@@ -15,10 +14,10 @@ import {
 export const check = (input: Output): NormalizedOutput => {
   const tables = extract("table", input).map((table) => ({
     actual: table,
-    columns: table.items.filter((i) => i.type === "column") as Column[],
-    indices: table.items.find((i) => i.type === "indices") as TableIndices,
-    options: table.items.reduce(
-      (acc, i) => (i.type === "option" ? { ...acc, ...i.option } : acc),
+    columns: extract("column", table.items),
+    indices: extract("indices", table.items)[0],
+    options: extract("option", table.items).reduce(
+      (acc, i) => ({ ...acc, ...i.option }),
       {}
     ),
   }));
@@ -45,11 +44,7 @@ export const check = (input: Output): NormalizedOutput => {
     tables,
     groups: extract("group", input).map((group) => ({
       actual: group,
-      tables: group.items.flatMap((i) => {
-        if (i.type !== "table") {
-          return [];
-        }
-
+      tables: extract("table", group.items).map((i) => {
         const name = tableName(i);
         const table = resolveTableUnsafe(name, tables);
         if (!groupedTables.add(name)) {
@@ -68,7 +63,7 @@ export const check = (input: Output): NormalizedOutput => {
       })),
     enums: extract("enum", input).map((e) => ({
       actual: e,
-      values: e.items.flatMap((i) => (i.type === "value" ? i.name : [])),
+      values: extract("value", e.items).map((v) => v.name),
     })),
   });
 };
@@ -158,12 +153,9 @@ const resolveTableUnsafe = (
   return table;
 };
 
-const extract = <T extends Entity["type"]>(
+const extract = <E extends { type: string }, T extends E["type"]>(
   type: T,
-  output: Output
-): Extract<Entity, { type: T }>[] => {
-  return output.filter((entity) => entity.type === type) as Extract<
-    Entity,
-    { type: T }
-  >[];
+  entries: E[]
+): Extract<E, { type: T }>[] => {
+  return entries.filter((e) => e.type === type) as Extract<E, { type: T }>[];
 };
