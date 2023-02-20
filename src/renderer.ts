@@ -334,9 +334,9 @@ class DbmlRenderer {
 
   constructor(dbml: NormalizedOutput) {
     this.groups = dbml.groups.map((group) => new GroupRenderer(group));
-    this.ungroupedTables = dbml
-      .ungroupedTables()
-      .map((table) => new TableRenderer(table));
+    this.ungroupedTables = dbml.ungroupedTables.map(
+      (table) => new TableRenderer(table)
+    );
 
     const allTables = this.groups
       .flatMap((group) => group.tables)

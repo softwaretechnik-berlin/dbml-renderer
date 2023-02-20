@@ -38,22 +38,27 @@ export const check = (input: Output): NormalizedOutput => {
   );
 
   const groupedTables = new Set<string>();
+  const groups = extract("group", input).map((group) => ({
+    actual: group,
+    tables: extract("table", group.items).map((i) => {
+      const name = tableName(i);
+      const table = resolveTableUnsafe(name, tables);
+      if (!groupedTables.add(name)) {
+        throw new Error(`Table ${i.name} belongs to multiple groups`);
+      }
 
-  return new NormalizedOutput({
+      return table;
+    }),
+  }));
+
+  const ungroupedTables = tables.filter(
+    (t) => !groupedTables.has(tableName(t.actual))
+  );
+
+  return {
     project: extract("project", input)[0],
-    tables,
-    groups: extract("group", input).map((group) => ({
-      actual: group,
-      tables: extract("table", group.items).map((i) => {
-        const name = tableName(i);
-        const table = resolveTableUnsafe(name, tables);
-        if (!groupedTables.add(name)) {
-          throw new Error(`Table ${i.name} belongs to multiple groups`);
-        }
-
-        return table;
-      }),
-    })),
+    ungroupedTables,
+    groups,
     refs: extract("ref", input)
       .concat(inlinedRefs)
       .map((ref) => ({
@@ -65,7 +70,7 @@ export const check = (input: Output): NormalizedOutput => {
       actual: e,
       values: extract("value", e.items).map((v) => v.name),
     })),
-  });
+  };
 };
 
 export type NormalizedTable = {
@@ -91,49 +96,13 @@ export type NormalizedRef = {
   toTable: NormalizedTable;
 };
 
-export class NormalizedOutput {
-  readonly project?: Project;
-  readonly tables: NormalizedTable[];
-  readonly groups: NormalizedGroup[];
-  readonly refs: NormalizedRef[];
-  readonly enums: NormalizedEnum[];
-
-  constructor({
-    project,
-    tables,
-    groups,
-    refs,
-    enums,
-  }: {
-    project?: Project;
-    tables: NormalizedTable[];
-    groups: NormalizedGroup[];
-    refs: NormalizedRef[];
-    enums: NormalizedEnum[];
-  }) {
-    this.project = project;
-    this.tables = tables;
-    this.groups = groups;
-    this.refs = refs;
-    this.enums = enums;
-  }
-
-  table(id: string): NormalizedTable | undefined {
-    return resolveTable(id, this.tables);
-  }
-
-  ungroupedTables(): NormalizedTable[] {
-    const groupedTables = new Set<string>(
-      this.groups.flatMap((group) =>
-        group.tables.map((t) => tableName(t.actual))
-      )
-    );
-
-    return this.tables.filter(
-      (table) => !groupedTables.has(tableName(table.actual))
-    );
-  }
-}
+export type NormalizedOutput = {
+  project?: Project;
+  ungroupedTables: NormalizedTable[];
+  groups: NormalizedGroup[];
+  refs: NormalizedRef[];
+  enums: NormalizedEnum[];
+};
 
 const resolveTable = (
   id: string,

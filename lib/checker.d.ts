@@ -86,19 +86,10 @@ export type NormalizedRef = {
     fromTable: NormalizedTable;
     toTable: NormalizedTable;
 };
-export declare class NormalizedOutput {
-    readonly project?: Project;
-    readonly tables: NormalizedTable[];
-    readonly groups: NormalizedGroup[];
-    readonly refs: NormalizedRef[];
-    readonly enums: NormalizedEnum[];
-    constructor({ project, tables, groups, refs, enums, }: {
-        project?: Project;
-        tables: NormalizedTable[];
-        groups: NormalizedGroup[];
-        refs: NormalizedRef[];
-        enums: NormalizedEnum[];
-    });
-    table(id: string): NormalizedTable | undefined;
-    ungroupedTables(): NormalizedTable[];
-}
+export type NormalizedOutput = {
+    project?: Project;
+    ungroupedTables: NormalizedTable[];
+    groups: NormalizedGroup[];
+    refs: NormalizedRef[];
+    enums: NormalizedEnum[];
+};
