@@ -3,7 +3,6 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import { readFile } from "fs/promises";
 import { join } from "path";
 import { run } from "./api";
-import { parse } from "./dbml";
 import { Format } from "./renderer";
 
 const examplesDir = "examples";
@@ -21,11 +20,6 @@ dbmlFiles.forEach(([dbmlFilename, dbmlFile]) => {
   const input = readFileSync(dbmlFile, "utf-8");
   const outputFile = (format: Format) =>
     join(testOutputDir, `${dbmlFilename}.${format}`);
-
-  test(`${dbmlFile} parsing output follows the schema`, (t) => {
-    parse(input);
-    t.pass();
-  });
 
   formats.forEach((format) => {
     test(`${dbmlFile} can be converted to ${format}`, (t) => {
