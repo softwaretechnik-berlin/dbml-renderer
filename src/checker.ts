@@ -104,17 +104,13 @@ export type NormalizedOutput = {
   enums: NormalizedEnum[];
 };
 
-const resolveTable = (
-  id: string,
-  tables: NormalizedTable[]
-): NormalizedTable | undefined =>
-  tables.find((t) => tableName(t.actual) === id || t.actual.alias === id);
-
 const resolveTableUnsafe = (
   id: string,
   tables: NormalizedTable[]
 ): NormalizedTable => {
-  const table = resolveTable(id, tables);
+  const table = tables.find(
+    (t) => tableName(t.actual) === id || t.actual.alias === id
+  );
   if (!table) {
     throw new Error(`Table ${id} does not exist`);
   }
