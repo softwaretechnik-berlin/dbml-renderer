@@ -1,0 +1,72 @@
+digraph dbml {
+      rankdir=LR;
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
+
+      
+      
+      "Person" [id="Person";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Person       </B></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">parent1<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">parent2<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"dates.Day" [id="dates.Day";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       dates.Day       </B></font></TD></TR>
+<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">id<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">next<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">previous<FONT>    </FONT></TD>
+          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+      "Person":f0 -> "Person":f0 [style=invis, weight=100, color=red]
+    "Person":f2:e -> "Person":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+"Person":f0 -> "Person":f0 [style=invis, weight=100, color=red]
+    "Person":f3:e -> "Person":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+"dates.Day":f0 -> "dates.Day":f0 [style=invis, weight=100, color=red]
+    "dates.Day":f2:e -> "dates.Day":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+"dates.Day":f0 -> "dates.Day":f0 [style=invis, weight=100, color=red]
+    "dates.Day":f3:e -> "dates.Day":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+      
+    }

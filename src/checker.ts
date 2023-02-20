@@ -1,4 +1,4 @@
-import { tableName } from "./common";
+import { SimplifiedTableRef, tableName } from "./common";
 import { parse } from "./parser";
 import {
   Column,
@@ -41,8 +41,8 @@ export const check = (input: Output): NormalizedOutput => {
   const groups = extract("group", input).map((group) => ({
     actual: group,
     tables: extract("table", group.items).map((i) => {
-      const name = tableName(i);
-      const table = resolveTableUnsafe(name, tables);
+      const table = resolveTable(i, tables);
+      const name = tableName(table.actual);
       if (!groupedTables.add(name)) {
         throw new Error(`Table ${i.name} belongs to multiple groups`);
       }
@@ -63,8 +63,8 @@ export const check = (input: Output): NormalizedOutput => {
       .concat(inlinedRefs)
       .map((ref) => ({
         actual: ref,
-        fromTable: resolveTableUnsafe(tableName(ref.from), tables),
-        toTable: resolveTableUnsafe(tableName(ref.to), tables),
+        fromTable: resolveTable(ref.from, tables),
+        toTable: resolveTable(ref.to, tables),
       })),
     enums: extract("enum", input).map((e) => ({
       actual: e,
@@ -104,15 +104,18 @@ export type NormalizedOutput = {
   enums: NormalizedEnum[];
 };
 
-const resolveTableUnsafe = (
-  id: string,
+const resolveTable = (
+  ref: SimplifiedTableRef,
   tables: NormalizedTable[]
 ): NormalizedTable => {
   const table = tables.find(
-    (t) => tableName(t.actual) === id || t.actual.alias === id
+    (t) =>
+      ref.schema === t.actual.schema &&
+      (ref.name === t.actual.name || ref.name === t.actual.alias)
   );
+
   if (!table) {
-    throw new Error(`Table ${id} does not exist`);
+    throw new Error(`Table ${tableName(ref)} does not exist`);
   }
 
   return table;
