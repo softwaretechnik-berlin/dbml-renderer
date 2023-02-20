@@ -2,6 +2,7 @@ import { SimplifiedTableRef, tableName } from "./common";
 import { parse } from "./parser";
 import {
   Column,
+  ColumnRef,
   Enum,
   Output,
   Project,
@@ -55,17 +56,21 @@ export const check = (input: Output): NormalizedOutput => {
     (t) => !groupedTables.has(tableName(t.actual))
   );
 
+  const refs = extract("ref", input)
+    .concat(inlinedRefs)
+    .map((ref) => {
+      return {
+        actual: ref,
+        from: extractColumns(ref.from, tables),
+        to: extractColumns(ref.to, tables),
+      };
+    });
+
   return {
     project: extract("project", input)[0],
     ungroupedTables,
     groups,
-    refs: extract("ref", input)
-      .concat(inlinedRefs)
-      .map((ref) => ({
-        actual: ref,
-        fromTable: resolveTable(ref.from, tables),
-        toTable: resolveTable(ref.to, tables),
-      })),
+    refs,
     enums: extract("enum", input).map((e) => ({
       actual: e,
       values: extract("value", e.items).map((v) => v.name),
@@ -92,8 +97,13 @@ export type NormalizedEnum = {
 
 export type NormalizedRef = {
   actual: Ref;
-  fromTable: NormalizedTable;
-  toTable: NormalizedTable;
+  from: ReferredColumns;
+  to: ReferredColumns;
+};
+
+export type ReferredColumns = {
+  table: NormalizedTable;
+  columns: Column[];
 };
 
 export type NormalizedOutput = {
@@ -126,4 +136,24 @@ const extract = <E extends { type: string }, T extends E["type"]>(
   entries: E[]
 ): Extract<E, { type: T }>[] => {
   return entries.filter((e) => e.type === type) as Extract<E, { type: T }>[];
+};
+
+const extractColumns = (
+  ref: ColumnRef,
+  tables: NormalizedTable[]
+): ReferredColumns => {
+  const table = resolveTable(ref, tables);
+
+  return {
+    table,
+    columns: ref.columns.map((c) => {
+      const column = table.columns.find((i) => i.name === c);
+      if (!column) {
+        throw new Error(
+          `Column ${c} does not exist in table ${tableName(table.actual)}`
+        );
+      }
+      return column;
+    }),
+  };
 };

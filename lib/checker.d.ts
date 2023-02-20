@@ -83,8 +83,12 @@ export type NormalizedEnum = {
 };
 export type NormalizedRef = {
     actual: Ref;
-    fromTable: NormalizedTable;
-    toTable: NormalizedTable;
+    from: ReferredColumns;
+    to: ReferredColumns;
+};
+export type ReferredColumns = {
+    table: NormalizedTable;
+    columns: Column[];
 };
 export type NormalizedOutput = {
     project?: Project;
