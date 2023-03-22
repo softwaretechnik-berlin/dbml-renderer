@@ -25,7 +25,6 @@ digraph dbml {
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    3    </i></font></TD></TR>
     </TABLE>>];
       
-      
       "orders" [id="orders";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       orders       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
@@ -45,7 +44,6 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-    
       
       "orders":f2:e -> "order_status":f0:w [penwidth=3, color="#29235c", arrowhead="none", arrowtail="none"]
     }

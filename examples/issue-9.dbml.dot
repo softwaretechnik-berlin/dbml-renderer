@@ -6,7 +6,6 @@ digraph dbml {
 
       
       
-      
       "issues" [id="issues";tooltip="issues\nThe reporter of #9 didn't give a DBML sample, but they had trouble escaping the word \"Farmer's\" in a single-quoted string used as a note.";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       issues       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
@@ -26,7 +25,6 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-    
       
       
     }

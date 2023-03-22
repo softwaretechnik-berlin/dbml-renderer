@@ -18,7 +18,6 @@ digraph dbml {
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    BET    </i></font></TD></TR>
     </TABLE>>];
       
-      
       "groups" [id="groups";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       groups       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
@@ -772,7 +771,6 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-    
       "payment_types":f0 -> "groups":f0 [style=invis, weight=100, color=red]
     "payment_types":f2:e -> "groups":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
 "payments":f0 -> "payment_types":f0 [style=invis, weight=100, color=red]

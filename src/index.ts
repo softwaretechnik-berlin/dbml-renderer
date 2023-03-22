@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
+import fs from "fs";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import fs from "fs";
-import render, { Format } from "./renderer";
+import { run } from "./api";
+import { Format } from "./renderer";
 
 const args = yargs(hideBin(process.argv))
   .scriptName("dbml-renderer")
@@ -47,7 +48,7 @@ const args = yargs(hideBin(process.argv))
   .parseSync();
 
 try {
-  args.output(render(args.input, args.format));
+  args.output(run(args.input, args.format));
 } catch (e) {
   console.error((e as any).message || e);
   process.exit(1);

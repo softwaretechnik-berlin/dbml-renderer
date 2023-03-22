@@ -1,8 +1,8 @@
-import render from "./api";
 import test from "ava";
-import { readdirSync, readFileSync, writeFileSync, mkdirSync } from "fs";
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import { readFile } from "fs/promises";
 import { join } from "path";
+import { run } from "./api";
 import { Format } from "./renderer";
 
 const examplesDir = "examples";
@@ -23,7 +23,7 @@ dbmlFiles.forEach(([dbmlFilename, dbmlFile]) => {
 
   formats.forEach((format) => {
     test(`${dbmlFile} can be converted to ${format}`, (t) => {
-      const output = render(input, format);
+      const output = run(input, format);
 
       writeFileSync(outputFile(format), output, "utf-8");
 

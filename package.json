@@ -11,7 +11,7 @@
     "dbml-renderer": "lib/index.js"
   },
   "scripts": {
-    "generate-parser": "peggy src/dbml.pegjs",
+    "generate:parser": "peggy src/dbml.pegjs",
     "format": "npx prettier --write src/ package.json",
     "format:check": "npx prettier --check src/ package.json",
     "build": "tsc",
@@ -26,12 +26,14 @@
     "ava": "^4.2.0",
     "peggy": "^2.0.1",
     "prettier": "2.7.1",
+    "prettier-plugin-organize-imports": "^3.2.2",
     "ts-node": "^10.8.0",
     "typescript": "^4.7.2"
   },
   "dependencies": {
     "@aduh95/viz.js": "3.4.0",
-    "yargs": "^17.5.1"
+    "yargs": "^17.5.1",
+    "zod": "^3.20.6"
   },
   "bugs": {
     "url": "https://github.com/softwaretechnik-berlin/dbml-renderer/issues"

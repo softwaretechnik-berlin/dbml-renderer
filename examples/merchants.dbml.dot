@@ -10,7 +10,6 @@ digraph dbml {
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    in_stock    </i></font></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    running_low    </i></font></TD></TR>
     </TABLE>>];
-      
       subgraph cluster_merchants {
       label = "merchants"
       style=filled;
@@ -106,41 +105,6 @@ digraph dbml {
     </TABLE>>];
     }
       "users" [id="users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">full_name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">country_code<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>int</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-    </TABLE>>];
-"users" [id="users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
 <TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -315,7 +279,6 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-    
       "users":f0 -> "countries":f0 [style=invis, weight=100, color=red]
     "users":f4:e -> "countries":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
 "merchants":f0 -> "countries":f0 [style=invis, weight=100, color=red]

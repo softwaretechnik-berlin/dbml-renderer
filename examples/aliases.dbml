@@ -1,0 +1,13 @@
+Table Person as u {
+    id int
+    parent1 int
+    parent2 int [ref: > u.id]
+}
+
+Ref: u.parent1 > u.id
+
+Table dates.Day as d {
+    id int
+    next int [ref: > dates.d.id]
+    previous int [ref: > dates.Day.id]
+}

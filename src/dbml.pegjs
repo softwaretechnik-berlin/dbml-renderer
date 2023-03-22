@@ -1,7 +1,7 @@
 File = all:DBML+ { return all.filter(e => e); }
 
 DBML =
-  comment: Comment { return { comment } }
+  Comment
   / Project
   / Table
   / TableGroup
@@ -9,60 +9,46 @@ DBML =
   / Enum
   / NewLine {}
 
-Project = "Project"i _ ProjectName? __ "{" __ options:Options Comment? __ "}"
-  { return { type: "project", options } }
+Project = "Project"i _ name:ProjectName? __ "{" __ options:Options Comment? __ "}" { return { type: "project", name, options } }
 ProjectName = Name
-Options = (head:Option tail:(EOL __ opt:Option { return opt; })* { return [head, ...tail].reduce((a, b) => Object.assign(a, b), {}); })?
-Option = key:OptionKey _ ":" _ value:OptionValue _ Comment?
-  { return { [key]: value } }
-OptionKey = Name
-OptionValue = AnyString
 
-SchemaName = Name
-FullTableName = schema:(SchemaName ".")? name:TableName
-  { return Array.isArray(schema) && schema.length > 0 ? schema[0]+"."+name : name }
+Schema = Name
 
-Table = "Table"i _ schema:(SchemaName ".")? name:TableName _ alias:TableAlias? _ settings:TableSettings? _ "{" __ items:TableItems Comment? __ "}"
-  { return { type: "table", name: (Array.isArray(schema) && schema.length > 0 ? schema[0]+"." : "") + name, items: items || [], alias, settings }}
-TableName = Name
+Table = "Table"i _ name:TableName _ alias:TableAlias? _ settings:TableSettings? __ "{" __ items:TableItems Comment? __ "}"
+  { return { type: "table", ...name, alias, items, settings }}
+TableName = SchemaTableName / SimpleTableName
+SchemaTableName = schema:Schema _ "." _ name:Name { return {schema, name}; }
+SimpleTableName = name:Name { return {schema: null, name}; }
 TableAlias = "as" _ alias:Name { return alias; }
 TableItems = (head:TableItem tail:(EOL __ item:TableItem { return item; })* { return [head, ...tail]; })?
 TableItem =
   Comment
   / Column
   / Indices
-  / option:Option { return { item: "option", option }; }
+  / option:Option { return { type: "option", option }; }
+TableSettings = Settings
 
-TableSettings = settings:Settings { return settings; }
-
-Column = name:ColumnName _ type:ColumnType _ settings:Settings? { return { item: "column", name, type, settings: settings || {} } }
+Column = name:ColumnName _ data:ColumnType _ settings:Settings? { return { type: "column", name, data, settings } }
 ColumnName = Name
 ColumnType = prefix:Name _ suffix:$('(' RawName? ')')? { return prefix + suffix }
 
-Indices = "Indexes"i _ "{" __ indices:IndicesList Comment? __ "}"
-   { return { item: "indices", indices }; }
+Indices = "Indexes"i __ "{" __ indices:IndicesList Comment? __ "}" { return { type: "indices", indices }; }
 IndicesList = (head:IndexItem tail:(EOL __ index:IndexItem { return index; })* { return [head, ...tail]; })?
 IndexItem =
   Comment
   / Index
-Index = columns:((name:ColumnName { return [name]; }) / CompositeIndex) _ settings:Settings? _ Comment? { return { columns, settings: settings || {} } }
+Index = columns:((name:ColumnName { return [name]; }) / CompositeIndex) _ settings:Settings? _ Comment? { return { columns, settings } }
 CompositeIndex = "(" _ entries:(head:CompositeIndexEntry tail:(_ "," _ entry:CompositeIndexEntry { return entry; })* { return [head, ...tail]; } )? _ ")" { return entries; }
 CompositeIndexEntry = ColumnName / Function
 
-Settings = "[" pairs:SettingsPairs "]" { return pairs; }
-SettingsPairs = (head:Setting tail:(_ "," _ setting:Setting _ { return setting; })* { return [head, ...tail].reduce((a, b) => Object.assign(a,b), {}); })?
-Setting = key:SettingKey _ value:(":" _ v:SettingValue { return v; })? { return {[key]: value}; }
-SettingKey = [^,\]:]+ { return text().trim(); }
-SettingValue = AnyString / Function / ([^,\]]+ { return text().trim(); })
-
-TableGroup = "TableGroup"i _ name:TableName _ "{" __ tables:TableGroupItems Comment? __ "}" { return { type: "group", name, tables: tables || [] }; }
+TableGroup = "TableGroup"i _ name:Name __ "{" __ items:TableGroupItems Comment? __ "}" { return { type: "group", name, items }; }
 TableGroupItems = (head:TableGroupItem tail:(EOL __ item:TableGroupItem { return item; })* { return [head, ...tail]; })?
 TableGroupItem =
   Comment
-  / FullTableName
+  / name:TableName { return {type: "table", ...name} }
 
-Ref = "Ref"i _ name:Name? _ ":" _ fromTable:(SchemaName '.' TableName '.' / TableName '.') fromColumns:RefColumns _ cardinality:Cardinality _ toTable:(SchemaName '.' TableName '.' / TableName '.') toColumns:RefColumns _ settings:Settings? Comment?
-  { return { type: "ref", cardinality, fromTable: fromTable.length > 3 ? fromTable[0]+"."+fromTable[2] : fromTable[0], fromColumns, toTable: toTable.length > 3 ? toTable[0]+"."+toTable[2] : toTable[0], toColumns }; }
+Ref = "Ref"i _ name:Name? _ ":" _ from:RefFull _ cardinality:Cardinality _ to:RefFull _ settings:Settings? Comment? { return { type: "ref", cardinality, from, to, settings }; }
+RefFull = schemaTable:(n:SchemaTableName _ '.' { return n; } / n:SimpleTableName _ '.' { return n; }) _ columns:RefColumns { return { ...schemaTable, columns } }
 RefColumns =
   (name:ColumnName { return [name]; })
   / CompositeKey
@@ -70,32 +56,44 @@ Cardinality = '-' / '>' / '<'
 
 CompositeKey = "(" _ columns:(head:ColumnName tail:(_ "," _ name:ColumnName { return name; })* { return [head, ...tail]; } )? _ ")" { return columns; }
 
-Enum = "Enum"i _ name:Name _ "{" __  values:EnumValues Comment? __ "}" { return { type: "enum", name, values: values || [] }}
+Enum = "Enum"i _ name:Name __ "{" __  items:EnumValues Comment? __ "}" { return { type: "enum", name, items }}
 EnumValues = (head:EnumValue tail:(EOL __ item:EnumValue { return item; })* { return [head, ...tail].filter(i => i); })?
 EnumValue =
-  name:Name _ settings:Settings? { return { name, settings: settings || {} }; }
+  name:Name _ settings:Settings? { return { type:"value", name, settings }; }
   / Comment
 
 Name = RawName / QuotedName
 RawName = $[a-zA-Z0-9_]+
 QuotedName = '"' content:$[^"\n\r]* '"' { return content; }
 
-AnyString = MultiLineString / SingleQuotedString / DoubleQuotedString
+String = MultiLineString / SingleQuotedString / DoubleQuotedString
 MultiLineString = "'''" content:(("'''" { return ""; }) / MultiLineStringContent) { return content; }
 MultiLineStringContent = head:. tail:(!"'''" c:. { return c; })* "'''" { return [head, ...tail].join(""); }
 SingleQuotedString = "'" content:($[^'\\]+ / "\\'" { return "'" } / [\\])* "'" { return content.join(""); }
-DoubleQuotedString = '"' content:($[^"\\]+ / '\\"' { return '"' } / [\\])* "'" { return content.join(""); }
+DoubleQuotedString = '"' content:($[^"\\]+ / '\\"' { return '"' } / [\\])* '"' { return content.join(""); }
 
-Function = '`' [^`]* '`' { return text(); }
-
-Comment = SingleLineComment / MultiLineComment
-SingleLineComment = _ "//" _ comment:LineOfText { return { comment }; }
+Comment = comment:(SingleLineComment / MultiLineComment) { return {type: "comment", comment} }
+SingleLineComment = _ "//" _ comment:LineOfText { return comment; }
 MultiLineComment = "/*" comment:(("*/" { return ""; }) / MultiLineCommentContent) { return comment; }
 MultiLineCommentContent = head:. tail:(!"*/" c:. { return c; })* "*/" { return [head, ...tail].join(""); }
 LineOfText = text:$([^\n\r]*)
-EOL = NewLine / (Comment NewLine) / EOF
-NewLine = '\n' / '\r' '\n'
-EOF = !.
+
+Settings = "[" pairs:SettingsPairs "]" { return pairs; }
+SettingsPairs = (head:Setting tail:(_ "," _ setting:Setting _ { return setting; })* { return [head, ...tail].reduce((a, b) => Object.assign(a,b), {}); })?
+Setting = key:SettingKey _ value:(":" _ v:SettingValue { return v; })? { return {[key]: value}; }
+SettingKey = [^,\]:]+ { return text().trim(); }
+SettingValue = String / Function / ([^,\]]+ { return text().trim(); })
+
+Function = '`' [^`]* '`' { return text(); }
+
+Options = (head:Option tail:(EOL __ opt:Option { return opt; })* { return [head, ...tail].reduce((a, b) => Object.assign(a, b), {}); })?
+Option = key:OptionKey _ ":" _ value:OptionValue _ Comment?
+  { return { [key]: value } }
+OptionKey = Name
+OptionValue = String
 
 _ "space" = [ \t]*
 __ "whitespace" = [ \t\n\r]*
+EOL = NewLine / (Comment NewLine) / EOF
+NewLine = '\n' / '\r' '\n'
+EOF = !.
