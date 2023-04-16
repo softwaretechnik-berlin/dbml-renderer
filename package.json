@@ -22,7 +22,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^17.0.36",
-    "@types/yargs": "^17.0.10",
+    "@types/yargs": "^17.0.24",
     "ava": "^4.2.0",
     "peggy": "^2.0.1",
     "prettier": "2.7.1",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@aduh95/viz.js": "3.4.0",
-    "yargs": "^17.5.1",
+    "yargs": "^17.7.1",
     "zod": "^3.20.6"
   },
   "bugs": {
