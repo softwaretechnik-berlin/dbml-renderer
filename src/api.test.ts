@@ -61,7 +61,7 @@ const comparisonPage =
   dbmlFiles
     .map(
       ([dbmlFilename, dbmlFile]) => `<div>
-    <h2>${dbmlFilename}</h2>
+    <h2 id="${dbmlFilename}">${dbmlFilename}</h2>
     <table>
       <tr>
         <th>Expected</th>
