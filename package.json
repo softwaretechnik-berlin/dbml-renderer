@@ -24,7 +24,7 @@
     "@types/node": "^18.15.11",
     "@types/yargs": "^17.0.24",
     "ava": "^5.2.0",
-    "peggy": "^2.0.1",
+    "peggy": "^3.0.2",
     "prettier": "2.7.1",
     "prettier-plugin-organize-imports": "^3.2.2",
     "ts-node": "^10.8.0",
