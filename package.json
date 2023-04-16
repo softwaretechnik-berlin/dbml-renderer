@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/node": "^18.15.11",
     "@types/yargs": "^17.0.24",
-    "ava": "^4.2.0",
+    "ava": "^5.2.0",
     "peggy": "^2.0.1",
     "prettier": "2.7.1",
     "prettier-plugin-organize-imports": "^3.2.2",
