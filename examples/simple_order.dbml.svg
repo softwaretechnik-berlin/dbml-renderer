@@ -24,8 +24,7 @@
 <text text-anchor="start" x="1165.21" y="-121.31" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">(!)</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="698.41,-40.11 698.41,-100.11 1206.41,-100.11 1206.41,-40.11 698.41,-40.11"/>
 <polygon fill="none" stroke="#29235c" points="698.41,-40.11 698.41,-100.11 1206.41,-100.11 1206.41,-40.11 698.41,-40.11"/>
-<text text-anchor="start" x="708.94" y="-61.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">client_fullname</text>
-<text text-anchor="start" x="922.31" y="-61.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="708.94" y="-60.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">client_fullname &#160;&#160;&#160;</text>
 <text text-anchor="start" x="957.3" y="-61.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">nvarchar(261)</text>
 <text text-anchor="start" x="1156.43" y="-61.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> </text>
 <text text-anchor="start" x="1165.32" y="-61.31" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">(!)</text>

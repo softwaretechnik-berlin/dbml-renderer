@@ -18,13 +18,11 @@
 <text text-anchor="start" x="81.71" y="-181.31" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#ffffff"> &#160;&#160;&#160;&#160;&#160;&#160;issues &#160;&#160;&#160;&#160;&#160;&#160;</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="57.8,-100.11 57.8,-160.11 320.8,-160.11 320.8,-100.11 57.8,-100.11"/>
 <polygon fill="none" stroke="#29235c" points="57.8,-100.11 57.8,-160.11 320.8,-160.11 320.8,-100.11 57.8,-100.11"/>
-<text text-anchor="start" x="68.78" y="-121.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">number</text>
-<text text-anchor="start" x="177.24" y="-121.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="68.78" y="-120.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">number &#160;&#160;&#160;</text>
 <text text-anchor="start" x="212.4" y="-121.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">integer</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="57.8,-40.11 57.8,-100.11 320.8,-100.11 320.8,-40.11 57.8,-40.11"/>
 <polygon fill="none" stroke="#29235c" points="57.8,-40.11 57.8,-100.11 320.8,-100.11 320.8,-40.11 57.8,-40.11"/>
-<text text-anchor="start" x="68.8" y="-61.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">title</text>
-<text text-anchor="start" x="118.57" y="-61.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="68.8" y="-60.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">title &#160;&#160;&#160;</text>
 <text text-anchor="start" x="203.13" y="-61.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">varchar</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="56.3,-39.11 56.3,-221.11 321.3,-221.11 321.3,-39.11 56.3,-39.11"/>
 </a>

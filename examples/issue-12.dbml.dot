@@ -6,29 +6,29 @@ digraph dbml {
 
       
       
-      "galleries" [id="galleries";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       galleries       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      "galleries" [id="galleries";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       galleries       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>gallery_id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>int(3) unsigned zerofill</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>gallery_id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int(3) unsigned zerofill</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">title<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(255)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">title    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(255)</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">comment<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>text</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">comment    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>

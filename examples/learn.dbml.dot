@@ -5,588 +5,588 @@ digraph dbml {
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
       "module_type" [id=module_type;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       module_type       </B></font></TD></TR>
-    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    lesson    </i></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    assignment    </i></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       module_type       </B></FONT></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    lesson    </I></FONT></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    assignment    </I></FONT></TD></TR>
     </TABLE>>];
       
-      "User" [id="User";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       User       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      "User" [id="User";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       User       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">firstName<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">firstName    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">lastName<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">lastName    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">email<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">email    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">createdAt<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">createdAt    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">updatedAt<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-    </TABLE>>];
-"UserPreferences" [id="UserPreferences";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPreferences       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">userId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">practiceGoal<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">why<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">codingAbility<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT">updatedAt    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"Path" [id="Path";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Path       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"UserPreferences" [id="UserPreferences";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       UserPreferences       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">userId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">icon<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">practiceGoal    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">description<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">why    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">createdAt<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">updatedAt<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">characterId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">codingAbility    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"UserPath" [id="UserPath";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserPath       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"Path" [id="Path";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       Path       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">userId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">pathId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">icon    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">completed<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>boolean</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">description    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">joined<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">createdAt    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-    </TABLE>>];
-"Concept" [id="Concept";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Concept       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">updatedAt    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">description<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>text</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">icon<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">taughtIn<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">characterId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"UserConcepts" [id="UserConcepts";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserConcepts       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"UserPath" [id="UserPath";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       UserPath       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">userId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">conceptId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">userId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">learned<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">pathId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-    </TABLE>>];
-"Module" [id="Module";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Module       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">completed    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>boolean</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">icon<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">type<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>module_type</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">previous<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">pathId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">joined    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"UserModule" [id="UserModule";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       UserModule       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"Concept" [id="Concept";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       Concept       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">userId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">moduleId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">description    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">completedAt<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">icon    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-    </TABLE>>];
-"Assignment" [id="Assignment";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Assignment       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">moduleId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">description<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">taughtIn    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"AssignmentFile" [id="AssignmentFile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       AssignmentFile       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"UserConcepts" [id="UserConcepts";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       UserConcepts       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">userId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">author<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">conceptId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">assignmentId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">type<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">content<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>text</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">learned    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"Lesson" [id="Lesson";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Lesson       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"Module" [id="Module";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       Module       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">moduleId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-    </TABLE>>];
-"StorySection" [id="StorySection";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       StorySection       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">icon    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">lessonId<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">type    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>module_type</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">order<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>int</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">previous    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">content<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>text</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">teaches<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i></font></TD>
+          <TD ALIGN="LEFT">pathId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"Character" [id="Character";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Character       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"UserModule" [id="UserModule";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       UserModule       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">userId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">displayName<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">moduleId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-    </TABLE>>];
-"Friends" [id="Friends";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       Friends       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">user1Id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">user2Id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">since<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">completedAt    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"FriendRequests" [id="FriendRequests";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       FriendRequests       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"Assignment" [id="Assignment";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       Assignment       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">from<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">to<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>uuid</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">moduleId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">accepted<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>boolean</i></font></TD>
+          <TD ALIGN="LEFT">description    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+    </TABLE>>];
+"AssignmentFile" [id="AssignmentFile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       AssignmentFile       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">requested<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">author    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">assignmentId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">type    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">content    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"Lesson" [id="Lesson";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       Lesson       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">moduleId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"StorySection" [id="StorySection";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       StorySection       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">lessonId    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">order    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">content    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">teaches    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"Character" [id="Character";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       Character       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">displayName    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"Friends" [id="Friends";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       Friends       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">user1Id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">user2Id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">since    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"FriendRequests" [id="FriendRequests";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       FriendRequests       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">from    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">to    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>uuid</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">accepted    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>boolean</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">requested    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>

@@ -82,8 +82,7 @@
 <text text-anchor="start" x="477.96" y="-458.59" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="203.75,-377.39 203.75,-437.39 522.75,-437.39 522.75,-377.39 203.75,-377.39"/>
 <polygon fill="none" stroke="#29235c" points="203.75,-377.39 203.75,-437.39 522.75,-437.39 522.75,-377.39 203.75,-377.39"/>
-<text text-anchor="start" x="214.28" y="-398.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">status</text>
-<text text-anchor="start" x="299.64" y="-398.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="214.28" y="-397.59" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">status &#160;&#160;&#160;</text>
 <text text-anchor="start" x="334.33" y="-398.59" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">order_status</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="202.25,-376.39 202.25,-558.39 523.25,-558.39 523.25,-376.39 202.25,-376.39"/>
 </g>

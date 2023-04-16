@@ -63,7 +63,7 @@ class TableNameRenderer implements RowRenderer {
         fontColor = "#000000";
       }
     }
-    return `<TR><TD PORT="${this.port}" BGCOLOR="${tableColor}"><font color="${fontColor}"><B>       ${this.displayName}       </B></font></TD></TR>`;
+    return `<TR><TD PORT="${this.port}" BGCOLOR="${tableColor}"><FONT COLOR="${fontColor}"><B>       ${this.displayName}       </B></FONT></TD></TR>`;
   }
 }
 
@@ -97,19 +97,19 @@ class ColumnRenderer implements RowRenderer {
     let name = this.actual.name;
     const settings = this.actual.settings || {};
     if (isPk(settings) || relatedIndexSettings.some(isPk)) {
-      name = `<b>${name}</b>`;
+      name = `<B>${name}</B>`;
     }
 
-    let type = `<i>${this.dataType()}</i>`;
+    let type = `<I>${this.dataType()}</I>`;
     if ("not null" in settings) {
-      type = type + " <b>(!)</b>";
+      type = type + " <B>(!)</B>";
     }
 
-    return `<TR><TD ALIGN="left" PORT="${this.port}" BGCOLOR="#e7e2dd">
+    return `<TR><TD ALIGN="LEFT" PORT="${this.port}" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">${name}<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font>${type}</font></TD>
+          <TD ALIGN="LEFT">${name}    </TD>
+          <TD ALIGN="RIGHT"><FONT>${type}</FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>`;
@@ -130,9 +130,9 @@ class CompositeKeyRowRenderer implements RowRenderer {
   toDot(): string {
     return `<TR><TD PORT="${
       this.port
-    }" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    ${this.columns.join(
+    }" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    ${this.columns.join(
       ", "
-    )}    </i></font></TD></TR>`;
+    )}    </I></FONT></TD></TR>`;
   }
 }
 
@@ -204,7 +204,7 @@ class TableRenderer {
       ? ""
       : `tooltip="${this.displayName()}\\n${escapeString(note)}";`;
 
-    return `"${this.displayName()}" [id="${this.displayName()}";${tooltip}label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
+    return `"${this.displayName()}" [id="${this.displayName()}";${tooltip}label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       ${this.renderers.map((column) => column.toDot()).join("\n")}
     </TABLE>>];`;
   }
@@ -221,7 +221,7 @@ class GroupRenderer {
 
   toDot(): string {
     return `subgraph cluster_${this.name} {
-      label = "${this.name}"
+      label="${this.name}"
       style=filled;
       color="#dddddd";
 
@@ -301,13 +301,13 @@ class EnumRenderer {
 
   toDot(): string {
     return `"${this.name()}" [id=${this.name()};label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       ${this.name()}       </B></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       ${this.name()}       </B></FONT></TD></TR>
     ${this.enumType.values.map((name, i) => this.valueDot(name, i)).join("\n")}
     </TABLE>>];`;
   }
 
   private valueDot(name: string, i: number): string {
-    return `<TR><TD PORT="f${i}" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    ${name}    </i></font></TD></TR>`;
+    return `<TR><TD PORT="f${i}" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    ${name}    </I></FONT></TD></TR>`;
   }
 }
 
@@ -363,7 +363,8 @@ class DbmlRenderer {
       ${this.ungroupedTables.map((table) => table.toDot()).join("\n")}
       ${this.refs.map((ref) => ref.toDot()).join("\n")}
       ${this.enumRefs.map((def) => def.toDot()).join("\n")}
-    }`;
+    }
+`;
   }
 }
 

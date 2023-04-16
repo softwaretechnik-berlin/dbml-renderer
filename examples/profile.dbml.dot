@@ -5,626 +5,626 @@ digraph dbml {
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
       "job_category" [id=job_category;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       job_category       </B></font></TD></TR>
-    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    full_time    </i></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    part_time    </i></font></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    intern    </i></font></TD></TR>
-<TR><TD PORT="f3" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    on_campus    </i></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       job_category       </B></FONT></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    full_time    </I></FONT></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    part_time    </I></FONT></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    intern    </I></FONT></TD></TR>
+<TR><TD PORT="f3" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    on_campus    </I></FONT></TD></TR>
     </TABLE>>];
 "apply_status" [id=apply_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       apply_status       </B></font></TD></TR>
-    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    pending    </i></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    reviewed    </i></font></TD></TR>
-<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    declined    </i></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       apply_status       </B></FONT></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    pending    </I></FONT></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    reviewed    </I></FONT></TD></TR>
+<TR><TD PORT="f2" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    declined    </I></FONT></TD></TR>
     </TABLE>>];
 "eligibility_status" [id=eligibility_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" BGCOLOR="#29235c"><font color="#ffffff"><B>       eligibility_status       </B></font></TD></TR>
-    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    all    </i></font></TD></TR>
-<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><font color="#1d71b8"><i>    special_major    </i></font></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       eligibility_status       </B></FONT></TD></TR>
+    <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    all    </I></FONT></TD></TR>
+<TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    special_major    </I></FONT></TD></TR>
     </TABLE>>];
       
-      "user" [id="user";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       user       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      "user" [id="user";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       user       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">username<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">username    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">email<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">email    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">password_digest<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">password_digest    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">role<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">role    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">created_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">updated_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-    </TABLE>>];
-"profile" [id="profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       profile       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">user_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">updated_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"basic_profile" [id="basic_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       basic_profile       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"profile" [id="profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       profile       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">profile_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">user_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">avatar<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>blob</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">birth<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>date</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">city<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">state<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f8" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">country<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f9" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">skillset<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f10" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">career_objective<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>text</i></font></TD>
+          <TD ALIGN="LEFT">created_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"education_profile" [id="education_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       education_profile       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"basic_profile" [id="basic_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       basic_profile       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">profile_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">profile_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">college_name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">avatar    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>blob</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">location<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">degree<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">birth    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>date</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">major<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">city    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">year_of_passing<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>date</i></font></TD>
+          <TD ALIGN="LEFT">state    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-    </TABLE>>];
-"experience_profile" [id="experience_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       experience_profile       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f8" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT">country    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f9" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">profile_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">skillset    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f10" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">company_name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">title<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">location<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">start_date<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>date</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">end_date<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>date</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f8" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">work_description<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>text</i></font></TD>
+          <TD ALIGN="LEFT">career_objective    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"company" [id="company";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       company       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"education_profile" [id="education_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       education_profile       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">company_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">profile_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">avatar<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>blob</i></font></TD>
+          <TD ALIGN="LEFT">college_name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">location    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">location<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">degree    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">description<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">major    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">contract_email<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f8" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">contract_phone<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">year_of_passing    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>date</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"job" [id="job";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       job       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"experience_profile" [id="experience_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       experience_profile       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">company_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">profile_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">title<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">company_name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">title    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">application_deadline<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">location    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">location<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">start_date    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>date</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">salary<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>float</i></font></TD>
+          <TD ALIGN="LEFT">end_date    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>date</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f8" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f8" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">desc<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>text</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f9" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">category<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>job_category</i></font></TD>
+          <TD ALIGN="LEFT">work_description    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"job_application" [id="job_application";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       job_application       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"company" [id="company";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       company       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">job_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">company_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">applicant_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">avatar    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>blob</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">resume<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">status<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>apply_status</i></font></TD>
+          <TD ALIGN="LEFT">location    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">description    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">updated_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">contract_email    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-    </TABLE>>];
-"event" [id="event";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       event       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f8" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">company_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">name<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">description<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">time<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>date</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f6" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">location<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f7" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">eligibility<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>eligibility_status</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f8" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="left" PORT="f9" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">updated_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">contract_phone    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"event_regisiteration" [id="event_regisiteration";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       event_regisiteration       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"job" [id="job";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       job       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">event_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">company_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">applicant_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar(32)</i> <b>(!)</b></font></TD>
+          <TD ALIGN="LEFT">title    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">regisitered_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">created_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">application_deadline    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">location    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">salary    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>float</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f8" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">desc    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f9" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">category    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>job_category</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"job_application" [id="job_application";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       job_application       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">job_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">applicant_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">resume    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">status    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>apply_status</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">updated_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"event" [id="event";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       event       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">company_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">description    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">time    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>date</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">location    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">eligibility    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>eligibility_status</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f8" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f9" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">updated_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"event_regisiteration" [id="event_regisiteration";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       event_regisiteration       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">event_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">applicant_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(32)</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">regisitered_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>

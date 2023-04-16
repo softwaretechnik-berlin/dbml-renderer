@@ -17,43 +17,35 @@
 <text text-anchor="start" x="181.65" y="-615.87" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#ffffff"> &#160;&#160;&#160;&#160;&#160;&#160;Users &#160;&#160;&#160;&#160;&#160;&#160;</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="85.67,-534.67 85.67,-594.67 485.67,-594.67 485.67,-534.67 85.67,-534.67"/>
 <polygon fill="none" stroke="#29235c" points="85.67,-534.67 85.67,-594.67 485.67,-594.67 485.67,-534.67 85.67,-534.67"/>
-<text text-anchor="start" x="96.67" y="-555.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">UserKey</text>
-<text text-anchor="start" x="219.34" y="-555.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="96.67" y="-554.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">UserKey &#160;&#160;&#160;</text>
 <text text-anchor="start" x="323.53" y="-555.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">random_id</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="85.67,-474.67 85.67,-534.67 485.67,-534.67 485.67,-474.67 85.67,-474.67"/>
 <polygon fill="none" stroke="#29235c" points="85.67,-474.67 85.67,-534.67 485.67,-534.67 485.67,-474.67 85.67,-474.67"/>
-<text text-anchor="start" x="96.67" y="-495.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">FirstName</text>
-<text text-anchor="start" x="244.2" y="-495.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="96.67" y="-494.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">FirstName &#160;&#160;&#160;</text>
 <text text-anchor="start" x="396.45" y="-495.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">string</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="85.67,-414.67 85.67,-474.67 485.67,-474.67 485.67,-414.67 85.67,-414.67"/>
 <polygon fill="none" stroke="#29235c" points="85.67,-414.67 85.67,-474.67 485.67,-474.67 485.67,-414.67 85.67,-414.67"/>
-<text text-anchor="start" x="96.67" y="-435.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">LastName</text>
-<text text-anchor="start" x="242.47" y="-435.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="96.67" y="-434.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">LastName &#160;&#160;&#160;</text>
 <text text-anchor="start" x="396.45" y="-435.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">string</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="85.67,-354.67 85.67,-414.67 485.67,-414.67 485.67,-354.67 85.67,-354.67"/>
 <polygon fill="none" stroke="#29235c" points="85.67,-354.67 85.67,-414.67 485.67,-414.67 485.67,-354.67 85.67,-354.67"/>
-<text text-anchor="start" x="96.45" y="-375.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">FullName</text>
-<text text-anchor="start" x="233.32" y="-375.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="96.45" y="-374.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">FullName &#160;&#160;&#160;</text>
 <text text-anchor="start" x="268.57" y="-375.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">formula(string)</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="85.67,-294.67 85.67,-354.67 485.67,-354.67 485.67,-294.67 85.67,-294.67"/>
 <polygon fill="none" stroke="#29235c" points="85.67,-294.67 85.67,-354.67 485.67,-354.67 485.67,-294.67 85.67,-294.67"/>
-<text text-anchor="start" x="96.67" y="-315.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Email</text>
-<text text-anchor="start" x="176.66" y="-315.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="96.67" y="-314.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Email &#160;&#160;&#160;</text>
 <text text-anchor="start" x="396.45" y="-315.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">string</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="85.67,-234.67 85.67,-294.67 485.67,-294.67 485.67,-234.67 85.67,-234.67"/>
 <polygon fill="none" stroke="#29235c" points="85.67,-234.67 85.67,-294.67 485.67,-294.67 485.67,-234.67 85.67,-234.67"/>
-<text text-anchor="start" x="96.67" y="-255.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Username</text>
-<text text-anchor="start" x="244.23" y="-255.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="96.67" y="-254.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Username &#160;&#160;&#160;</text>
 <text text-anchor="start" x="396.45" y="-255.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">string</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="85.67,-174.67 85.67,-234.67 485.67,-234.67 485.67,-174.67 85.67,-174.67"/>
 <polygon fill="none" stroke="#29235c" points="85.67,-174.67 85.67,-234.67 485.67,-234.67 485.67,-174.67 85.67,-174.67"/>
-<text text-anchor="start" x="96.67" y="-195.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Created</text>
-<text text-anchor="start" x="210.47" y="-195.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="96.67" y="-194.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Created &#160;&#160;&#160;</text>
 <text text-anchor="start" x="327.11" y="-195.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">timestamp</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="85.67,-114.67 85.67,-174.67 485.67,-174.67 485.67,-114.67 85.67,-114.67"/>
 <polygon fill="none" stroke="#29235c" points="85.67,-114.67 85.67,-174.67 485.67,-174.67 485.67,-114.67 85.67,-114.67"/>
-<text text-anchor="start" x="96.67" y="-135.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">LastUpdated</text>
-<text text-anchor="start" x="278.08" y="-135.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="96.67" y="-134.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">LastUpdated &#160;&#160;&#160;</text>
 <text text-anchor="start" x="327.11" y="-135.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">timestamp</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="84.67,-113.67 84.67,-655.67 486.67,-655.67 486.67,-113.67 84.67,-113.67"/>
 </g>

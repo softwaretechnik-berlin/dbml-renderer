@@ -22,8 +22,7 @@
 <text text-anchor="start" x="256.7" y="-121.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="54.48,-40.11 54.48,-100.11 301.48,-100.11 301.48,-40.11 54.48,-40.11"/>
 <polygon fill="none" stroke="#29235c" points="54.48,-40.11 54.48,-100.11 301.48,-100.11 301.48,-40.11 54.48,-40.11"/>
-<text text-anchor="start" x="65.48" y="-61.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Target</text>
-<text text-anchor="start" x="157.94" y="-61.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="65.48" y="-60.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Target &#160;&#160;&#160;</text>
 <text text-anchor="start" x="256.7" y="-61.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="52.98,-39.11 52.98,-221.11 301.98,-221.11 301.98,-39.11 52.98,-39.11"/>
 </g>

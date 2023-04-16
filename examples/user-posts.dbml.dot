@@ -6,80 +6,80 @@ digraph dbml {
 
       
       
-      "users" [id="users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       users       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+      "users" [id="users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       users       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT">id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">username<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">username    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">role<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">role    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">created_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"posts" [id="posts";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" >
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><font color="#ffffff"><B>       posts       </B></font></TD></TR>
-<TR><TD ALIGN="left" PORT="f1" BGCOLOR="#e7e2dd">
+"posts" [id="posts";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       posts       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT"><b>id</b><FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f2" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">title<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>varchar</i></font></TD>
+          <TD ALIGN="LEFT">title    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f3" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">body<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>text</i></font></TD>
+          <TD ALIGN="LEFT">body    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f4" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">user_id<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>integer</i></font></TD>
+          <TD ALIGN="LEFT">user_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>integer</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>
-<TR><TD ALIGN="left" PORT="f5" BGCOLOR="#e7e2dd">
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-          <TD ALIGN="LEFT">created_at<FONT>    </FONT></TD>
-          <TD ALIGN="RIGHT"><font><i>timestamp</i></font></TD>
+          <TD ALIGN="LEFT">created_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
         </TR>
       </TABLE>
     </TD></TR>

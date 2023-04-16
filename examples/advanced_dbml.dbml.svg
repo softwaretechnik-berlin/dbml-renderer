@@ -29,15 +29,13 @@
 <text text-anchor="start" x="914.49" y="-472.31" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">(!)</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="586.68,-391.11 586.68,-451.11 955.68,-451.11 955.68,-391.11 586.68,-391.11"/>
 <polygon fill="none" stroke="#29235c" points="586.68,-391.11 586.68,-451.11 955.68,-451.11 955.68,-391.11 586.68,-391.11"/>
-<text text-anchor="start" x="597.23" y="-412.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Name</text>
-<text text-anchor="start" x="682.56" y="-412.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="597.23" y="-411.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Name &#160;&#160;&#160;</text>
 <text text-anchor="start" x="717.43" y="-412.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">varchar(max)</text>
 <text text-anchor="start" x="905.85" y="-412.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> </text>
 <text text-anchor="start" x="914.74" y="-412.31" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">(!)</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="586.68,-331.11 586.68,-391.11 955.68,-391.11 955.68,-331.11 586.68,-331.11"/>
 <polygon fill="none" stroke="#29235c" points="586.68,-331.11 586.68,-391.11 955.68,-391.11 955.68,-331.11 586.68,-331.11"/>
-<text text-anchor="start" x="597.68" y="-352.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Sex</text>
-<text text-anchor="start" x="652.81" y="-352.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="597.68" y="-351.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Sex &#160;&#160;&#160;</text>
 <text text-anchor="start" x="910.9" y="-352.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="585.18,-330.11 585.18,-572.11 956.18,-572.11 956.18,-330.11 585.18,-330.11"/>
 </g>
@@ -58,8 +56,7 @@
 <text text-anchor="start" x="1415.22" y="-472.31" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">(!)</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="1139.42,-391.11 1139.42,-451.11 1456.42,-451.11 1456.42,-391.11 1139.42,-391.11"/>
 <polygon fill="none" stroke="#29235c" points="1139.42,-391.11 1139.42,-451.11 1456.42,-451.11 1456.42,-391.11 1139.42,-391.11"/>
-<text text-anchor="start" x="1150.42" y="-412.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Name</text>
-<text text-anchor="start" x="1235.75" y="-412.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="1150.42" y="-411.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Name &#160;&#160;&#160;</text>
 <text text-anchor="start" x="1281.86" y="-412.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">varchar(10)</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="1137.92,-390.11 1137.92,-572.11 1456.92,-572.11 1456.92,-390.11 1137.92,-390.11"/>
 </a>
@@ -88,8 +85,7 @@
 <text text-anchor="start" x="878.9" y="-121.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="618.68,-40.11 618.68,-100.11 923.68,-100.11 923.68,-40.11 618.68,-40.11"/>
 <polygon fill="none" stroke="#29235c" points="618.68,-40.11 618.68,-100.11 923.68,-100.11 923.68,-40.11 618.68,-40.11"/>
-<text text-anchor="start" x="629.23" y="-61.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Name</text>
-<text text-anchor="start" x="714.56" y="-61.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="629.23" y="-60.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Name &#160;&#160;&#160;</text>
 <text text-anchor="start" x="749.41" y="-61.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">varchar(20)</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="617.18,-39.11 617.18,-221.11 924.18,-221.11 924.18,-39.11 617.18,-39.11"/>
 </g>
@@ -107,13 +103,11 @@
 <text text-anchor="start" x="355.68" y="-326.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="71.47,-245.11 71.47,-305.11 400.47,-305.11 400.47,-245.11 71.47,-245.11"/>
 <polygon fill="none" stroke="#29235c" points="71.47,-245.11 71.47,-305.11 400.47,-305.11 400.47,-245.11 71.47,-245.11"/>
-<text text-anchor="start" x="82.47" y="-266.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">TeamId</text>
-<text text-anchor="start" x="190.93" y="-266.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="82.47" y="-265.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">TeamId &#160;&#160;&#160;</text>
 <text text-anchor="start" x="355.68" y="-266.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="#e7e2dd" stroke="transparent" points="71.47,-185.11 71.47,-245.11 400.47,-245.11 400.47,-185.11 71.47,-185.11"/>
 <polygon fill="none" stroke="#29235c" points="71.47,-185.11 71.47,-245.11 400.47,-245.11 400.47,-185.11 71.47,-185.11"/>
-<text text-anchor="start" x="82.47" y="-206.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">UserId</text>
-<text text-anchor="start" x="176.69" y="-206.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c"> &#160;&#160;&#160;</text>
+<text text-anchor="start" x="82.47" y="-205.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">UserId &#160;&#160;&#160;</text>
 <text text-anchor="start" x="355.68" y="-206.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="69.97,-184.11 69.97,-426.11 400.97,-426.11 400.97,-184.11 69.97,-184.11"/>
 </g>
