@@ -37,6 +37,6 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
       "Source":f0 -> "Target":f0 [style=invis, weight=100, color=red]
-    "Source":f2:e -> "Target":f1:w [penwidth=3, color="#29235c", headlabel="*", taillabel="1", arrowhead="normal", arrowtail="none"]
+    "Source":f2:e -> "Target":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="*", taillabel="1"]
       
     }

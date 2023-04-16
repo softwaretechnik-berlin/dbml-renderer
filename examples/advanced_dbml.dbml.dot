@@ -104,10 +104,10 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
       "users.users":f0 -> "users.sexes":f0 [style=invis, weight=100, color=red]
-    "users.users":f3:e -> "users.sexes":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    "users.users":f3:e -> "users.sexes":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
 "teams_users":f0 -> "teams":f0 [style=invis, weight=100, color=red]
-    "teams_users":f2:e -> "teams":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    "teams_users":f2:e -> "teams":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
 "teams_users":f0 -> "users.users":f0 [style=invis, weight=100, color=red]
-    "teams_users":f3:e -> "users.users":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    "teams_users":f3:e -> "users.users":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
       
     }

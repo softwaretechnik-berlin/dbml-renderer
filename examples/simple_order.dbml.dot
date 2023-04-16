@@ -45,6 +45,6 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
       "[dbo].[OrderItem]":f0 -> "[dbo].[Order]":f0 [style=invis, weight=100, color=red]
-    "[dbo].[OrderItem]":f2:e -> "[dbo].[Order]":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    "[dbo].[OrderItem]":f2:e -> "[dbo].[Order]":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
       
     }

@@ -83,6 +83,7 @@ export const Enum = z.object({
 export type Enum = z.infer<typeof Enum>;
 
 export const Cardinality = z.union([
+  z.literal("<>"),
   z.literal(">"),
   z.literal("<"),
   z.literal("-"),

@@ -322,7 +322,7 @@ export declare const Enum: z.ZodObject<{
     })[];
 }>;
 export type Enum = z.infer<typeof Enum>;
-export declare const Cardinality: z.ZodUnion<[z.ZodLiteral<">">, z.ZodLiteral<"<">, z.ZodLiteral<"-">]>;
+export declare const Cardinality: z.ZodUnion<[z.ZodLiteral<"<>">, z.ZodLiteral<">">, z.ZodLiteral<"<">, z.ZodLiteral<"-">]>;
 export type Cardinality = z.infer<typeof Cardinality>;
 declare const ColumnRef: z.ZodObject<{
     schema: z.ZodNullable<z.ZodString>;
@@ -340,7 +340,7 @@ declare const ColumnRef: z.ZodObject<{
 export type ColumnRef = z.infer<typeof ColumnRef>;
 export declare const Ref: z.ZodObject<{
     type: z.ZodLiteral<"ref">;
-    cardinality: z.ZodUnion<[z.ZodLiteral<">">, z.ZodLiteral<"<">, z.ZodLiteral<"-">]>;
+    cardinality: z.ZodUnion<[z.ZodLiteral<"<>">, z.ZodLiteral<">">, z.ZodLiteral<"<">, z.ZodLiteral<"-">]>;
     from: z.ZodObject<{
         schema: z.ZodNullable<z.ZodString>;
         name: z.ZodString;
@@ -371,7 +371,7 @@ export declare const Ref: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     type: "ref";
     settings: Record<string, string | null>;
-    cardinality: ">" | "<" | "-";
+    cardinality: "<>" | ">" | "<" | "-";
     from: {
         name: string;
         columns: string[];
@@ -385,7 +385,7 @@ export declare const Ref: z.ZodObject<{
 }, {
     type: "ref";
     settings: Record<string, string | null> | null;
-    cardinality: ">" | "<" | "-";
+    cardinality: "<>" | ">" | "<" | "-";
     from: {
         name: string;
         columns: string[];
@@ -627,7 +627,7 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
     })[];
 }>, z.ZodObject<{
     type: z.ZodLiteral<"ref">;
-    cardinality: z.ZodUnion<[z.ZodLiteral<">">, z.ZodLiteral<"<">, z.ZodLiteral<"-">]>;
+    cardinality: z.ZodUnion<[z.ZodLiteral<"<>">, z.ZodLiteral<">">, z.ZodLiteral<"<">, z.ZodLiteral<"-">]>;
     from: z.ZodObject<{
         schema: z.ZodNullable<z.ZodString>;
         name: z.ZodString;
@@ -658,7 +658,7 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     type: "ref";
     settings: Record<string, string | null>;
-    cardinality: ">" | "<" | "-";
+    cardinality: "<>" | ">" | "<" | "-";
     from: {
         name: string;
         columns: string[];
@@ -672,7 +672,7 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
 }, {
     type: "ref";
     settings: Record<string, string | null> | null;
-    cardinality: ">" | "<" | "-";
+    cardinality: "<>" | ">" | "<" | "-";
     from: {
         name: string;
         columns: string[];
@@ -914,7 +914,7 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
     })[];
 }>, z.ZodObject<{
     type: z.ZodLiteral<"ref">;
-    cardinality: z.ZodUnion<[z.ZodLiteral<">">, z.ZodLiteral<"<">, z.ZodLiteral<"-">]>;
+    cardinality: z.ZodUnion<[z.ZodLiteral<"<>">, z.ZodLiteral<">">, z.ZodLiteral<"<">, z.ZodLiteral<"-">]>;
     from: z.ZodObject<{
         schema: z.ZodNullable<z.ZodString>;
         name: z.ZodString;
@@ -945,7 +945,7 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     type: "ref";
     settings: Record<string, string | null>;
-    cardinality: ">" | "<" | "-";
+    cardinality: "<>" | ">" | "<" | "-";
     from: {
         name: string;
         columns: string[];
@@ -959,7 +959,7 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
 }, {
     type: "ref";
     settings: Record<string, string | null> | null;
-    cardinality: ">" | "<" | "-";
+    cardinality: "<>" | ">" | "<" | "-";
     from: {
         name: string;
         columns: string[];

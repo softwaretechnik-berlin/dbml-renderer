@@ -231,6 +231,7 @@ class GroupRenderer {
 }
 
 const refLabels: Record<Cardinality, [string, string]> = {
+  "<>": ["*", "*"],
   ">": ["*", "1"],
   "<": ["1", "*"],
   "-": ["1", "1"],
@@ -278,9 +279,9 @@ class RefRenderer {
   toDot(): string {
     const [tailLabel, headLabel] = refLabels[this.ref.actual.cardinality];
     return `${this.fromTable.selfRef()} -> ${this.toTable.selfRef()} [style=invis, weight=100, color=red]
-    ${this.fromRef}:e -> ${
-      this.toRef
-    }:w [penwidth=3, color="#29235c", headlabel="${headLabel}", taillabel="${tailLabel}", arrowhead="normal", arrowtail="none"]`;
+    ${this.fromRef}:e -> ${this.toRef}:w [dir=${
+      this.ref.actual.cardinality == "<>" ? "both" : "forward"
+    }, penwidth=3, color="#29235c", headlabel="${headLabel}", taillabel="${tailLabel}"]`;
   }
 }
 

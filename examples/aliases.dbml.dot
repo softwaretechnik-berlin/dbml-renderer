@@ -61,12 +61,12 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
       "Person":f0 -> "Person":f0 [style=invis, weight=100, color=red]
-    "Person":f2:e -> "Person":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    "Person":f2:e -> "Person":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
 "Person":f0 -> "Person":f0 [style=invis, weight=100, color=red]
-    "Person":f3:e -> "Person":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    "Person":f3:e -> "Person":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
 "dates.Day":f0 -> "dates.Day":f0 [style=invis, weight=100, color=red]
-    "dates.Day":f2:e -> "dates.Day":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    "dates.Day":f2:e -> "dates.Day":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
 "dates.Day":f0 -> "dates.Day":f0 [style=invis, weight=100, color=red]
-    "dates.Day":f3:e -> "dates.Day":f1:w [penwidth=3, color="#29235c", headlabel="1", taillabel="*", arrowhead="normal", arrowtail="none"]
+    "dates.Day":f3:e -> "dates.Day":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
       
     }

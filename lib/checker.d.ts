@@ -55,7 +55,7 @@ export declare const check: (input: ({
 } | {
     type: "ref";
     settings: Record<string, string | null>;
-    cardinality: ">" | "<" | "-";
+    cardinality: "<>" | ">" | "<" | "-";
     from: {
         name: string;
         columns: string[];

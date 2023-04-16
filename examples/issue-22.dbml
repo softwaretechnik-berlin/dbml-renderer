@@ -1,0 +1,11 @@
+Table users {
+    id integer
+    username varchar
+}
+
+Table conversations {
+    id integer [primary key]
+    title varchar
+}
+
+Ref: users.id <> conversations.id

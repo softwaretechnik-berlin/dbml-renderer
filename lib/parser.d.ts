@@ -54,7 +54,7 @@ export declare const parse: (input: string) => ({
 } | {
     type: "ref";
     settings: Record<string, string | null>;
-    cardinality: ">" | "<" | "-";
+    cardinality: "<>" | ">" | "<" | "-";
     from: {
         name: string;
         columns: string[];

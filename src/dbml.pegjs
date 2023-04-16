@@ -52,7 +52,7 @@ RefFull = schemaTable:(n:SchemaTableName _ '.' { return n; } / n:SimpleTableName
 RefColumns =
   (name:ColumnName { return [name]; })
   / CompositeKey
-Cardinality = '-' / '>' / '<'
+Cardinality = '-' / '<>' / '>' / '<'
 
 CompositeKey = "(" _ columns:(head:ColumnName tail:(_ "," _ name:ColumnName { return name; })* { return [head, ...tail]; } )? _ ")" { return columns; }
 
