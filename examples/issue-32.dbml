@@ -1,0 +1,4 @@
+Table users {
+    id public.user_id
+    username varchar
+}

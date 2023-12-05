@@ -30,7 +30,9 @@ TableSettings = Settings
 
 Column = name:ColumnName _ data:ColumnType _ settings:Settings? { return { type: "column", name, data, settings } }
 ColumnName = Name
-ColumnType = prefix:Name _ suffix:$('(' RawName? ')')? { return prefix + suffix }
+SimpleColumnType = prefix:Name _ suffix:$('(' RawName? ')')? { return prefix + suffix }
+QualifiedColumnType = schema:Schema _ "." _ prefix:Name _ suffix:$('(' RawName? ')')? { return schema + "." + prefix + suffix }
+ColumnType = QualifiedColumnType / SimpleColumnType
 
 Indices = "Indexes"i __ "{" __ indices:IndicesList Comment? __ "}" { return { type: "indices", indices }; }
 IndicesList = (head:IndexItem tail:(EOL __ index:IndexItem { return index; })* { return [head, ...tail]; })?
