@@ -1,0 +1,4 @@
+Table user {
+    id integer [primary key, increment]
+    tags varchar[]
+}
