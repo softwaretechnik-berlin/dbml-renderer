@@ -39,7 +39,9 @@ IndicesList = (head:IndexItem tail:(EOL __ index:IndexItem { return index; })* {
 IndexItem =
   Comment
   / Index
-Index = columns:((name:ColumnName { return [name]; }) / CompositeIndex) _ settings:Settings? _ Comment? { return { columns, settings } }
+
+Index = columns:(name:Function { return [name] } / (name:ColumnName { return [name]; }) / CompositeIndex) _ settings:Settings? _ Comment? { return { columns, settings } }
+
 CompositeIndex = "(" _ entries:(head:CompositeIndexEntry tail:(_ "," _ entry:CompositeIndexEntry { return entry; })* { return [head, ...tail]; } )? _ ")" { return entries; }
 CompositeIndexEntry = ColumnName / Function
 

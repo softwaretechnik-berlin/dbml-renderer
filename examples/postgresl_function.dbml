@@ -1,0 +1,10 @@
+Table "my_table" {
+  "delete_timestamp" timestamp
+  "buyer_code_id" bigint [not null]
+  "buyer_code" "character varying" [not null, note: 'A code that can be used in the app']
+
+  Indexes {
+    `lower(buyer_code)` [type: btree, unique, name: "buyer_code_ix"]
+  }
+}
+
