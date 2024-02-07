@@ -14,7 +14,7 @@ Note my_note {
    'A note!'
 }
 
-table users.users [headercolor: #D3D3D3] {
+table users.users [headercolor: #D3D3D3, url:'https://github.com/softwaretechnik-berlin/dbml-renderer'] {
   // Simple comment
   Id int [primary key, increment, not null]
   Name varchar(max) [not null]
@@ -23,7 +23,7 @@ table users.users [headercolor: #D3D3D3] {
   Note: 'a test note'
 }
 
-table users.sexes [headercolor: #200000] {
+table users.sexes [headercolor: #200000, url:'https://github.com/softwaretechnik-berlin/dbml-renderer'] {
   /*
   Multiline comment
   */
@@ -39,7 +39,7 @@ table teams [note: 'Another note'] {
   Name varchar(20)
 }
 
-table teams_users {
+table teams_users [url:'https://github.com/softwaretechnik-berlin/dbml-renderer']{
   Id int [primary key]
   TeamId int [ref: > teams.Id]
   UserId int [ref: > users.users.Id]
