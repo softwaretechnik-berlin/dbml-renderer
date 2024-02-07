@@ -10,7 +10,7 @@ digraph dbml {
       style=filled;
       color="#dddddd";
 
-      "users.users" [id="users.users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      "users.users" [id="users.users";URL="https://github.com/softwaretechnik-berlin/dbml-renderer";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#D3D3D3"><FONT COLOR="#000000"><B>       users.users       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -37,7 +37,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"users.sexes" [id="users.sexes";tooltip="users.sexes\nMale or female";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"users.sexes" [id="users.sexes";URL="https://github.com/softwaretechnik-berlin/dbml-renderer";tooltip="users.sexes\nMale or female";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#200000"><FONT COLOR="#ffffff"><B>       users.sexes       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -76,7 +76,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"teams_users" [id="teams_users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"teams_users" [id="teams_users";URL="https://github.com/softwaretechnik-berlin/dbml-renderer";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       teams_users       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
