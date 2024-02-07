@@ -16,6 +16,7 @@
 <!-- users.users -->
 <g id="users.users" class="node">
 <title>users.users</title>
+<g id="a_users.users"><a xlink:href="https://github.com/softwaretechnik-berlin/dbml-renderer" xlink:title="&lt;TABLE&gt;">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="770.68" cy="-451.11" rx="263.5" ry="172.57"/>
 <polygon fill="#d3d3d3" stroke="transparent" points="586.68,-511.11 586.68,-571.11 955.68,-571.11 955.68,-511.11 586.68,-511.11"/>
 <polygon fill="none" stroke="#29235c" points="586.68,-511.11 586.68,-571.11 955.68,-571.11 955.68,-511.11 586.68,-511.11"/>
@@ -38,11 +39,13 @@
 <text text-anchor="start" x="597.68" y="-351.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Sex &#160;&#160;&#160;</text>
 <text text-anchor="start" x="910.9" y="-352.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="585.18,-330.11 585.18,-572.11 956.18,-572.11 956.18,-330.11 585.18,-330.11"/>
+</a>
+</g>
 </g>
 <!-- users.sexes -->
 <g id="users.sexes" class="node">
 <title>users.sexes</title>
-<g id="a_users.sexes"><a xlink:title="users.sexes&#10;Male or female">
+<g id="a_users.sexes"><a xlink:href="https://github.com/softwaretechnik-berlin/dbml-renderer" xlink:title="users.sexes&#10;Male or female">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="1297.42" cy="-481.11" rx="226.96" ry="130.22"/>
 <polygon fill="#200000" stroke="transparent" points="1139.42,-511.11 1139.42,-571.11 1456.42,-571.11 1456.42,-511.11 1139.42,-511.11"/>
 <polygon fill="none" stroke="#29235c" points="1139.42,-511.11 1139.42,-571.11 1456.42,-571.11 1456.42,-511.11 1139.42,-511.11"/>
@@ -92,6 +95,7 @@
 <!-- teams_users -->
 <g id="teams_users" class="node">
 <title>teams_users</title>
+<g id="a_teams_users"><a xlink:href="https://github.com/softwaretechnik-berlin/dbml-renderer" xlink:title="&lt;TABLE&gt;">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="235.47" cy="-305.11" rx="235.43" ry="172.57"/>
 <polygon fill="#1d71b8" stroke="transparent" points="71.47,-365.11 71.47,-425.11 400.47,-425.11 400.47,-365.11 71.47,-365.11"/>
 <polygon fill="none" stroke="#29235c" points="71.47,-365.11 71.47,-425.11 400.47,-425.11 400.47,-365.11 71.47,-365.11"/>
@@ -110,6 +114,8 @@
 <text text-anchor="start" x="82.47" y="-205.31" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">UserId &#160;&#160;&#160;</text>
 <text text-anchor="start" x="355.68" y="-206.31" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="69.97,-184.11 69.97,-426.11 400.97,-426.11 400.97,-184.11 69.97,-184.11"/>
+</a>
+</g>
 </g>
 <!-- teams_users&#45;&gt;users.users -->
 <!-- teams_users&#45;&gt;users.users -->
