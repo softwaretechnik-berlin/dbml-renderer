@@ -44,6 +44,7 @@ export declare const check: (input: ({
 } | {
     type: "enum";
     name: string;
+    schema: string | null;
     items: ({
         type: "comment";
         comment: string;

@@ -15,11 +15,8 @@ ProjectName = Name
 
 Schema = Name
 
-Table = "Table"i _ name:TableName _ alias:TableAlias? _ settings:TableSettings? __ "{" __ items:TableItems __ "}"
+Table = "Table"i _ name:SchemaElementName _ alias:TableAlias? _ settings:TableSettings? __ "{" __ items:TableItems __ "}"
   { return { type: "table", ...name, alias, items, settings }}
-TableName = SchemaTableName / SimpleTableName
-SchemaTableName = schema:Schema _ "." _ name:Name { return {schema, name}; }
-SimpleTableName = name:Name { return {schema: null, name}; }
 TableAlias = "as" _ alias:Name { return alias; }
 TableItems = (head:TableItem tail:(EOL __ item:TableItem { return item; })* { return [head, ...tail]; })?
 TableItem =
@@ -45,10 +42,10 @@ CompositeIndexEntry = ColumnName / Function
 
 TableGroup = "TableGroup"i _ name:Name __ "{" __ items:TableGroupItems __ "}" { return { type: "group", name, items }; }
 TableGroupItems = (head:TableGroupItem tail:(EOL __ item:TableGroupItem { return item; })* { return [head, ...tail]; })?
-TableGroupItem = name:TableName { return {type: "table", ...name} }
+TableGroupItem = name:SchemaElementName { return {type: "table", ...name} }
 
 Ref = "Ref"i _ name:Name? _ ":" _ from:RefFull _ cardinality:Cardinality _ to:RefFull _ settings:Settings? { return { type: "ref", cardinality, from, to, settings }; }
-RefFull = schemaTable:(n:SchemaTableName _ '.' { return n; } / n:SimpleTableName _ '.' { return n; }) _ columns:RefColumns { return { ...schemaTable, columns } }
+RefFull = schemaTable:(n:SchemaAndName _ '.' { return n; } / n:SimpleName _ '.' { return n; }) _ columns:RefColumns { return { ...schemaTable, columns } }
 RefColumns =
   (name:ColumnName { return [name]; })
   / CompositeKey
@@ -56,10 +53,14 @@ Cardinality = '-' / '<>' / '>' / '<'
 
 CompositeKey = "(" _ columns:(head:ColumnName tail:(_ "," _ name:ColumnName { return name; })* { return [head, ...tail]; } )? _ ")" { return columns; }
 
-Enum = "Enum"i _ name:Name __ "{" __  items:EnumValues __ "}" { return { type: "enum", name, items }}
+Enum = "Enum"i _ name:SchemaElementName __ "{" __  items:EnumValues __ "}" { return { type: "enum", ...name, items }}
 EnumValues = (head:EnumValue tail:(EOL __ item:EnumValue { return item; })* { return [head, ...tail].filter(i => i); })?
 EnumValue =
   name:Name _ settings:Settings? { return { type:"value", name, settings }; }
+
+SchemaElementName = SchemaAndName / SimpleName
+SchemaAndName = schema:Schema _ "." _ name:Name { return {schema, name}; }
+SimpleName = name:Name { return {schema: null, name}; }
 
 Name = RawName / QuotedName
 RawName = $[a-zA-Z0-9_]+

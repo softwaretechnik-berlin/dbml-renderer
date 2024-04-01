@@ -275,6 +275,7 @@ export declare const EnumValue: z.ZodObject<{
 export type EnumValue = z.infer<typeof EnumValue>;
 export declare const Enum: z.ZodObject<{
     type: z.ZodLiteral<"enum">;
+    schema: z.ZodNullable<z.ZodString>;
     name: z.ZodString;
     items: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         type: z.ZodLiteral<"comment">;
@@ -301,6 +302,7 @@ export declare const Enum: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     type: "enum";
     name: string;
+    schema: string | null;
     items: ({
         type: "comment";
         comment: string;
@@ -312,6 +314,7 @@ export declare const Enum: z.ZodObject<{
 }, {
     type: "enum";
     name: string;
+    schema: string | null;
     items: ({
         type: "comment";
         comment: string;
@@ -580,6 +583,7 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
     })[];
 }>, z.ZodObject<{
     type: z.ZodLiteral<"enum">;
+    schema: z.ZodNullable<z.ZodString>;
     name: z.ZodString;
     items: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         type: z.ZodLiteral<"comment">;
@@ -606,6 +610,7 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     type: "enum";
     name: string;
+    schema: string | null;
     items: ({
         type: "comment";
         comment: string;
@@ -617,6 +622,7 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
 }, {
     type: "enum";
     name: string;
+    schema: string | null;
     items: ({
         type: "comment";
         comment: string;
@@ -867,6 +873,7 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
     })[];
 }>, z.ZodObject<{
     type: z.ZodLiteral<"enum">;
+    schema: z.ZodNullable<z.ZodString>;
     name: z.ZodString;
     items: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         type: z.ZodLiteral<"comment">;
@@ -893,6 +900,7 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     type: "enum";
     name: string;
+    schema: string | null;
     items: ({
         type: "comment";
         comment: string;
@@ -904,6 +912,7 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
 }, {
     type: "enum";
     name: string;
+    schema: string | null;
     items: ({
         type: "comment";
         comment: string;

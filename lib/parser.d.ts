@@ -43,6 +43,7 @@ export declare const parse: (input: string) => ({
 } | {
     type: "enum";
     name: string;
+    schema: string | null;
     items: ({
         type: "comment";
         comment: string;

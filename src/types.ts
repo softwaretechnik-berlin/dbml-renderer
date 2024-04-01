@@ -77,6 +77,7 @@ export type EnumValue = z.infer<typeof EnumValue>;
 
 export const Enum = z.object({
   type: z.literal("enum"),
+  schema: z.string().nullable(),
   name: z.string(),
   items: z.array(z.union([Comment, EnumValue])),
 });
