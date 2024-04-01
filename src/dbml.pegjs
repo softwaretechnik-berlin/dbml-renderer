@@ -95,6 +95,6 @@ OptionValue = String
 _ "space" = [ \t]*
 __ "whitespace" = pure_whitespace (Comment pure_whitespace)*
 pure_whitespace "pure whitespace" = [ \t\n\r]*
-EOL = NewLine / (Comment NewLine) / EOF
+EOL = _ NewLine / (Comment NewLine) / EOF
 NewLine = '\n' / '\r' '\n'
 EOF = !.
