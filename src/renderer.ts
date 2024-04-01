@@ -5,7 +5,7 @@ import {
   NormalizedRef,
   NormalizedTable,
 } from "./checker";
-import { tableName } from "./common";
+import { fullName } from "./common";
 import { Cardinality, Column, Settings, Table, TableIndices } from "./types";
 
 export type Format = "dot" | "svg";
@@ -195,7 +195,7 @@ class TableRenderer {
   }
 
   private displayName(): string {
-    return tableName(this.table.actual);
+    return fullName(this.table.actual);
   }
 
   toDot(): string {
@@ -293,7 +293,7 @@ class EnumRenderer {
   }
 
   name(): string {
-    return this.enumType.actual.name;
+    return fullName(this.enumType.actual);
   }
 
   selfRef(): string {
@@ -301,7 +301,7 @@ class EnumRenderer {
   }
 
   toDot(): string {
-    return `"${this.name()}" [id=${this.name()};label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    return `"${this.name()}" [id="${this.name()}";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
     <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       ${this.name()}       </B></FONT></TD></TR>
     ${this.enumType.values.map((name, i) => this.valueDot(name, i)).join("\n")}
     </TABLE>>];`;

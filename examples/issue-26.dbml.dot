@@ -4,8 +4,8 @@ digraph dbml {
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
-      "products_status" [id=products_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-    <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       products_status       </B></FONT></TD></TR>
+      "ecommerce.products_status" [id="ecommerce.products_status";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       ecommerce.products_status       </B></FONT></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    out_of_stock    </I></FONT></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    in_stock    </I></FONT></TD></TR>
     </TABLE>>];

@@ -4,20 +4,20 @@ digraph dbml {
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
-      "job_category" [id=job_category;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      "job_category" [id="job_category";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
     <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       job_category       </B></FONT></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    full_time    </I></FONT></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    part_time    </I></FONT></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    intern    </I></FONT></TD></TR>
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    on_campus    </I></FONT></TD></TR>
     </TABLE>>];
-"apply_status" [id=apply_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"apply_status" [id="apply_status";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
     <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       apply_status       </B></FONT></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    pending    </I></FONT></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    reviewed    </I></FONT></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    declined    </I></FONT></TD></TR>
     </TABLE>>];
-"eligibility_status" [id=eligibility_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"eligibility_status" [id="eligibility_status";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
     <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       eligibility_status       </B></FONT></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    all    </I></FONT></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    special_major    </I></FONT></TD></TR>
