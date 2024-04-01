@@ -79,7 +79,7 @@ class ColumnRenderer implements RowRenderer {
     this.port = port;
 
     this.indices = (table.items.find(
-      (item) => item.type === "indices"
+      (item) => item.type === "indices",
     ) as TableIndices) || { type: "indices", indices: [] };
   }
 
@@ -131,7 +131,7 @@ class CompositeKeyRowRenderer implements RowRenderer {
     return `<TR><TD PORT="${
       this.port
     }" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    ${this.columns.join(
-      ", "
+      ", ",
     )}    </I></FONT></TD></TR>`;
   }
 }
@@ -178,7 +178,7 @@ class TableRenderer {
       (columnName) =>
         (columnIndex[columnName] =
           this.renderers.findIndex((c) => c.name === columnName) + 1 ||
-          Number.MAX_SAFE_INTEGER)
+          Number.MAX_SAFE_INTEGER),
     );
 
     const name = columns
@@ -188,7 +188,7 @@ class TableRenderer {
     const column = this.findColumn(name);
     if (!column) {
       this.renderers.push(
-        new CompositeKeyRowRenderer(`f${this.renderers.length}`, name, columns)
+        new CompositeKeyRowRenderer(`f${this.renderers.length}`, name, columns),
       );
     }
     return this.ref(name);
@@ -336,7 +336,7 @@ class DbmlRenderer {
   constructor(dbml: NormalizedOutput) {
     this.groups = dbml.groups.map((group) => new GroupRenderer(group));
     this.ungroupedTables = dbml.ungroupedTables.map(
-      (table) => new TableRenderer(table)
+      (table) => new TableRenderer(table),
     );
 
     const allTables = this.groups
@@ -381,7 +381,7 @@ const enumRefs = (tables: TableRenderer[], enums: EnumRenderer[]) =>
       const enumRef = enumType.selfRef();
 
       return new EnumReferenceRenderer(columnRef, enumRef);
-    })
+    }),
   );
 
 const escapeString = (text: string): string => {

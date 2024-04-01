@@ -39,7 +39,7 @@ export const TableIndices = z.object({
     z.object({
       columns: z.array(z.string()),
       settings: Settings.nullable().transform((v) => v || {}),
-    })
+    }),
   ),
 });
 export type TableIndices = z.infer<typeof TableIndices>;

@@ -73,7 +73,7 @@ const comparisonPage =
       </tr>
     </table>
   </div>
-  `
+  `,
     )
     .join("\n");
 

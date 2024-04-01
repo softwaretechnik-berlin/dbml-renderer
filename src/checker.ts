@@ -19,7 +19,7 @@ export const check = (input: Output): NormalizedOutput => {
     indices: extract("indices", table.items)[0],
     options: extract("option", table.items).reduce(
       (acc, i) => ({ ...acc, ...i.option }),
-      {}
+      {},
     ),
   }));
 
@@ -33,7 +33,7 @@ export const check = (input: Output): NormalizedOutput => {
       // create a virtual ref, parse it and add it to the list of refs
       const virtualRef = `Ref: ${fullName(table.actual)}.${column.name} ${ref}`;
       return extract("ref", parse(virtualRef));
-    })
+    }),
   );
 
   const groupedTables = new Set<string>();
@@ -51,7 +51,7 @@ export const check = (input: Output): NormalizedOutput => {
   }));
 
   const ungroupedTables = tables.filter(
-    (t) => !groupedTables.has(fullName(t.actual))
+    (t) => !groupedTables.has(fullName(t.actual)),
   );
 
   const refs = extract("ref", input)
@@ -114,12 +114,12 @@ export type NormalizedOutput = {
 
 const resolveTable = (
   ref: SchemaElementRef,
-  tables: NormalizedTable[]
+  tables: NormalizedTable[],
 ): NormalizedTable => {
   const table = tables.find(
     (t) =>
       ref.schema === t.actual.schema &&
-      (ref.name === t.actual.name || ref.name === t.actual.alias)
+      (ref.name === t.actual.name || ref.name === t.actual.alias),
   );
 
   if (!table) {
@@ -131,14 +131,14 @@ const resolveTable = (
 
 const extract = <E extends { type: string }, T extends E["type"]>(
   type: T,
-  entries: E[]
+  entries: E[],
 ): Extract<E, { type: T }>[] => {
   return entries.filter((e) => e.type === type) as Extract<E, { type: T }>[];
 };
 
 const extractColumns = (
   ref: ColumnRef,
-  tables: NormalizedTable[]
+  tables: NormalizedTable[],
 ): ReferredColumns => {
   const table = resolveTable(ref, tables);
 
@@ -148,7 +148,7 @@ const extractColumns = (
       const column = table.columns.find((i) => i.name === c);
       if (!column) {
         throw new Error(
-          `Column ${c} does not exist in table ${fullName(table.actual)}`
+          `Column ${c} does not exist in table ${fullName(table.actual)}`,
         );
       }
       return column;
