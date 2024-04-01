@@ -1,6 +1,6 @@
 File = all:DBML+ { return all.filter(e => e); }
 
-DBML =
+DBML = _ declaration:(
   Comment
   / Project
   / Table
@@ -8,6 +8,7 @@ DBML =
   / Ref
   / Enum
   / NewLine {}
+) { return declaration }
 
 Project = "Project"i _ name:ProjectName? __ "{" __ options:Options Comment? __ "}" { return { type: "project", name, options } }
 ProjectName = Name

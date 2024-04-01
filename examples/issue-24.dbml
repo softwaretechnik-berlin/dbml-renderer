@@ -1,4 +1,4 @@
-Project simplebank {
+ Project simplebank {
      database_type: 'PostgreSQL'
      Note: '''
        # Simple Bank Database
