@@ -13,6 +13,7 @@ Table accounts as A {
 
   Indexes {
     owner
+    // to make it so an owner can only have different accounts with different currency
     (owner, currency) [unique]
   }
 }
