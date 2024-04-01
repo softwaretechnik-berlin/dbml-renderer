@@ -1,0 +1,38 @@
+digraph dbml {
+      rankdir=LR;
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
+
+      
+      
+      "my_table" [id="my_table";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       my_table       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">delete_timestamp    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">buyer_code_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>bigint</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">buyer_code    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>character varying</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+      
+      
+    }
