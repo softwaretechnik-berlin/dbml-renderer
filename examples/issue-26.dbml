@@ -1,0 +1,8 @@
+Table ecommerce.foo {
+  id integer
+}
+
+Enum ecommerce.products_status {
+  out_of_stock
+  in_stock
+}

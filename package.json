@@ -1,6 +1,6 @@
 {
   "name": "@softwaretechnik/dbml-renderer",
-  "version": "1.0.27",
+  "version": "1.0.30",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/softwaretechnik-berlin/dbml-renderer.git"
@@ -21,19 +21,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "@types/yargs": "^17.0.24",
-    "ava": "^5.2.0",
-    "peggy": "^3.0.2",
-    "prettier": "^2.8.7",
-    "prettier-plugin-organize-imports": "^3.2.2",
-    "ts-node": "^10.8.0",
-    "typescript": "^5.0.4"
+    "@types/node": "^20.12.2",
+    "@types/yargs": "^17.0.32",
+    "ava": "^6.1.2",
+    "peggy": "^4.0.2",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
   },
   "dependencies": {
     "@aduh95/viz.js": "3.4.0",
-    "yargs": "^17.7.1",
-    "zod": "^3.21.4"
+    "yargs": "^17.7.2",
+    "zod": "^3.22.4"
   },
   "bugs": {
     "url": "https://github.com/softwaretechnik-berlin/dbml-renderer/issues"

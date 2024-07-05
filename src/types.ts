@@ -39,7 +39,7 @@ export const TableIndices = z.object({
     z.object({
       columns: z.array(z.string()),
       settings: Settings.nullable().transform((v) => v || {}),
-    })
+    }),
   ),
 });
 export type TableIndices = z.infer<typeof TableIndices>;
@@ -77,6 +77,7 @@ export type EnumValue = z.infer<typeof EnumValue>;
 
 export const Enum = z.object({
   type: z.literal("enum"),
+  schema: z.string().nullable(),
   name: z.string(),
   items: z.array(z.union([Comment, EnumValue])),
 });

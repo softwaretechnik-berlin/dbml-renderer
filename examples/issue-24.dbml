@@ -1,0 +1,19 @@
+ Project simplebank {
+     database_type: 'PostgreSQL'
+     Note: '''
+       # Simple Bank Database
+     '''
+ }
+
+Table accounts as A {
+  id bigserial [pk]
+  owner varchar [not null]
+  balance bigint [not null]
+  currency varchar [not null]
+
+  Indexes {
+    owner
+    // to make it so an owner can only have different accounts with different currency
+    (owner, currency) [unique]
+  }
+}

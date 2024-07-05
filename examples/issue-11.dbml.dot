@@ -4,7 +4,7 @@ digraph dbml {
       node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 
-      "order_status" [id=order_status;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      "order_status" [id="order_status";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
     <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       order_status       </B></FONT></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    Abandoned Cart    </I></FONT></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    Submitted    </I></FONT></TD></TR>
@@ -12,13 +12,13 @@ digraph dbml {
 <TR><TD PORT="f3" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    Shipped    </I></FONT></TD></TR>
 <TR><TD PORT="f4" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    Delivered    </I></FONT></TD></TR>
     </TABLE>>];
-"dbml_test_string_enum" [id=dbml_test_string_enum;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"dbml_test_string_enum" [id="dbml_test_string_enum";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
     <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       dbml_test_string_enum       </B></FONT></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    Choice1    </I></FONT></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    Choice2    </I></FONT></TD></TR>
 <TR><TD PORT="f2" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    Choice3    </I></FONT></TD></TR>
     </TABLE>>];
-"dbml_test_number_enum" [id=dbml_test_number_enum;label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"dbml_test_number_enum" [id="dbml_test_number_enum";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
     <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       dbml_test_number_enum       </B></FONT></TD></TR>
     <TR><TD PORT="f0" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    1    </I></FONT></TD></TR>
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    2    </I></FONT></TD></TR>

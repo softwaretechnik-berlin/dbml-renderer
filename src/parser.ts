@@ -26,7 +26,7 @@ type SourceLocation = {
 class SyntaxError extends Error {
   constructor(peggyErr: PeggyError) {
     super(
-      `Could not parse input at line ${peggyErr.location.start.line}:${peggyErr.location.start.column}. ${peggyErr.message}`
+      `Could not parse input at line ${peggyErr.location.start.line}:${peggyErr.location.start.column}. ${peggyErr.message}`,
     );
     this.name = "SyntaxError";
   }

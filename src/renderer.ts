@@ -5,7 +5,7 @@ import {
   NormalizedRef,
   NormalizedTable,
 } from "./checker";
-import { tableName } from "./common";
+import { fullName } from "./common";
 import { Cardinality, Column, Settings, Table, TableIndices } from "./types";
 
 export type Format = "dot" | "svg";
@@ -79,7 +79,7 @@ class ColumnRenderer implements RowRenderer {
     this.port = port;
 
     this.indices = (table.items.find(
-      (item) => item.type === "indices"
+      (item) => item.type === "indices",
     ) as TableIndices) || { type: "indices", indices: [] };
   }
 
@@ -131,7 +131,7 @@ class CompositeKeyRowRenderer implements RowRenderer {
     return `<TR><TD PORT="${
       this.port
     }" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    ${this.columns.join(
-      ", "
+      ", ",
     )}    </I></FONT></TD></TR>`;
   }
 }
@@ -178,7 +178,7 @@ class TableRenderer {
       (columnName) =>
         (columnIndex[columnName] =
           this.renderers.findIndex((c) => c.name === columnName) + 1 ||
-          Number.MAX_SAFE_INTEGER)
+          Number.MAX_SAFE_INTEGER),
     );
 
     const name = columns
@@ -188,14 +188,14 @@ class TableRenderer {
     const column = this.findColumn(name);
     if (!column) {
       this.renderers.push(
-        new CompositeKeyRowRenderer(`f${this.renderers.length}`, name, columns)
+        new CompositeKeyRowRenderer(`f${this.renderers.length}`, name, columns),
       );
     }
     return this.ref(name);
   }
 
   private displayName(): string {
-    return tableName(this.table.actual);
+    return fullName(this.table.actual);
   }
 
   toDot(): string {
@@ -296,7 +296,7 @@ class EnumRenderer {
   }
 
   name(): string {
-    return this.enumType.actual.name;
+    return fullName(this.enumType.actual);
   }
 
   selfRef(): string {
@@ -304,7 +304,7 @@ class EnumRenderer {
   }
 
   toDot(): string {
-    return `"${this.name()}" [id=${this.name()};label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    return `"${this.name()}" [id="${this.name()}";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
     <TR><TD PORT="f0" BGCOLOR="#29235c"><FONT COLOR="#ffffff"><B>       ${this.name()}       </B></FONT></TD></TR>
     ${this.enumType.values.map((name, i) => this.valueDot(name, i)).join("\n")}
     </TABLE>>];`;
@@ -339,7 +339,7 @@ class DbmlRenderer {
   constructor(dbml: NormalizedOutput) {
     this.groups = dbml.groups.map((group) => new GroupRenderer(group));
     this.ungroupedTables = dbml.ungroupedTables.map(
-      (table) => new TableRenderer(table)
+      (table) => new TableRenderer(table),
     );
 
     const allTables = this.groups
@@ -384,7 +384,7 @@ const enumRefs = (tables: TableRenderer[], enums: EnumRenderer[]) =>
       const enumRef = enumType.selfRef();
 
       return new EnumReferenceRenderer(columnRef, enumRef);
-    })
+    }),
   );
 
 const escapeString = (text: string): string => {

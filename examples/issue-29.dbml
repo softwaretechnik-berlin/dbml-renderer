@@ -1,0 +1,7 @@
+Table utenti {
+    id int [pk, increment]
+    nome varchar
+    data_creato timestamp
+    numero decimal(10,2)
+    nazione_id int
+}

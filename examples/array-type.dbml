@@ -1,0 +1,6 @@
+Table user {
+    id integer [primary key, increment]
+    tags varchar[]
+    friend_groups uuid[][]
+    position decimal(3,5)[3]
+}

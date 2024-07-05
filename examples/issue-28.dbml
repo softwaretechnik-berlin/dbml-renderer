@@ -1,0 +1,5 @@
+Table nazione {
+    id int [pk] 
+    nome varchar
+    continente int
+}
