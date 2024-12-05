@@ -65,6 +65,7 @@ export const TableGroup = z.object({
   type: z.literal("group"),
   name: z.string().nullable(),
   items: z.array(z.union([Comment, TableRef])),
+  settings: Settings.nullable().transform((v) => v || {}),
 });
 export type TableGroup = z.infer<typeof TableGroup>;
 

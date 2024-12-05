@@ -235,9 +235,11 @@ export declare const TableGroup: z.ZodObject<{
         name: string;
         schema: string | null;
     }>]>, "many">;
+    settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
 }, "strip", z.ZodTypeAny, {
     type: "group";
     name: string | null;
+    settings: Record<string, string | null>;
     items: ({
         type: "comment";
         comment: string;
@@ -249,6 +251,7 @@ export declare const TableGroup: z.ZodObject<{
 }, {
     type: "group";
     name: string | null;
+    settings: Record<string, string | null> | null;
     items: ({
         type: "comment";
         comment: string;
@@ -559,9 +562,11 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
         name: string;
         schema: string | null;
     }>]>, "many">;
+    settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
 }, "strip", z.ZodTypeAny, {
     type: "group";
     name: string | null;
+    settings: Record<string, string | null>;
     items: ({
         type: "comment";
         comment: string;
@@ -573,6 +578,7 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
 }, {
     type: "group";
     name: string | null;
+    settings: Record<string, string | null> | null;
     items: ({
         type: "comment";
         comment: string;
@@ -849,9 +855,11 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         name: string;
         schema: string | null;
     }>]>, "many">;
+    settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
 }, "strip", z.ZodTypeAny, {
     type: "group";
     name: string | null;
+    settings: Record<string, string | null>;
     items: ({
         type: "comment";
         comment: string;
@@ -863,6 +871,7 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
 }, {
     type: "group";
     name: string | null;
+    settings: Record<string, string | null> | null;
     items: ({
         type: "comment";
         comment: string;

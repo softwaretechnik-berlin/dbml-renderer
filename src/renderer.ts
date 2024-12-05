@@ -211,10 +211,14 @@ class TableRenderer {
 }
 
 class GroupRenderer {
+  private color: string;
   private name: string;
   readonly tables: TableRenderer[];
 
   constructor(group: NormalizedGroup) {
+    this.color = !group.actual.settings?.color
+      ? "#dddddd"
+      : group.actual.settings.color;
     this.name = group.actual.name || "-unnamed-";
     this.tables = group.tables.map((table) => new TableRenderer(table));
   }
@@ -223,7 +227,7 @@ class GroupRenderer {
     return `subgraph cluster_${this.name} {
       label="${this.name}"
       style=filled;
-      color="#dddddd";
+      color="${this.color}";
 
       ${this.tables.map((table) => table.toDot()).join("\n")}
     }`;

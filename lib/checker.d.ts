@@ -33,6 +33,7 @@ export declare const check: (input: ({
 } | {
     type: "group";
     name: string | null;
+    settings: Record<string, string | null>;
     items: ({
         type: "comment";
         comment: string;

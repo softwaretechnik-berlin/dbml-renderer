@@ -3,6 +3,11 @@ TableGroup users {
   users.sexes
 }
 
+TableGroup teams [color: #fcecec] {
+  teams
+  teams_users
+}
+
 table users.users [headercolor: #D3D3D3] {
   // Simple comment
   Id int [primary key, increment, not null]

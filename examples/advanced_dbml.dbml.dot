@@ -57,6 +57,11 @@ digraph dbml {
     </TD></TR>
     </TABLE>>];
     }
+subgraph cluster_teams {
+      label="teams"
+      style=filled;
+      color="#fcecec";
+
       "teams" [id="teams";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       teams       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
@@ -103,6 +108,8 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
+    }
+      
       "users.users":f0 -> "users.sexes":f0 [style=invis, weight=100, color=red]
     "users.users":f3:e -> "users.sexes":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
 "teams_users":f0 -> "teams":f0 [style=invis, weight=100, color=red]
