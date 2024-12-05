@@ -199,7 +199,7 @@ class TableRenderer {
   }
 
   toDot(): string {
-    const note = this.table.options.Note;
+    const note = this.table.options.Note || this.table.actual.settings?.note;
     const tooltip = !note
       ? ""
       : `tooltip="${this.displayName()}\\n${escapeString(note)}";`;
@@ -211,11 +211,13 @@ class TableRenderer {
 }
 
 class GroupRenderer {
+  private note?: string | null;
   private color: string;
   private name: string;
   readonly tables: TableRenderer[];
 
   constructor(group: NormalizedGroup) {
+    this.note = group.options.Note || group.actual.settings?.note;
     this.color = !group.actual.settings?.color
       ? "#dddddd"
       : group.actual.settings.color;
@@ -224,7 +226,11 @@ class GroupRenderer {
   }
 
   toDot(): string {
-    return `subgraph cluster_${this.name} {
+    const tooltip = !this.note
+      ? ""
+      : `\n      tooltip="${this.name}\\n${escapeString(this.note)}"`;
+
+    return `subgraph cluster_${this.name} {${tooltip}
       label="${this.name}"
       style=filled;
       color="${this.color}";

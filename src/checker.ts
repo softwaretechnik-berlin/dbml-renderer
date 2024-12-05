@@ -48,6 +48,10 @@ export const check = (input: Output): NormalizedOutput => {
 
       return table;
     }),
+    options: extract("option", group.items).reduce(
+      (acc, i) => ({ ...acc, ...i.option }),
+      {},
+    ),
   }));
 
   const ungroupedTables = tables.filter(
@@ -86,6 +90,7 @@ export type NormalizedTable = {
 export type NormalizedGroup = {
   actual: TableGroup;
   tables: NormalizedTable[];
+  options: Record<string, string>;
 };
 
 export type NormalizedEnum = {

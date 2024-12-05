@@ -10,17 +10,24 @@
 <title>dbml</title>
 <g id="clust2" class="cluster">
 <title>cluster_teams</title>
+<g id="a_clust2"><a xlink:title="teams&#10;The team tables">
 <polygon fill="#fcecec" stroke="#fcecec" points="8,-424 8,-832 1013.18,-832 1013.18,-424 8,-424"/>
 <text text-anchor="middle" x="510.59" y="-799.2" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">teams</text>
+</a>
+</g>
 </g>
 <g id="clust1" class="cluster">
 <title>cluster_users</title>
+<g id="a_clust1"><a xlink:title="users&#10;User details">
 <polygon fill="#dddddd" stroke="#dddddd" points="514.93,-8 514.93,-416 1548.4,-416 1548.4,-8 514.93,-8"/>
 <text text-anchor="middle" x="1031.67" y="-383.2" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">users</text>
+</a>
+</g>
 </g>
 <!-- users.users -->
 <g id="users.users" class="node">
 <title>users.users</title>
+<g id="a_users.users"><a xlink:title="users.users&#10;a test note">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="786.68" cy="-189" rx="263.5" ry="172.57"/>
 <polygon fill="#d3d3d3" stroke="transparent" points="602.68,-249 602.68,-309 971.68,-309 971.68,-249 602.68,-249"/>
 <polygon fill="none" stroke="#29235c" points="602.68,-249 602.68,-309 971.68,-309 971.68,-249 602.68,-249"/>
@@ -43,6 +50,8 @@
 <text text-anchor="start" x="613.68" y="-89.2" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Sex &#160;&#160;&#160;</text>
 <text text-anchor="start" x="926.9" y="-90.2" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="601.18,-68 601.18,-310 972.18,-310 972.18,-68 601.18,-68"/>
+</a>
+</g>
 </g>
 <!-- users.sexes -->
 <g id="users.sexes" class="node">
@@ -79,6 +88,7 @@
 <!-- teams -->
 <g id="teams" class="node">
 <title>teams</title>
+<g id="a_teams"><a xlink:title="teams&#10;Another note">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="786.68" cy="-635" rx="218.49" ry="130.22"/>
 <polygon fill="#1d71b8" stroke="transparent" points="634.68,-665 634.68,-725 939.68,-725 939.68,-665 634.68,-665"/>
 <polygon fill="none" stroke="#29235c" points="634.68,-665 634.68,-725 939.68,-725 939.68,-665 634.68,-665"/>
@@ -93,6 +103,8 @@
 <text text-anchor="start" x="645.23" y="-565.2" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">Name &#160;&#160;&#160;</text>
 <text text-anchor="start" x="765.41" y="-566.2" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">varchar(20)</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="633.18,-544 633.18,-726 940.18,-726 940.18,-544 633.18,-544"/>
+</a>
+</g>
 </g>
 <!-- teams_users -->
 <g id="teams_users" class="node">

@@ -1,4 +1,4 @@
-TableGroup users {
+TableGroup users [note: 'User details'] {
   users.users
   users.sexes
 }
@@ -6,6 +6,12 @@ TableGroup users {
 TableGroup teams [color: #fcecec] {
   teams
   teams_users
+
+  Note: 'The team tables'
+}
+
+Note my_note {
+   'A note!'
 }
 
 table users.users [headercolor: #D3D3D3] {
@@ -13,18 +19,22 @@ table users.users [headercolor: #D3D3D3] {
   Id int [primary key, increment, not null]
   Name varchar(max) [not null]
   Sex int [ref: > users.sexes.Id]
+
+  Note: 'a test note'
 }
 
 table users.sexes [headercolor: #200000] {
   /*
   Multiline comment
   */
-  Note: 'Male or female'
+  Note {
+   'Male or female'
+  }
   Id int [primary key, not null]
   Name varchar(10)
 }
 
-table teams {
+table teams [note: 'Another note'] {
   Id int [primary key]
   Name varchar(20)
 }

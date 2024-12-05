@@ -1,5 +1,6 @@
 import { parse as dbmlParse } from "./dbml";
 import { Output } from "./types";
+import { ZodError } from "zod";
 
 export const parse = (input: string): Output => {
   try {
@@ -24,10 +25,15 @@ type SourceLocation = {
 };
 
 class SyntaxError extends Error {
-  constructor(peggyErr: PeggyError) {
-    super(
-      `Could not parse input at line ${peggyErr.location.start.line}:${peggyErr.location.start.column}. ${peggyErr.message}`,
-    );
+  constructor(peggyErr: PeggyError | ZodError) {
+    if (peggyErr instanceof ZodError) {
+      console.debug(peggyErr);
+      super("Zod Error");
+    } else {
+      super(
+        `Could not parse input at line ${peggyErr.location.start.line}:${peggyErr.location.start.column}. ${peggyErr.message}`,
+      );
+    }
     this.name = "SyntaxError";
   }
 }

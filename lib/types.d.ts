@@ -28,6 +28,20 @@ export declare const Project: z.ZodObject<{
     name: string | null;
 }>;
 export type Project = z.infer<typeof Project>;
+export declare const StickyNote: z.ZodObject<{
+    type: z.ZodLiteral<"note">;
+    name: z.ZodString;
+    note: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    type: "note";
+    name: string;
+    note: string;
+}, {
+    type: "note";
+    name: string;
+    note: string;
+}>;
+export type StickyNote = z.infer<typeof StickyNote>;
 export declare const Column: z.ZodObject<{
     type: z.ZodLiteral<"column">;
     name: z.ZodString;
@@ -210,6 +224,17 @@ export declare const TableRef: z.ZodObject<{
     schema: string | null;
 }>;
 export type TableRef = z.infer<typeof TableRef>;
+export declare const TableGroupOption: z.ZodObject<{
+    type: z.ZodLiteral<"option">;
+    option: z.ZodRecord<z.ZodString, z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    type: "option";
+    option: Record<string, string>;
+}, {
+    type: "option";
+    option: Record<string, string>;
+}>;
+export type TableGroupOption = z.infer<typeof TableGroupOption>;
 export declare const TableGroup: z.ZodObject<{
     type: z.ZodLiteral<"group">;
     name: z.ZodNullable<z.ZodString>;
@@ -234,6 +259,15 @@ export declare const TableGroup: z.ZodObject<{
         type: "table";
         name: string;
         schema: string | null;
+    }>, z.ZodObject<{
+        type: z.ZodLiteral<"option">;
+        option: z.ZodRecord<z.ZodString, z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        type: "option";
+        option: Record<string, string>;
+    }, {
+        type: "option";
+        option: Record<string, string>;
     }>]>, "many">;
     settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
 }, "strip", z.ZodTypeAny, {
@@ -247,6 +281,9 @@ export declare const TableGroup: z.ZodObject<{
         type: "table";
         name: string;
         schema: string | null;
+    } | {
+        type: "option";
+        option: Record<string, string>;
     })[];
 }, {
     type: "group";
@@ -259,6 +296,9 @@ export declare const TableGroup: z.ZodObject<{
         type: "table";
         name: string;
         schema: string | null;
+    } | {
+        type: "option";
+        option: Record<string, string>;
     })[];
 }>;
 export type TableGroup = z.infer<typeof TableGroup>;
@@ -426,6 +466,18 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
     options: Record<string, string> | null;
     name: string | null;
 }>, z.ZodObject<{
+    type: z.ZodLiteral<"note">;
+    name: z.ZodString;
+    note: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    type: "note";
+    name: string;
+    note: string;
+}, {
+    type: "note";
+    name: string;
+    note: string;
+}>, z.ZodObject<{
     type: z.ZodLiteral<"table">;
     schema: z.ZodNullable<z.ZodString>;
     name: z.ZodString;
@@ -561,6 +613,15 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
         type: "table";
         name: string;
         schema: string | null;
+    }>, z.ZodObject<{
+        type: z.ZodLiteral<"option">;
+        option: z.ZodRecord<z.ZodString, z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        type: "option";
+        option: Record<string, string>;
+    }, {
+        type: "option";
+        option: Record<string, string>;
     }>]>, "many">;
     settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
 }, "strip", z.ZodTypeAny, {
@@ -574,6 +635,9 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
         type: "table";
         name: string;
         schema: string | null;
+    } | {
+        type: "option";
+        option: Record<string, string>;
     })[];
 }, {
     type: "group";
@@ -586,6 +650,9 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
         type: "table";
         name: string;
         schema: string | null;
+    } | {
+        type: "option";
+        option: Record<string, string>;
     })[];
 }>, z.ZodObject<{
     type: z.ZodLiteral<"enum">;
@@ -719,6 +786,18 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
     options: Record<string, string> | null;
     name: string | null;
 }>, z.ZodObject<{
+    type: z.ZodLiteral<"note">;
+    name: z.ZodString;
+    note: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    type: "note";
+    name: string;
+    note: string;
+}, {
+    type: "note";
+    name: string;
+    note: string;
+}>, z.ZodObject<{
     type: z.ZodLiteral<"table">;
     schema: z.ZodNullable<z.ZodString>;
     name: z.ZodString;
@@ -854,6 +933,15 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         type: "table";
         name: string;
         schema: string | null;
+    }>, z.ZodObject<{
+        type: z.ZodLiteral<"option">;
+        option: z.ZodRecord<z.ZodString, z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        type: "option";
+        option: Record<string, string>;
+    }, {
+        type: "option";
+        option: Record<string, string>;
     }>]>, "many">;
     settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
 }, "strip", z.ZodTypeAny, {
@@ -867,6 +955,9 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         type: "table";
         name: string;
         schema: string | null;
+    } | {
+        type: "option";
+        option: Record<string, string>;
     })[];
 }, {
     type: "group";
@@ -879,6 +970,9 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         type: "table";
         name: string;
         schema: string | null;
+    } | {
+        type: "option";
+        option: Record<string, string>;
     })[];
 }>, z.ZodObject<{
     type: z.ZodLiteral<"enum">;
