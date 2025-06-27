@@ -19,6 +19,13 @@ export const Project = z.object({
 });
 export type Project = z.infer<typeof Project>;
 
+export const StickyNote = z.object({
+  type: z.literal("note"),
+  name: z.string(),
+  note: z.string(),
+});
+export type StickyNote = z.infer<typeof StickyNote>;
+
 export const Column = z.object({
   type: z.literal("column"),
   name: z.string(),
@@ -61,10 +68,17 @@ export const TableRef = z.object({
 });
 export type TableRef = z.infer<typeof TableRef>;
 
+export const TableGroupOption = z.object({
+  type: z.literal("option"),
+  option: z.record(z.string()),
+});
+export type TableGroupOption = z.infer<typeof TableGroupOption>;
+
 export const TableGroup = z.object({
   type: z.literal("group"),
   name: z.string().nullable(),
-  items: z.array(z.union([Comment, TableRef])),
+  items: z.array(z.union([Comment, TableRef, TableGroupOption])),
+  settings: Settings.nullable().transform((v) => v || {}),
 });
 export type TableGroup = z.infer<typeof TableGroup>;
 
@@ -107,7 +121,15 @@ export const Ref = z.object({
 });
 export type Ref = z.infer<typeof Ref>;
 
-export const Entity = z.union([Comment, Project, Table, TableGroup, Enum, Ref]);
+export const Entity = z.union([
+  Comment,
+  Project,
+  StickyNote,
+  Table,
+  TableGroup,
+  Enum,
+  Ref,
+]);
 export type Entity = z.infer<typeof Entity>;
 
 export const Output = z.array(Entity);

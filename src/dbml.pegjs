@@ -3,6 +3,7 @@ File = all:DBML+ { return all.filter(e => e); }
 DBML = _ declaration:(
   Comment
   / Project
+  / StickyNote
   / Table
   / TableGroup
   / Ref
@@ -12,6 +13,9 @@ DBML = _ declaration:(
 
 Project = "Project"i _ name:ProjectName? __ "{" __ options:Options __ "}" { return { type: "project", name, options } }
 ProjectName = Name
+
+StickyNote = "Note"i _ name:StickyNoteName __ "{" __ note:String __ "}" { return { type: "note", name, note } }
+StickyNoteName = Name
 
 Schema = Name
 
@@ -40,9 +44,13 @@ Index = columns:(name:Function { return [name] } / (name:ColumnName { return [na
 CompositeIndex = "(" _ entries:(head:CompositeIndexEntry tail:(_ "," _ entry:CompositeIndexEntry { return entry; })* { return [head, ...tail]; } )? _ ")" { return entries; }
 CompositeIndexEntry = ColumnName / Function
 
-TableGroup = "TableGroup"i _ name:Name __ "{" __ items:TableGroupItems __ "}" { return { type: "group", name, items }; }
+TableGroup = "TableGroup"i _ name:Name _ settings:TableGroupSettings? __ "{" __ items:TableGroupItems __ "}"
+  { return { type: "group", name, items, settings }; }
 TableGroupItems = (head:TableGroupItem tail:(EOL __ item:TableGroupItem { return item; })* { return [head, ...tail]; })?
-TableGroupItem = name:SchemaElementName { return {type: "table", ...name} }
+TableGroupItem =
+  option:Option { return { type: "option", option }; }
+  / name:SchemaElementName { return {type: "table", ...name} }
+TableGroupSettings = Settings
 
 Ref = "Ref"i _ name:Name? _ ":" _ from:RefFull _ cardinality:Cardinality _ to:RefFull _ settings:Settings? { return { type: "ref", cardinality, from, to, settings }; }
 RefFull = schemaTable:(n:SchemaAndName _ '.' { return n; } / n:SimpleName _ '.' { return n; }) _ columns:RefColumns { return { ...schemaTable, columns } }
@@ -87,8 +95,9 @@ SettingValue = String / Function / ([^,\]]+ { return text().trim(); })
 Function = '`' [^`]* '`' { return text(); }
 
 Options = (head:Option tail:(EOL __ opt:Option { return opt; })* { return [head, ...tail].reduce((a, b) => Object.assign(a, b), {}); })?
-Option = key:OptionKey _ ":" _ value:OptionValue
-  { return { [key]: value } }
+Option =
+  key:OptionKey _ ":" _ value:OptionValue { return { [key]: value } }
+  /  key:OptionKey _ "{" __ value:OptionValue __ "}" { return { [key]: value } }
 OptionKey = Name
 OptionValue = String
 

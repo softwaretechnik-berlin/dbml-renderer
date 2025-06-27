@@ -6,6 +6,10 @@ export declare const parse: (input: string) => ({
     options: Record<string, string>;
     name: string | null;
 } | {
+    type: "note";
+    name: string;
+    note: string;
+} | {
     type: "table";
     name: string;
     settings: Record<string, string | null>;
@@ -32,6 +36,7 @@ export declare const parse: (input: string) => ({
 } | {
     type: "group";
     name: string | null;
+    settings: Record<string, string | null>;
     items: ({
         type: "comment";
         comment: string;
@@ -39,6 +44,9 @@ export declare const parse: (input: string) => ({
         type: "table";
         name: string;
         schema: string | null;
+    } | {
+        type: "option";
+        option: Record<string, string>;
     })[];
 } | {
     type: "enum";

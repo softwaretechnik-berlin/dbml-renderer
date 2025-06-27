@@ -7,6 +7,10 @@ export declare const check: (input: ({
     options: Record<string, string>;
     name: string | null;
 } | {
+    type: "note";
+    name: string;
+    note: string;
+} | {
     type: "table";
     name: string;
     settings: Record<string, string | null>;
@@ -33,6 +37,7 @@ export declare const check: (input: ({
 } | {
     type: "group";
     name: string | null;
+    settings: Record<string, string | null>;
     items: ({
         type: "comment";
         comment: string;
@@ -40,6 +45,9 @@ export declare const check: (input: ({
         type: "table";
         name: string;
         schema: string | null;
+    } | {
+        type: "option";
+        option: Record<string, string>;
     })[];
 } | {
     type: "enum";
@@ -77,6 +85,7 @@ export type NormalizedTable = {
 export type NormalizedGroup = {
     actual: TableGroup;
     tables: NormalizedTable[];
+    options: Record<string, string>;
 };
 export type NormalizedEnum = {
     actual: Enum;
