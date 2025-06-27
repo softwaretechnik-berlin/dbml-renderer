@@ -49,13 +49,13 @@ export declare const Column: z.ZodObject<{
     settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
 }, "strip", z.ZodTypeAny, {
     type: "column";
-    data: string;
     name: string;
+    data: string;
     settings: Record<string, string | null>;
 }, {
     type: "column";
-    data: string;
     name: string;
+    data: string;
     settings: Record<string, string | null> | null;
 }>;
 export type Column = z.infer<typeof Column>;
@@ -117,13 +117,13 @@ export declare const Table: z.ZodObject<{
         settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
     }, "strip", z.ZodTypeAny, {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null>;
     }, {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null> | null;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"option">;
@@ -171,8 +171,8 @@ export declare const Table: z.ZodObject<{
         comment: string;
     } | {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null>;
     } | {
         type: "option";
@@ -195,8 +195,8 @@ export declare const Table: z.ZodObject<{
         comment: string;
     } | {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null> | null;
     } | {
         type: "option";
@@ -498,13 +498,13 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
         settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
     }, "strip", z.ZodTypeAny, {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null>;
     }, {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null> | null;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"option">;
@@ -552,8 +552,8 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
         comment: string;
     } | {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null>;
     } | {
         type: "option";
@@ -576,8 +576,8 @@ export declare const Entity: z.ZodUnion<[z.ZodObject<{
         comment: string;
     } | {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null> | null;
     } | {
         type: "option";
@@ -818,13 +818,13 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         settings: z.ZodEffects<z.ZodNullable<z.ZodRecord<z.ZodString, z.ZodNullable<z.ZodString>>>, Record<string, string | null>, Record<string, string | null> | null>;
     }, "strip", z.ZodTypeAny, {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null>;
     }, {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null> | null;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"option">;
@@ -872,8 +872,8 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         comment: string;
     } | {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null>;
     } | {
         type: "option";
@@ -896,8 +896,8 @@ export declare const Output: z.ZodArray<z.ZodUnion<[z.ZodObject<{
         comment: string;
     } | {
         type: "column";
-        data: string;
         name: string;
+        data: string;
         settings: Record<string, string | null> | null;
     } | {
         type: "option";
