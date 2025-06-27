@@ -27,11 +27,14 @@
 <!-- users.users -->
 <g id="users.users" class="node">
 <title>users.users</title>
-<g id="a_users.users"><a xlink:href="https://github.com/softwaretechnik-berlin/dbml-renderer" xlink:title="users.users&#10;a test note">
+<g id="a_users.users"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:users.users+table+link" xlink:title="users.users&#10;a test note">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="786.68" cy="-189" rx="263.5" ry="172.57"/>
+<g id="a_users.users_0"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:users.users+table+link" xlink:title="users.users&#10;a test note">
 <polygon fill="#d3d3d3" stroke="transparent" points="602.68,-249 602.68,-309 971.68,-309 971.68,-249 602.68,-249"/>
 <polygon fill="none" stroke="#29235c" points="602.68,-249 602.68,-309 971.68,-309 971.68,-249 602.68,-249"/>
 <text text-anchor="start" x="642.26" y="-270.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#000000"> &#160;&#160;&#160;&#160;&#160;&#160;users.users &#160;&#160;&#160;&#160;&#160;&#160;</text>
+</a>
+</g>
 <polygon fill="#e7e2dd" stroke="transparent" points="602.68,-189 602.68,-249 971.68,-249 971.68,-189 602.68,-189"/>
 <polygon fill="none" stroke="#29235c" points="602.68,-189 602.68,-249 971.68,-249 971.68,-189 602.68,-189"/>
 <text text-anchor="start" x="613.68" y="-210.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">Id</text>
@@ -56,11 +59,14 @@
 <!-- users.sexes -->
 <g id="users.sexes" class="node">
 <title>users.sexes</title>
-<g id="a_users.sexes"><a xlink:href="https://github.com/softwaretechnik-berlin/dbml-renderer" xlink:title="users.sexes&#10;Male or female">
+<g id="a_users.sexes"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:users.sexes+table+link" xlink:title="users.sexes&#10;Male or female">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="1313.42" cy="-219" rx="226.96" ry="130.22"/>
+<g id="a_users.sexes_1"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:users.sexes+table+link" xlink:title="users.sexes&#10;Male or female">
 <polygon fill="#200000" stroke="transparent" points="1155.42,-249 1155.42,-309 1472.42,-309 1472.42,-249 1155.42,-249"/>
 <polygon fill="none" stroke="#29235c" points="1155.42,-249 1155.42,-309 1472.42,-309 1472.42,-249 1155.42,-249"/>
 <text text-anchor="start" x="1166.32" y="-270.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#ffffff"> &#160;&#160;&#160;&#160;&#160;&#160;users.sexes &#160;&#160;&#160;&#160;&#160;&#160;</text>
+</a>
+</g>
 <polygon fill="#e7e2dd" stroke="transparent" points="1155.42,-189 1155.42,-249 1472.42,-249 1472.42,-189 1155.42,-189"/>
 <polygon fill="none" stroke="#29235c" points="1155.42,-189 1155.42,-249 1472.42,-249 1472.42,-189 1155.42,-189"/>
 <text text-anchor="start" x="1166.42" y="-210.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">Id</text>
@@ -109,11 +115,14 @@
 <!-- teams_users -->
 <g id="teams_users" class="node">
 <title>teams_users</title>
-<g id="a_teams_users"><a xlink:href="https://github.com/softwaretechnik-berlin/dbml-renderer" xlink:title="&lt;TABLE&gt;">
+<g id="a_teams_users"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:teams_users+join+table+link" xlink:title="&lt;TABLE&gt;">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="251.47" cy="-605" rx="235.43" ry="172.57"/>
+<g id="a_teams_users_2"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:teams_users+join+table+link" xlink:title="&lt;TABLE&gt;">
 <polygon fill="#1d71b8" stroke="transparent" points="87.47,-665 87.47,-725 416.47,-725 416.47,-665 87.47,-665"/>
 <polygon fill="none" stroke="#29235c" points="87.47,-665 87.47,-725 416.47,-725 416.47,-665 87.47,-665"/>
 <text text-anchor="start" x="98.15" y="-686.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#ffffff"> &#160;&#160;&#160;&#160;&#160;&#160;teams_users &#160;&#160;&#160;&#160;&#160;&#160;</text>
+</a>
+</g>
 <polygon fill="#e7e2dd" stroke="transparent" points="87.47,-605 87.47,-665 416.47,-665 416.47,-605 87.47,-605"/>
 <polygon fill="none" stroke="#29235c" points="87.47,-605 87.47,-665 416.47,-665 416.47,-605 87.47,-605"/>
 <text text-anchor="start" x="98.47" y="-626.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="32.00" fill="#29235c">Id</text>
