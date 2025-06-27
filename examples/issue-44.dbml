@@ -1,0 +1,258 @@
+// Docs: https://dbml.dbdiagram.io/docs
+
+// Schema: envixus
+
+// ----------------------------
+// Reference Tables (Lookup Tables)
+// ----------------------------
+
+Table listing_years {
+id int [pk, increment] // Primary Key
+year year [unique] // Year of the listing (1990-2024)
+}
+
+Table makes {
+id int [pk, increment] // Primary Key
+name varchar(50) [unique] // Car make (e.g., Honda, Toyota)
+}
+
+Table models {
+id int [pk, increment] // Primary Key
+make_id int [not null, ref: > makes.id] // Foreign Key to makes
+name varchar(50) // Car model (e.g., Civic, Camry)
+
+indexes {
+(make_id, name) [unique]
+}
+}
+
+Table trims {
+id int [pk, increment] // Primary Key
+model_id int [not null, ref: > models.id] // Foreign Key to models
+name varchar(50) // Trim level (e.g., EX, LX)
+description text // Detailed description of the trim
+
+indexes {
+(model_id, name) [unique]
+}
+}
+
+Table manufacturing_years {
+id int [pk, increment] // Primary Key
+year year [unique] // Manufacturing year (e.g., 2010, 2011)
+}
+
+Table colors {
+id int [pk, increment] // Primary Key
+name varchar(50) [unique] // Color name (e.g., Red, Black)
+color_type enum('Exterior', 'Interior') // Type of color
+}
+
+Table body_types {
+id int [pk, increment] // Primary Key
+name varchar(50) [unique] // Body type (e.g., Sedan, SUV)
+}
+
+Table doors {
+id int [pk, increment] // Primary Key
+number_of_doors int [unique] // Number of doors (e.g., 2, 4)
+}
+
+Table seats {
+id int [pk, increment] // Primary Key
+number_of_seats int [unique] // Number of seats (e.g., 5, 7)
+}
+
+Table engine_types {
+id int [pk, increment] // Primary Key
+name varchar(50) [unique] // Engine type (e.g., Gas, Electric)
+}
+
+Table engines {
+id int [pk, increment] // Primary Key
+engine_type_id int [not null, ref: > engine_types.id] // Foreign Key to engine_types
+cylinders int // Number of engine cylinders (e.g., 4, 6, 8)
+engine_size_l decimal(3,1) // Engine displacement in liters
+horsepower int // Horsepower
+}
+
+Table transmissions {
+id int [pk, increment] // Primary Key
+type varchar(50) [unique] // Transmission type (e.g., Automatic, Manual)
+}
+
+Table drive_trains {
+id int [pk, increment] // Primary Key
+type varchar(50) [unique] // Drive train type (e.g., FWD, AWD, RWD)
+}
+
+Table fuel_types {
+id int [pk, increment] // Primary Key
+name varchar(50) [unique] // Fuel type (e.g., Gasoline, Diesel, Electric)
+}
+
+Table title_statuses {
+id int [pk, increment] // Primary Key
+status varchar(50) [unique] // Title status (e.g., Clean, Salvage)
+}
+
+Table regions {
+id int [pk, increment] // Primary Key
+name varchar(100) [unique] // Region name (e.g., Northeast, Midwest)
+}
+
+// ----------------------------
+// Source Information Table
+// ----------------------------
+
+Table sources {
+id int [pk, increment] // Primary Key
+name varchar(100) [unique] // Source name (e.g., Craigslist, Edmunds, CarGurus)
+source_url varchar(255) // URL from where the data was scraped
+source_json text // Raw JSON data if provided
+source_json_url varchar(255) // URL to the raw JSON data (if applicable)
+}
+
+// ----------------------------
+// Core Tables
+// ----------------------------
+
+Table vehicles {
+id int [pk, increment] // Primary Key
+listing_year_id int [not null, ref: > listing_years.id] // Foreign Key to listing_years
+make_id int [not null, ref: > makes.id] // Foreign Key to makes
+model_id int [not null, ref: > models.id] // Foreign Key to models
+trim_id int [not null, ref: > trims.id] // Foreign Key to trims
+manufacture_year_id int [not null, ref: > manufacturing_years.id] // Foreign Key to manufacturing_years
+condition_type enum('New', 'Used') // Condition type
+base_msrp decimal(10,2) // Manufacturer's Suggested Retail Price
+price decimal(10,2) // Current price
+mileage int // Odometer reading
+exterior_color_id int [ref: > colors.id, note: 'References colors where color_type = Exterior'] // Foreign Key to colors (Exterior)
+interior_color_id int [ref: > colors.id, note: 'References colors where color_type = Interior'] // Foreign Key to colors (Interior)
+body_type_id int [ref: > body_types.id] // Foreign Key to body_types
+door_id int [ref: > doors.id] // Foreign Key to doors
+seat_id int [ref: > seats.id] // Foreign Key to seats
+engine_id int [ref: > engines.id] // Foreign Key to engines
+transmission_id int [ref: > transmissions.id] // Foreign Key to transmissions
+drive_train_id int [ref: > drive_trains.id] // Foreign Key to drive_trains
+fuel_type_id int [ref: > fuel_types.id] // Foreign Key to fuel_types
+vin varchar(17) [unique, not null] // Vehicle Identification Number
+torque_ft_lbs int // Torque in foot-pounds
+torque_rpm int // RPM at which torque is achieved
+epa_combined_mpg decimal(4,1) // Combined MPG
+epa_city_mpg decimal(4,1) // City MPG
+epa_highway_mpg decimal(4,1) // Highway MPG
+epa_electric_range_mi decimal(5,1) // Electric range (if applicable)
+epa_time_to_charge_240v_hr decimal(4,1) // Time to charge at 240V (if applicable)
+battery_capacity_kwh decimal(5,1) // Battery capacity (if applicable)
+state varchar(50) // State of the listing
+region_id int [ref: > regions.id] // Foreign Key to regions
+region_url varchar(255) // URL specific to the region
+accidents_reported int // Number of reported accidents
+owner_count int // Number of previous owners
+rental_use boolean // Indicates if used as a rental
+days_on_market int // Days the vehicle has been listed
+date_captured datetime // Date data was scraped or collected
+date_added datetime [default: `CURRENT_TIMESTAMP`] // Date entry was added
+date_modified datetime [default: `CURRENT_TIMESTAMP`, note: 'Automatically updated on modification in MySQL'] // Date entry was last modified
+
+indexes {
+(vin) [unique]
+(price)
+(date_captured)
+}
+}
+
+Table live_scraped_data {
+id int [pk, increment] // Primary Key
+vehicle_id int [not null, ref: > vehicles.id] // Foreign Key to vehicles
+price decimal(10,2) // Scraped price
+mileage int // Scraped mileage
+msrp decimal(10,2) // Scraped MSRP
+date_captured datetime // Date data was scraped
+source_id int [not null, ref: > sources.id] // Foreign Key to sources
+
+indexes {
+(source_id)
+}
+}
+
+Table historical_data {
+id int [pk, increment] // Primary Key
+vehicle_id int [not null, ref: > vehicles.id] // Foreign Key to vehicles
+price decimal(10,2) // Historical price
+mileage int // Historical mileage
+msrp decimal(10,2) // Historical MSRP
+date_captured datetime // Date data was captured
+source_id int [not null, ref: > sources.id] // Foreign Key to sources
+
+indexes {
+(source_id)
+}
+}
+
+// ----------------------------
+// Additional Tables
+// ----------------------------
+
+Table images {
+id int [pk, increment] // Primary Key
+vehicle_id int [not null, ref: > vehicles.id] // Foreign Key to vehicles
+image_url varchar(255) // URL for the car image
+}
+
+Table listing_raw_data {
+id int [pk, increment] // Primary Key
+vehicle_id int [not null, ref: > vehicles.id] // Foreign Key to vehicles
+raw_json json // Raw JSON data from the source
+}
+
+// ----------------------------
+// Tagging and Categorization Tables
+// ----------------------------
+
+Table tags {
+id int [pk, increment]
+name varchar(50) [unique] // Tag name (e.g., Craigslist, Edmunds, CarGurus)
+}
+
+Table vehicle_tags {
+vehicle_id int [ref: > vehicles.id]
+tag_id int [ref: > tags.id]
+
+indexes {
+(vehicle_id, tag_id) [unique]
+}
+}
+
+// ----------------------------
+// User Management Tables
+// ----------------------------
+
+Table roles {
+id int [pk, increment]
+name varchar(50) [unique] // e.g., Admin, Editor, Viewer
+}
+
+Table users {
+id int [pk, increment]
+username varchar(50) [unique, not null]
+password_hash varchar(255) [not null]
+role_id int [ref: > roles.id]
+created_at datetime [default: `CURRENT_TIMESTAMP`]
+}
+
+Table audit_trails {
+id int [pk, increment]
+vehicle_id int [ref: > vehicles.id]
+user_id int [ref: > users.id]
+action varchar(50) // e.g., INSERT, UPDATE, DELETE
+action_timestamp datetime [default: `CURRENT_TIMESTAMP`]
+ip_address varchar(45) // IP address from where the action was performed
+
+indexes {
+(vehicle_id)
+(user_id)
+}
+}

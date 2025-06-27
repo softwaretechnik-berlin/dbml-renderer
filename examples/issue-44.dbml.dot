@@ -1,0 +1,1101 @@
+digraph dbml {
+      rankdir=LR;
+      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
+
+      
+      
+      "listing_years" [id="listing_years";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       listing_years       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">year    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>year</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"makes" [id="makes";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       makes       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"models" [id="models";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       models       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">make_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"trims" [id="trims";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       trims       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">model_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">description    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"manufacturing_years" [id="manufacturing_years";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       manufacturing_years       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">year    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>year</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"colors" [id="colors";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       colors       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">color_type    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>enum(Exterior,Interior)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"body_types" [id="body_types";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       body_types       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"doors" [id="doors";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       doors       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">number_of_doors    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"seats" [id="seats";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       seats       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">number_of_seats    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"engine_types" [id="engine_types";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       engine_types       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"engines" [id="engines";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       engines       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">engine_type_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">cylinders    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">engine_size_l    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(3,1)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">horsepower    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"transmissions" [id="transmissions";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       transmissions       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">type    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"drive_trains" [id="drive_trains";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       drive_trains       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">type    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"fuel_types" [id="fuel_types";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       fuel_types       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"title_statuses" [id="title_statuses";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       title_statuses       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">status    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"regions" [id="regions";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       regions       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(100)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"sources" [id="sources";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       sources       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(100)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">source_url    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(255)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">source_json    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>text</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">source_json_url    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(255)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"vehicles" [id="vehicles";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       vehicles       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">listing_year_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">make_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">model_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">trim_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">manufacture_year_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">condition_type    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>enum(New,Used)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f8" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">base_msrp    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(10,2)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f9" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">price    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(10,2)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f10" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">mileage    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f11" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">exterior_color_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f12" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">interior_color_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f13" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">body_type_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f14" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">door_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f15" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">seat_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f16" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">engine_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f17" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">transmission_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f18" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">drive_train_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f19" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">fuel_type_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f20" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">vin    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(17)</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f21" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">torque_ft_lbs    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f22" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">torque_rpm    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f23" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">epa_combined_mpg    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(4,1)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f24" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">epa_city_mpg    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(4,1)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f25" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">epa_highway_mpg    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(4,1)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f26" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">epa_electric_range_mi    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(5,1)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f27" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">epa_time_to_charge_240v_hr    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(4,1)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f28" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">battery_capacity_kwh    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(5,1)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f29" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">state    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f30" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">region_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f31" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">region_url    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(255)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f32" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">accidents_reported    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f33" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">owner_count    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f34" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">rental_use    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>boolean</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f35" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">days_on_market    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f36" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">date_captured    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>datetime</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f37" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">date_added    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>datetime</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f38" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">date_modified    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>datetime</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"live_scraped_data" [id="live_scraped_data";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       live_scraped_data       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">vehicle_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">price    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(10,2)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">mileage    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">msrp    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(10,2)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">date_captured    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>datetime</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">source_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"historical_data" [id="historical_data";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       historical_data       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">vehicle_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">price    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(10,2)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">mileage    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">msrp    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>decimal(10,2)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">date_captured    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>datetime</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f7" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">source_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"images" [id="images";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       images       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">vehicle_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">image_url    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(255)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"listing_raw_data" [id="listing_raw_data";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       listing_raw_data       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">vehicle_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">raw_json    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>json</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"tags" [id="tags";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       tags       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"vehicle_tags" [id="vehicle_tags";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       vehicle_tags       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">vehicle_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">tag_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"roles" [id="roles";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       roles       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">name    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"users" [id="users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       users       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">username    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">password_hash    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(255)</I> <B>(!)</B></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">role_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">created_at    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>datetime</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+"audit_trails" [id="audit_trails";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       audit_trails       </B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT"><B>id</B>    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">vehicle_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">user_id    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f4" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">action    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(50)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f5" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">action_timestamp    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>datetime</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+<TR><TD ALIGN="LEFT" PORT="f6" BGCOLOR="#e7e2dd">
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+        <TR>
+          <TD ALIGN="LEFT">ip_address    </TD>
+          <TD ALIGN="RIGHT"><FONT><I>varchar(45)</I></FONT></TD>
+        </TR>
+      </TABLE>
+    </TD></TR>
+    </TABLE>>];
+      "models":f0 -> "makes":f0 [style=invis, weight=100, color=red]
+    "models":f2:e -> "makes":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"trims":f0 -> "models":f0 [style=invis, weight=100, color=red]
+    "trims":f2:e -> "models":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"engines":f0 -> "engine_types":f0 [style=invis, weight=100, color=red]
+    "engines":f2:e -> "engine_types":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "listing_years":f0 [style=invis, weight=100, color=red]
+    "vehicles":f2:e -> "listing_years":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "makes":f0 [style=invis, weight=100, color=red]
+    "vehicles":f3:e -> "makes":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "models":f0 [style=invis, weight=100, color=red]
+    "vehicles":f4:e -> "models":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "trims":f0 [style=invis, weight=100, color=red]
+    "vehicles":f5:e -> "trims":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "manufacturing_years":f0 [style=invis, weight=100, color=red]
+    "vehicles":f6:e -> "manufacturing_years":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "colors":f0 [style=invis, weight=100, color=red]
+    "vehicles":f11:e -> "colors":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "colors":f0 [style=invis, weight=100, color=red]
+    "vehicles":f12:e -> "colors":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "body_types":f0 [style=invis, weight=100, color=red]
+    "vehicles":f13:e -> "body_types":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "doors":f0 [style=invis, weight=100, color=red]
+    "vehicles":f14:e -> "doors":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "seats":f0 [style=invis, weight=100, color=red]
+    "vehicles":f15:e -> "seats":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "engines":f0 [style=invis, weight=100, color=red]
+    "vehicles":f16:e -> "engines":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "transmissions":f0 [style=invis, weight=100, color=red]
+    "vehicles":f17:e -> "transmissions":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "drive_trains":f0 [style=invis, weight=100, color=red]
+    "vehicles":f18:e -> "drive_trains":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "fuel_types":f0 [style=invis, weight=100, color=red]
+    "vehicles":f19:e -> "fuel_types":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicles":f0 -> "regions":f0 [style=invis, weight=100, color=red]
+    "vehicles":f30:e -> "regions":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"live_scraped_data":f0 -> "vehicles":f0 [style=invis, weight=100, color=red]
+    "live_scraped_data":f2:e -> "vehicles":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"live_scraped_data":f0 -> "sources":f0 [style=invis, weight=100, color=red]
+    "live_scraped_data":f7:e -> "sources":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"historical_data":f0 -> "vehicles":f0 [style=invis, weight=100, color=red]
+    "historical_data":f2:e -> "vehicles":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"historical_data":f0 -> "sources":f0 [style=invis, weight=100, color=red]
+    "historical_data":f7:e -> "sources":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"images":f0 -> "vehicles":f0 [style=invis, weight=100, color=red]
+    "images":f2:e -> "vehicles":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"listing_raw_data":f0 -> "vehicles":f0 [style=invis, weight=100, color=red]
+    "listing_raw_data":f2:e -> "vehicles":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicle_tags":f0 -> "vehicles":f0 [style=invis, weight=100, color=red]
+    "vehicle_tags":f1:e -> "vehicles":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"vehicle_tags":f0 -> "tags":f0 [style=invis, weight=100, color=red]
+    "vehicle_tags":f2:e -> "tags":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"users":f0 -> "roles":f0 [style=invis, weight=100, color=red]
+    "users":f4:e -> "roles":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"audit_trails":f0 -> "vehicles":f0 [style=invis, weight=100, color=red]
+    "audit_trails":f2:e -> "vehicles":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+"audit_trails":f0 -> "users":f0 [style=invis, weight=100, color=red]
+    "audit_trails":f3:e -> "users":f1:w [dir=forward, penwidth=3, color="#29235c", headlabel="1", taillabel="*"]
+      
+    }
