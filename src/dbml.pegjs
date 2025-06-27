@@ -89,7 +89,7 @@ LineOfText = text:$([^\n\r]*)
 Settings = "[" pairs:SettingsPairs "]" { return pairs; }
 SettingsPairs = (head:Setting tail:(_ "," _ setting:Setting _ { return setting; })* { return [head, ...tail].reduce((a, b) => Object.assign(a,b), {}); })?
 Setting = key:SettingKey _ value:(":" _ v:SettingValue { return v; })? { return {[key]: value}; }
-SettingKey = [^,\]:]+ { return text().trim(); }
+SettingKey = [^,\]:]+ { return text().trim().toLowerCase(); }
 SettingValue = String / Function / ([^,\]]+ { return text().trim(); })
 
 Function = '`' [^`]* '`' { return text(); }
@@ -98,7 +98,7 @@ Options = (head:Option tail:(EOL __ opt:Option { return opt; })* { return [head,
 Option =
   key:OptionKey _ ":" _ value:OptionValue { return { [key]: value } }
   /  key:OptionKey _ "{" __ value:OptionValue __ "}" { return { [key]: value } }
-OptionKey = Name
+OptionKey = Name { return text().trim().toLowerCase() }
 OptionValue = String
 
 _ "space" = [ \t]*

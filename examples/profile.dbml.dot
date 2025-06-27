@@ -23,7 +23,7 @@ digraph dbml {
 <TR><TD PORT="f1" BGCOLOR="#e7e2dd"><FONT COLOR="#1d71b8"><I>    special_major    </I></FONT></TD></TR>
     </TABLE>>];
       
-      "user" [id="user";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      "user" [id="user";tooltip="user\nuser registration";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       user       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -82,7 +82,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"profile" [id="profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"profile" [id="profile";tooltip="profile\nuser profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       profile       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -109,7 +109,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"basic_profile" [id="basic_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"basic_profile" [id="basic_profile";tooltip="basic_profile\nstudent basic information";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       basic_profile       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -192,7 +192,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"education_profile" [id="education_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"education_profile" [id="education_profile";tooltip="education_profile\nstudent education experience";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       education_profile       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -251,7 +251,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"experience_profile" [id="experience_profile";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"experience_profile" [id="experience_profile";tooltip="experience_profile\nstudent work experience";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       experience_profile       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -318,7 +318,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"company" [id="company";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"company" [id="company";tooltip="company\ncompany basic information";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       company       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -385,7 +385,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"job" [id="job";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"job" [id="job";tooltip="job\njob posts";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       job       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -460,7 +460,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"job_application" [id="job_application";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"job_application" [id="job_application";tooltip="job_application\napplication";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       job_application       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">

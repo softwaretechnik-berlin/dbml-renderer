@@ -1,0 +1,28 @@
+Table countries {
+  code int [pk]
+  name varchar
+}
+
+Table users as U {
+  id int [pk, increment]
+  full_name varchar
+
+  country_code int [ref: > countries.code]
+}
+
+Table merchants {
+  id int [pk]
+  name varchar
+  country_code int [Ref: > countries.code]
+  admin_id int [REF: > U.id]
+}
+
+Table products {
+  id int [pk]
+  name varchar
+  merchant_id int
+  country_code int
+}
+
+ref: products.merchant_id > merchants.id
+Ref: products.country_code > countries.code

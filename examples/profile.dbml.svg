@@ -65,6 +65,7 @@
 <!-- user -->
 <g id="user" class="node">
 <title>user</title>
+<g id="a_user"><a xlink:title="user&#10;user registration">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="2333.27" cy="-2432.67" rx="287.59" ry="342.48"/>
 <polygon fill="#1d71b8" stroke="transparent" points="2132.27,-2612.67 2132.27,-2672.67 2535.27,-2672.67 2535.27,-2612.67 2132.27,-2612.67"/>
 <polygon fill="none" stroke="#29235c" points="2132.27,-2612.67 2132.27,-2672.67 2535.27,-2672.67 2535.27,-2612.67 2132.27,-2612.67"/>
@@ -105,10 +106,13 @@
 <text text-anchor="start" x="2143.27" y="-2212.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">updated_at &#160;&#160;&#160;</text>
 <text text-anchor="start" x="2376.71" y="-2213.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">timestamp</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="2130.77,-2191.67 2130.77,-2673.67 2535.77,-2673.67 2535.77,-2191.67 2130.77,-2191.67"/>
+</a>
+</g>
 </g>
 <!-- profile -->
 <g id="profile" class="node">
 <title>profile</title>
+<g id="a_profile"><a xlink:title="profile&#10;user profile">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="1003.32" cy="-1893.67" rx="260.43" ry="172.57"/>
 <polygon fill="#1d71b8" stroke="transparent" points="821.32,-1953.67 821.32,-2013.67 1185.32,-2013.67 1185.32,-1953.67 821.32,-1953.67"/>
 <polygon fill="none" stroke="#29235c" points="821.32,-1953.67 821.32,-2013.67 1185.32,-2013.67 1185.32,-1953.67 821.32,-1953.67"/>
@@ -129,6 +133,8 @@
 <text text-anchor="start" x="832.32" y="-1793.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">created_at &#160;&#160;&#160;</text>
 <text text-anchor="start" x="1026.76" y="-1794.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">timestamp</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="820.32,-1772.67 820.32,-2014.67 1186.32,-2014.67 1186.32,-1772.67 820.32,-1772.67"/>
+</a>
+</g>
 </g>
 <!-- profile&#45;&gt;user -->
 <!-- profile&#45;&gt;user -->
@@ -142,6 +148,7 @@
 <!-- basic_profile -->
 <g id="basic_profile" class="node">
 <title>basic_profile</title>
+<g id="a_basic_profile"><a xlink:title="basic_profile&#10;student basic information">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="306.88" cy="-1959.67" rx="277.79" ry="469.54"/>
 <polygon fill="#1d71b8" stroke="transparent" points="112.88,-2229.67 112.88,-2289.67 501.88,-2289.67 501.88,-2229.67 112.88,-2229.67"/>
 <polygon fill="none" stroke="#29235c" points="112.88,-2229.67 112.88,-2289.67 501.88,-2289.67 501.88,-2229.67 112.88,-2229.67"/>
@@ -194,6 +201,8 @@
 <text text-anchor="start" x="123.88" y="-1649.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">career_objective &#160;&#160;&#160;</text>
 <text text-anchor="start" x="439.31" y="-1650.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">text</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="111.38,-1628.67 111.38,-2290.67 502.38,-2290.67 502.38,-1628.67 111.38,-1628.67"/>
+</a>
+</g>
 </g>
 <!-- basic_profile&#45;&gt;profile -->
 <!-- basic_profile&#45;&gt;profile -->
@@ -207,6 +216,7 @@
 <!-- education_profile -->
 <g id="education_profile" class="node">
 <title>education_profile</title>
+<g id="a_education_profile"><a xlink:title="education_profile&#10;student education experience">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="306.88" cy="-1129.67" rx="278.7" ry="342.48"/>
 <polygon fill="#1d71b8" stroke="transparent" points="111.88,-1309.67 111.88,-1369.67 501.88,-1369.67 501.88,-1309.67 111.88,-1309.67"/>
 <polygon fill="none" stroke="#29235c" points="111.88,-1309.67 111.88,-1369.67 501.88,-1369.67 501.88,-1309.67 111.88,-1309.67"/>
@@ -243,6 +253,8 @@
 <text text-anchor="start" x="122.88" y="-909.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">year_of_passing &#160;&#160;&#160;</text>
 <text text-anchor="start" x="428.63" y="-910.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">date</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="110.88,-888.67 110.88,-1370.67 502.88,-1370.67 502.88,-888.67 110.88,-888.67"/>
+</a>
+</g>
 </g>
 <!-- education_profile&#45;&gt;profile -->
 <!-- education_profile&#45;&gt;profile -->
@@ -256,6 +268,7 @@
 <!-- experience_profile -->
 <g id="experience_profile" class="node">
 <title>experience_profile</title>
+<g id="a_experience_profile"><a xlink:title="experience_profile&#10;student work experience">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="306.88" cy="-384.67" rx="290.74" ry="384.83"/>
 <polygon fill="#1d71b8" stroke="transparent" points="103.88,-594.67 103.88,-654.67 510.88,-654.67 510.88,-594.67 103.88,-594.67"/>
 <polygon fill="none" stroke="#29235c" points="103.88,-594.67 103.88,-654.67 510.88,-654.67 510.88,-594.67 103.88,-594.67"/>
@@ -296,6 +309,8 @@
 <text text-anchor="start" x="114.88" y="-134.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">work_description &#160;&#160;&#160;</text>
 <text text-anchor="start" x="448.31" y="-135.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">text</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="102.38,-113.67 102.38,-655.67 511.38,-655.67 511.38,-113.67 102.38,-113.67"/>
+</a>
+</g>
 </g>
 <!-- experience_profile&#45;&gt;profile -->
 <!-- experience_profile&#45;&gt;profile -->
@@ -309,6 +324,7 @@
 <!-- company -->
 <g id="company" class="node">
 <title>company</title>
+<g id="a_company"><a xlink:title="company&#10;company basic information">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="1701.17" cy="-3122.67" rx="308.1" ry="384.83"/>
 <polygon fill="#1d71b8" stroke="transparent" points="1485.17,-3332.67 1485.17,-3392.67 1917.17,-3392.67 1917.17,-3332.67 1485.17,-3332.67"/>
 <polygon fill="none" stroke="#29235c" points="1485.17,-3332.67 1485.17,-3392.67 1917.17,-3392.67 1917.17,-3332.67 1485.17,-3332.67"/>
@@ -349,6 +365,8 @@
 <text text-anchor="start" x="1496.17" y="-2872.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">contract_phone &#160;&#160;&#160;</text>
 <text text-anchor="start" x="1799.5" y="-2873.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">varchar</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="1484.17,-2851.67 1484.17,-3393.67 1918.17,-3393.67 1918.17,-2851.67 1484.17,-2851.67"/>
+</a>
+</g>
 </g>
 <!-- company&#45;&gt;user -->
 <!-- company&#45;&gt;user -->
@@ -362,6 +380,7 @@
 <!-- job -->
 <g id="job" class="node">
 <title>job</title>
+<g id="a_job"><a xlink:title="job&#10;job posts">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="1003.32" cy="-3747.67" rx="353.61" ry="427.19"/>
 <polygon fill="#1d71b8" stroke="transparent" points="755.32,-3987.67 755.32,-4047.67 1251.32,-4047.67 1251.32,-3987.67 755.32,-3987.67"/>
 <polygon fill="none" stroke="#29235c" points="755.32,-3987.67 755.32,-4047.67 1251.32,-4047.67 1251.32,-3987.67 755.32,-3987.67"/>
@@ -406,6 +425,8 @@
 <text text-anchor="start" x="766.32" y="-3467.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">category &#160;&#160;&#160;</text>
 <text text-anchor="start" x="1057.15" y="-3468.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">job_category</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="754.32,-3446.67 754.32,-4048.67 1252.32,-4048.67 1252.32,-3446.67 754.32,-3446.67"/>
+</a>
+</g>
 </g>
 <!-- job&#45;&gt;job_category -->
 <g id="edge23" class="edge">
@@ -424,6 +445,7 @@
 <!-- job_application -->
 <g id="job_application" class="node">
 <title>job_application</title>
+<g id="a_job_application"><a xlink:title="job_application&#10;application">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="306.88" cy="-3309.67" rx="306.77" ry="342.48"/>
 <polygon fill="#1d71b8" stroke="transparent" points="91.88,-3489.67 91.88,-3549.67 521.88,-3549.67 521.88,-3489.67 91.88,-3489.67"/>
 <polygon fill="none" stroke="#29235c" points="91.88,-3489.67 91.88,-3549.67 521.88,-3549.67 521.88,-3489.67 91.88,-3489.67"/>
@@ -462,6 +484,8 @@
 <text text-anchor="start" x="102.88" y="-3089.87" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">updated_at &#160;&#160;&#160;</text>
 <text text-anchor="start" x="363.33" y="-3090.87" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">timestamp</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="90.88,-3068.67 90.88,-3550.67 522.88,-3550.67 522.88,-3068.67 90.88,-3068.67"/>
+</a>
+</g>
 </g>
 <!-- job_application&#45;&gt;apply_status -->
 <g id="edge24" class="edge">

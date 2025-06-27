@@ -203,7 +203,7 @@ class TableRenderer {
   }
 
   toDot(): string {
-    const note = this.table.options.Note || this.table.actual.settings?.note;
+    const note = this.table.options.note || this.table.actual.settings?.note;
     const tooltip = !note
       ? ""
       : `tooltip="${this.displayName()}\\n${escapeString(note)}";`;
@@ -221,7 +221,7 @@ class GroupRenderer {
   readonly tables: TableRenderer[];
 
   constructor(group: NormalizedGroup) {
-    this.note = group.options.Note || group.actual.settings?.note;
+    this.note = group.options.note || group.actual.settings?.note;
     this.color = !group.actual.settings?.color
       ? "#dddddd"
       : group.actual.settings.color;
