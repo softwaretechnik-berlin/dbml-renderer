@@ -11,7 +11,7 @@ digraph dbml {
       style=filled;
       color="#dddddd";
 
-      "users.users" [id="users.users";URL="https://flexivis.infrastruktur.link/#url=text:inline:users.users+table+link";tooltip="users.users\na test note";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+      "users.users" [id="users.users";tooltip="users.users\na test note";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#D3D3D3" HREF="https://flexivis.infrastruktur.link/#url=text:inline:users.users+table+link"><FONT COLOR="#000000"><B>       users.users 🔗       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -38,7 +38,7 @@ digraph dbml {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"users.sexes" [id="users.sexes";URL="https://flexivis.infrastruktur.link/#url=text:inline:users.sexes+table+link";tooltip="users.sexes\nMale or female";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"users.sexes" [id="users.sexes";tooltip="users.sexes\nMale or female";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#200000" HREF="https://flexivis.infrastruktur.link/#url=text:inline:users.sexes+table+link"><FONT COLOR="#ffffff"><B>       users.sexes 🔗       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
@@ -83,7 +83,7 @@ subgraph cluster_teams {
       </TABLE>
     </TD></TR>
     </TABLE>>];
-"teams_users" [id="teams_users";URL="https://flexivis.infrastruktur.link/#url=text:inline:teams_users+join+table+link";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+"teams_users" [id="teams_users";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       <TR><TD PORT="f0" BGCOLOR="#1d71b8" HREF="https://flexivis.infrastruktur.link/#url=text:inline:teams_users+join+table+link"><FONT COLOR="#ffffff"><B>       teams_users 🔗       </B></FONT></TD></TR>
 <TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
       <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">

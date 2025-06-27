@@ -207,11 +207,8 @@ class TableRenderer {
     const tooltip = !note
       ? ""
       : `tooltip="${this.displayName()}\\n${escapeString(note)}";`;
-    const url = !this.table.actual.settings?.url
-      ? ""
-      : `URL="${this.table.actual.settings.url}";`;
 
-    return `"${this.displayName()}" [id="${this.displayName()}";${url}${tooltip}label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
+    return `"${this.displayName()}" [id="${this.displayName()}";${tooltip}label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
       ${this.renderers.map((column) => column.toDot()).join("\n")}
     </TABLE>>];`;
   }

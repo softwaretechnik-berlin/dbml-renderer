@@ -27,7 +27,7 @@
 <!-- users.users -->
 <g id="users.users" class="node">
 <title>users.users</title>
-<g id="a_users.users"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:users.users+table+link" xlink:title="users.users&#10;a test note">
+<g id="a_users.users"><a xlink:title="users.users&#10;a test note">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="850.32" cy="-189" rx="263.5" ry="172.57"/>
 <g id="a_users.users_0"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:users.users+table+link" xlink:title="users.users&#10;a test note">
 <polygon fill="#d3d3d3" stroke="transparent" points="666.32,-249 666.32,-309 1035.32,-309 1035.32,-249 666.32,-249"/>
@@ -59,7 +59,7 @@
 <!-- users.sexes -->
 <g id="users.sexes" class="node">
 <title>users.sexes</title>
-<g id="a_users.sexes"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:users.sexes+table+link" xlink:title="users.sexes&#10;Male or female">
+<g id="a_users.sexes"><a xlink:title="users.sexes&#10;Male or female">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="1408.17" cy="-219" rx="258.19" ry="130.22"/>
 <g id="a_users.sexes_1"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:users.sexes+table+link" xlink:title="users.sexes&#10;Male or female">
 <polygon fill="#200000" stroke="transparent" points="1228.17,-249 1228.17,-309 1589.17,-309 1589.17,-249 1228.17,-249"/>
@@ -115,7 +115,6 @@
 <!-- teams_users -->
 <g id="teams_users" class="node">
 <title>teams_users</title>
-<g id="a_teams_users"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:teams_users+join+table+link" xlink:title="&lt;TABLE&gt;">
 <ellipse fill="none" stroke="black" stroke-width="0" cx="283.29" cy="-605" rx="267.07" ry="172.57"/>
 <g id="a_teams_users_2"><a xlink:href="https://flexivis.infrastruktur.link/#url=text:inline:teams_users+join+table+link" xlink:title="&lt;TABLE&gt;">
 <polygon fill="#1d71b8" stroke="transparent" points="96.29,-665 96.29,-725 470.29,-725 470.29,-665 96.29,-665"/>
@@ -137,8 +136,6 @@
 <text text-anchor="start" x="107.29" y="-505.2" font-family="Helvetica,sans-Serif" font-size="32.00" fill="#29235c">UserId &#160;&#160;&#160;</text>
 <text text-anchor="start" x="425.5" y="-506.2" font-family="Helvetica,sans-Serif" font-style="italic" font-size="32.00" fill="#29235c">int</text>
 <polygon fill="none" stroke="#29235c" stroke-width="2" points="95.29,-484 95.29,-726 471.29,-726 471.29,-484 95.29,-484"/>
-</a>
-</g>
 </g>
 <!-- teams_users&#45;&gt;users.users -->
 <!-- teams_users&#45;&gt;users.users -->
