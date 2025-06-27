@@ -63,11 +63,11 @@ class TableNameRenderer implements RowRenderer {
         fontColor = "#000000";
       }
     }
-    const url = this.table.settings?.url
-      ? ` HREF="${this.table.settings.url}"`
-      : "";
+    const [url, urlIcon] = this.table.settings?.url
+      ? [` HREF="${this.table.settings.url}"`, " 🔗"]
+      : ["", ""];
 
-    return `<TR><TD PORT="${this.port}" BGCOLOR="${tableColor}"${url}><FONT COLOR="${fontColor}"><B>       ${this.displayName}       </B></FONT></TD></TR>`;
+    return `<TR><TD PORT="${this.port}" BGCOLOR="${tableColor}"${url}><FONT COLOR="${fontColor}"><B>       ${this.displayName}${urlIcon}       </B></FONT></TD></TR>`;
   }
 }
 
