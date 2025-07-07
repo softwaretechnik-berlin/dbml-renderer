@@ -47,6 +47,18 @@ Ref: posts.user_id > users.id
 
 The [examples directory](examples/) contains other input and output examples.
 
+## Docker
+
+Use docker
+
+```bash
+docker run \
+  --rm \
+  --volume $(pwd):/app \
+  tgrivel/dbml-renderer \
+  dbml-renderer -i source.dbml -o destination.svg
+```
+
 ## Testing
 
 The tests can be run with `npm test`. They use the examples available in the
