@@ -21,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.19.1",
+    "@types/node": "^20.19.4",
     "@types/yargs": "^17.0.33",
     "ava": "^6.4.0",
     "peggy": "^4.2.0",
@@ -32,7 +32,7 @@
   "dependencies": {
     "@aduh95/viz.js": "3.4.0",
     "yargs": "^17.7.2",
-    "zod": "^3.25.67"
+    "zod": "^3.25.75"
   },
   "bugs": {
     "url": "https://github.com/softwaretechnik-berlin/dbml-renderer/issues"
