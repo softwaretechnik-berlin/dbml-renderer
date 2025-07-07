@@ -16,6 +16,12 @@ It can then be used to render DBML files like so:
 dbml-renderer -i example.dbml -o output.svg
 ```
 
+Alternatively, you can run using `npx @softwaretechnik/dbml-renderer` (or `npx --yes @softwaretechnik/dbml-renderer` to install packages without prompting), e.g.:
+
+```bash
+npx @softwaretechnik/dbml-renderer -i example.dbml -o output.svg
+```
+
 For instance, the following input will produce the image below:
 
 ```dbml
